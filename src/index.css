@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@theme {
+  /* Light theme colors */
+  --color-bg: 255 255 255;
+  --color-surface: 255 255 255;
+  --color-card: 255 255 255;
+  
+  /* Fragrance-inspired color palette */
+  --color-primary: 89 199 219; /* Rich brown - woody scents */
+  --color-primary-light: 89 199 219; /* Lighter brown */
+  --color-secondary: 75 0 130; /* Deep purple - floral elegance */
+  --color-secondary-light: 147 112 219; /* Light purple */
+  --color-accent: 218 165 32; /* Golden - luxury */
+  --color-accent-light: 255 215 0; /* Light gold */
+  
+  /* Text colors */
+  --text-primary: 0 0 0;
+  --text-secondary: 108 117 125;
+  --text-muted: 134 142 150;
+  --text-light: 255 255 255;
+  
+  /* Border and shadow */
+  --border-color: 229 231 235;
+  --shadow-color: 0 0 0 / 0.1;
+}
+
+.dark {
+  --color-bg: 18 18 18;
+  --color-surface: 23 23 23;
+  --color-card: 28 28 28;
+  
+  --color-primary: 160 82 45;
+  --color-primary-light: 139 69 19;
+  --color-secondary: 147 112 219;
+  --color-secondary-light: 75 0 130;
+  --color-accent: 255 215 0;
+  --color-accent-light: 218 165 32;
+  
+  --text-primary: 255 255 255;
+  --text-secondary: 209 213 219;
+  --text-muted: 156 163 175;
+  --text-light: 255 255 255;
+  
+  --border-color: 55 65 81;
+  --shadow-color: 0 0 0 / 0.3;
+}
+
+@layer utilities {
+  .bg-primary {
+    background-color: rgb(var(--color-primary));
+  }
+  .bg-primary-light {
+    background-color: rgb(var(--color-primary-light));
+  }
+  .bg-secondary {
+    background-color: rgb(var(--color-secondary));
+  }
+  .bg-secondary-light {
+    background-color: rgb(var(--color-secondary-light));
+  }
+  .bg-accent {
+    background-color: rgb(var(--color-accent));
+  }
+  .bg-accent-light {
+    background-color: rgb(var(--color-accent-light));
+  }
+  .bg-surface {
+    background-color: rgb(var(--color-surface));
+  }
+  .bg-card {
+    background-color: rgb(var(--color-card));
+  }
+  
+  .text-primary {
+    color: rgb(var(--text-primary));
+  }
+  .text-secondary {
+    color: rgb(var(--text-secondary));
+  }
+  .text-muted {
+    color: rgb(var(--text-muted));
+  }
+  .text-light {
+    color: rgb(var(--text-light));
+  }
+  
+  .border-custom {
+    border-color: rgb(var(--border-color));
+  }
+  
+  .shadow-custom {
+    box-shadow: 0 4px 6px -1px rgb(var(--shadow-color));
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("/fonts/FuturaCyrillicBook.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("/fonts/FuturaCyrillicDemi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  font-family: "Futura", sans-serif;
+  background-color: rgb(var(--color-surface));
+  color: rgb(var(--text-primary));
+  line-height: 1.6;
+}
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-surface));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-primary-light));
+}
+
+/* Fade in and slide up animation */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInSlide {
+  animation: fadeInSlide 0.5s ease-out forwards;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible {
+  outline: 2px solid rgb(var(--color-primary));
+  outline-offset: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid rgb(var(--color-primary));
+  outline-offset: 2px;
+}
+
+/* Glassmorphism effect */
+.glassmorphism-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.glassmorphism-card:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}

@@ -200,7 +200,8 @@ export const Contact: React.FC = () => {
                       <p className="text-secondary">
                         PT. Graha Lestari Agung Makmur<br />
                         Komplek Duta Merlin Blok D No. 2<br />
-                        Jl. Gajah Mada No. 3-5,
+                        Jl. Gajah Mada No. 3-5, Jakarta Pusat, Indonesia<br />
+                        10130
                       </p>
                     </div>
                   </div>

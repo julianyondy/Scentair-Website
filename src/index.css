@@ -138,6 +138,10 @@ body {
   background: rgb(var(--color-primary-light));
 }
 
+button {
+  cursor: pointer;
+}
+
 /* Fade in and slide up animation */
 @keyframes fadeInSlide {
   0% {

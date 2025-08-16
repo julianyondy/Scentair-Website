@@ -6,16 +6,15 @@ const fragranceCategories = [
     id: 'crisp',
     name: 'Crisp & Invigorating',
     image: '/assets/fragrance/Crisp & Invigorating.png',
-    points: ['Refreshing', 'Energizing', 'Vibrant'],
+    points: ['Bold', 'Lively', 'Stimulating'],
     fragrances: [
       {
         id: 'crisp-1',
         name: 'Agave',
-        bgImage: '/assets/cardfrag/Lemongrass.png',
+        bgImage: '/assets/cardfrag/agave.png',
         image: '/assets/objek/White Tea and Thyme.png',
         description: 'Restore your senses with fresh air, dewy aloe, leafy greens and watery melon with a base of white woods and musk..',
-        notes: ['Citrus', 'Mint', 'Ozone'],
-        intensity: 'Light'
+        notes: ['Citrus', 'Mint', 'Ozone']
       },
       {
         id: 'crisp-2',
@@ -23,17 +22,15 @@ const fragranceCategories = [
         bgImage: '/assets/cardfrag/Lemongrass.png',
         image: '/assets/objek/White Tea and Thyme.png',
         description: 'Cool mountain air with fresh greens and white musk.',
-        notes: ['Mountain Air', 'Greens', 'Musk'],
-        intensity: 'Medium'
+        notes: ['Mountain Air', 'Greens', 'Musk']
       },
       {
         id: 'crisp-3',
         name: 'White Tea & Thyme',
-        bgImage: '/assets/cardfrag/Lemongrass.png',
+        bgImage: '/assets/cardfrag/whitetea.png',
         image: '/assets/objek/White Tea and Thyme.png',
         description: 'Salt spray with sea greens and driftwood.',
-        notes: ['Salt', 'Sea Greens', 'Driftwood'],
-        intensity: 'Light'
+        notes: ['Salt', 'Sea Greens', 'Driftwood']
       }
     ]
   },
@@ -41,7 +38,7 @@ const fragranceCategories = [
     id: 'lux',
     name: 'Lux & Sophisticated',
     image: '/assets/fragrance/Lux & Sophisticated.png',
-    points: ['Premium', 'Elegant', 'Refined'],
+    points: ['Extravagance', 'Opulence', 'Refinement'],
     fragrances: [
       {
         id: 'lux-1',
@@ -76,7 +73,7 @@ const fragranceCategories = [
     id: 'passionate',
     name: 'Passionate & Sensual',
     image: '/assets/fragrance/Passionate & Sensual.png',
-    points: ['Intimate', 'Alluring', 'Warm'],
+    points: ['Seductive', 'Lavish', 'Irresistible'],
     fragrances: [
       {
         id: 'passionate-1',
@@ -416,7 +413,7 @@ export const Fragrances: React.FC = () => {
               </h2>
               
 {/* Fragrance Cards */}
-<div className="space-y-6">
+<div className="space-y-8">
   {selectedCategoryData.fragrances.map((fragrance, index) => {
     // If you haven't added bgImage on each fragrance yet,
     // this fallback will use a single default image:
@@ -436,47 +433,49 @@ export const Fragrances: React.FC = () => {
         {/* ONE overlay for readability */}
         <div className="pointer-events-none absolute inset-0 bg-black/25" />
 
-        {/* Card content (INSIDE the card) */}
-        <div className="relative z-10">
-          <div className="flex flex-col md:flex-row md:items-center">
-            {/* Left: Name */}
-            <div className="md:w-1/4 mb-4 md:mb-0 md:pr-4">
-              <h3 className="text-2xl font-bold text-light text-center md:text-left">
-                {fragrance.name}
-              </h3>
-            </div>
+{/* Card content (INSIDE the card) */}
+<div className="relative z-10">
+  <div className="flex flex-col md:flex-row md:items-center gap-6">
+    
+    {/* Left: Name */}
+    <div className="md:w-1/4 mb-4 md:mb-0 md:pr-6">
+      <h3 className="text-7xl font-extrabold text-light text-center md:text-left leading-tight tracking-tight drop-shadow-lg">
+        {fragrance.name}
+      </h3>
+    </div>
 
-            {/* Middle: Object/Image */}
-            <div className="md:w-2/4 flex items-center justify-center mb-4 md:mb-0">
-              <img
-                src={fragrance.image}
-                alt={`${fragrance.name} fragrance`}
-                className="w-80 h-80 object-contain"
-              />
-            </div>
+    {/* Middle: Object/Image */}
+    <div className="md:w-2/4 flex items-center justify-center mb-4 md:mb-0">
+      <img
+        src={fragrance.image}
+        alt={`${fragrance.name} fragrance`}
+        className="w-96 h-96 object-contain drop-shadow-md"
+      />
+    </div>
 
-            {/* Right: Info */}
-            <div className="md:w-1/4 md:pl-4">
-              <p className="text-light mb-3 text-center md:text-left">
-                {fragrance.description}
-              </p>
+    {/* Right: Info */}
+    <div className="md:w-1/4 md:pl-6">
+      <p className="text-3xl text-light mb-6 text-center md:text-left leading-relaxed tracking-wide drop-shadow-sm">
+        {fragrance.description}
+      </p>
 
-              <h4 className="font-semibold text-light mb-1 text-center md:text-left">Notes:</h4>
-              <ul className="space-y-1">
-                {fragrance.notes.map((note, i) => (
-                  <li key={i} className="flex items-center justify-center md:justify-start">
-                    <span className="w-2 h-2 rounded-full bg-primary mr-2" />
-                    <span className="text-sm text-light">{note}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <span className={`mt-2 inline-block text-xs font-medium px-2.5 py-0.5 rounded-full ${getIntensityColor(fragrance.intensity)}`}>
-                {fragrance.intensity} Intensity
-              </span>
-            </div>
-          </div>
-        </div>
+      <h4 className="font-semibold text-4xl text-light mb-4 text-center md:text-left">
+        Notes:
+      </h4>
+      <ul className="space-y-3">
+        {fragrance.notes.map((note, i) => (
+          <li
+            key={i}
+            className="flex items-center justify-center md:justify-start"
+          >
+            <span className="w-3.5 h-3.5 rounded-full bg-primary mr-3" />
+            <span className="text-3xl text-light">{note}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
       </div>
     );
   })}

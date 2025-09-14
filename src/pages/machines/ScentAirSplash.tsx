@@ -20,9 +20,9 @@ export const ScentAirSplash: React.FC = () => {
         
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="md:flex">
-            <div className="md:w-1/2 bg-gradient-to-r from-blue-400 to-indigo-600 flex items-center justify-center p-8">
+            <div className="md:w-1/2 flex items-center justify-center p-8">
               <img 
-                src="/assets/productcard/machines.jpg" 
+                src="/assets/machines/splash.png" 
                 alt="ScentAir Splash" 
                 className="max-h-64 object-contain"
               />

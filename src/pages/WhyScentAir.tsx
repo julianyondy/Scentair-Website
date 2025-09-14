@@ -4,7 +4,7 @@ import { OurStory } from '../components/sections/OurStory';
 import { WhatMakesUsDifferent } from '../components/sections/WhatMakesUsDifferent';
 import { CorporateResponsibility } from '../components/sections/CorporateResponsibility';
 
-export const About: React.FC = () => {
+export const WhyScentAir: React.FC = () => {
   return (
     <div className="pt-[180px]">
       <AboutHero />

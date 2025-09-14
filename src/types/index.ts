@@ -14,6 +14,7 @@ export interface ContactForm {
   purpose: 'home' | 'business';
   companyName?: string;
   address: string;
+  reason: string;
 }
 
 export interface NavItem {

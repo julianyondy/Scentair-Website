@@ -10,7 +10,8 @@ export const Contact: React.FC = () => {
     email: '',
     purpose: 'home',
     companyName: '',
-    address: ''
+    address: '',
+    reason: ''
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -39,7 +40,8 @@ export const Contact: React.FC = () => {
       email: '',
       purpose: 'home',
       companyName: '',
-      address: ''
+      address: '',
+      reason: ''
     });
   };
 
@@ -172,6 +174,26 @@ export const Contact: React.FC = () => {
                     className="w-full px-4 py-3 border border-custom rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
                     placeholder="Your full address"
                   />
+                </div>
+                
+                <div>
+                  <label htmlFor="reason" className="block text-sm font-medium text-primary mb-2">
+                    Reason for Contact (Please describe your reason in detail, up to 500 words)
+                  </label>
+                  <textarea
+                    id="reason"
+                    name="reason"
+                    value={formData.reason}
+                    onChange={handleInputChange}
+                    required
+                    rows={6}
+                    maxLength={500}
+                    className="w-full px-4 py-3 border border-custom rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
+                    placeholder="Please describe your reason for contacting us..."
+                  />
+                  <div className="text-right text-sm text-gray-500 mt-1">
+                    {formData.reason.length}/500 characters
+                  </div>
                 </div>
                 
                 <Button type="submit" size="lg" className="w-full">

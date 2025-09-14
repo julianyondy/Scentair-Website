@@ -57,12 +57,12 @@ export const Hero: React.FC = () => {
                   Explore Collection
                 </Button>
               </Link>
-              <Link to="/about">
+              <Link to="/why-scentair">
                 <Button
                   size="lg"
                   className="px-8 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:!bg-[#89C7D9]"
                 >
-                  Learn Our Story
+                  Why ScentAir
                 </Button>
               </Link>
             </div>

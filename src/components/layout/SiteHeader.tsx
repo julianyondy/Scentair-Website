@@ -5,8 +5,8 @@ import { Navigation } from '../ui/Navigation';
 import { NavItem } from '../../types';
 
 const navItems: NavItem[] = [
-  { label: 'Why Scent', href: '/service' },
-  { label: 'Why ScentAir', href: '/about' },
+  { label: 'Why Scent', href: '/why-scent' },
+  { label: 'Why ScentAir', href: '/why-scentair' },
   { label: 'Solutions', href: '/products' },
   { label: 'Our Partners', href: '/our-partners' },
   { label: 'Contact Us', href: '/contact' },

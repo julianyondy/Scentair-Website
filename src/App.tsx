@@ -2,10 +2,10 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
 import { Home } from './pages/Home';
-import { About } from './pages/About';
+import { WhyScentAir } from './pages/WhyScentAir';
 import { Products } from './pages/Products';
 import { Contact } from './pages/Contact';
-import { Service } from './pages/Service';
+import { WhyScent } from './pages/WhyScent';
 import { Fragrances } from './pages/Fragrances';
 import { Machines } from './pages/Machines';
 import { ScentAirSplash } from './pages/machines/ScentAirSplash';
@@ -21,8 +21,8 @@ function App() {
       <ScrollToTop />
       <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/service" element={<Service />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/why-scent" element={<WhyScent />} />
+              <Route path="/why-scentair" element={<WhyScentAir />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/fragrances" element={<Fragrances />} />
               <Route path="/products/machines" element={<Machines />} />

@@ -7,12 +7,12 @@
   --color-card: 255 255 255;
   
   /* Fragrance-inspired color palette */
-  --color-primary: 89 199 219; /* Rich brown - woody scents */
-  --color-primary-light: 89 199 219; /* Lighter brown */
-  --color-secondary: 75 0 130; /* Deep purple - floral elegance */
-  --color-secondary-light: 147 112 219; /* Light purple */
-  --color-accent: 218 165 32; /* Golden - luxury */
-  --color-accent-light: 255 215 0; /* Light gold */
+    --color-primary: 96 196 220; /* #60c4dc */
+    --color-primary-light: 96 196 220; /* #60c4dc */
+    --color-secondary: 75 0 130; /* Deep purple - floral elegance */
+    --color-secondary-light: 147 112 219; /* Light purple */
+    --color-accent: 218 165 32; /* Golden - luxury */
+    --color-accent-light: 255 215 0; /* Light gold */
   
   /* Text colors */
   --text-primary: 0 0 0;

@@ -12,8 +12,22 @@ export const Navigation: React.FC<NavigationProps> = ({ items, className = '' })
   const location = useLocation();
 
   const handleNavClick = () => {
-    setIsOpen(false);
-  };
+      setIsOpen(false);
+    };
+  
+    const isActive = (href: string) => {
+          // For exact match
+          if (location.pathname === href) return true;
+          
+          // For sub-pages, check if current path starts with the href
+          // and ensure it's actually a sub-path (next char is '/')
+          if (href !== '/' && location.pathname.startsWith(href)) {
+            const nextChar = location.pathname[href.length];
+            return nextChar === '/' || nextChar === undefined;
+          }
+          
+          return false;
+        };
 
   return (
     <nav className={className}>
@@ -23,10 +37,12 @@ export const Navigation: React.FC<NavigationProps> = ({ items, className = '' })
           <Link
             key={item.href}
             to={item.href}
-            aria-current={location.pathname === item.href ? 'page' : undefined}
-            className={`text-primary hover:text-primary-light transition-colors duration-200 font-medium ${
-              location.pathname === item.href ? 'text-primary-light' : ''
-            }`}
+            aria-current={isActive(item.href) ? 'page' : undefined}
+            className={`text-primary hover:text-primary-light transition-all duration-200 font-medium px-4 py-2 rounded-lg ${
+                          isActive(item.href)
+                            ? 'bg-primary text-white'
+                            : ''
+                        }`}
           >
             {item.label}
           </Link>
@@ -56,10 +72,12 @@ export const Navigation: React.FC<NavigationProps> = ({ items, className = '' })
                   key={item.href}
                   to={item.href}
                   onClick={handleNavClick}
-                  aria-current={location.pathname === item.href ? 'page' : undefined}
-                  className={`block w-full text-left px-4 py-2 text-primary hover:bg-white transition-colors duration-200 ${
-                    location.pathname === item.href ? 'bg-white' : ''
-                  }`}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
+                  className={`block w-full text-left px-4 py-3 text-primary transition-all duration-200 font-medium rounded-lg mx-2 my-1 ${
+                                      isActive(item.href)
+                                        ? 'bg-primary text-white'
+                                        : 'hover:bg-gray-100'
+                                    }`}
                 >
                   {item.label}
                 </Link>

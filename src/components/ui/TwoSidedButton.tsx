@@ -32,10 +32,10 @@ export const TwoSidedButton: React.FC<TwoSidedButtonProps> = ({
       <button
         type="button"
         onClick={handleMachineClick}
-        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+        className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
           activeSide === 'machine'
             ? 'bg-white text-primary shadow-sm'
-            : 'text-gray-600 hover:text-gray-900'
+            : 'text-gray-600 hover:text-gray-900 hover:scale-105'
         }`}
       >
         Machines
@@ -43,10 +43,10 @@ export const TwoSidedButton: React.FC<TwoSidedButtonProps> = ({
       <button
         type="button"
         onClick={handleFragranceClick}
-        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+        className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
           activeSide === 'fragrance'
             ? 'bg-white text-primary shadow-sm'
-            : 'text-gray-600 hover:text-gray-900'
+            : 'text-gray-600 hover:text-gray-900 hover:scale-105'
         }`}
       >
         Fragrances

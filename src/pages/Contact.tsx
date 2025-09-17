@@ -3,7 +3,7 @@ import { Contact as ContactSection } from '../components/sections/Contact';
 
 export const Contact: React.FC = () => {
   return (
-    <div className="pt-[180px]">
+    <div className="pt-[180px] bg-transparent">
       <ContactSection />
     </div>
   );

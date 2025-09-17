@@ -1,11 +1,9 @@
 import React from 'react';
-import { HeroImageSection } from '../components/sections/HeroImageSection';
-import { OverlayImageSectionA } from '../components/sections/OverlayImageSectionA';
-import { OverlayImageSectionB } from '../components/sections/OverlayImageSectionB';
+import { WhyScentSection } from '../components/sections/WhyScentSection';
 
 export const WhyScent: React.FC = () => {
   return (
-    <div className="pt-[180px]">
+    <div className="pt-[180px] bg-transparent">
       {/* Introduction section */}
       <section className="py-12 px-6 bg-gradient-to-b from-white to-cyan-50">
         <div className="max-w-4xl mx-auto text-center">
@@ -19,9 +17,7 @@ export const WhyScent: React.FC = () => {
       </section>
       
       {/* Main content sections */}
-      <HeroImageSection />
-      <OverlayImageSectionA />
-      <OverlayImageSectionB />
+            <WhyScentSection />
       
       {/* Conclusion section */}
       <section className="py-16 px-6 bg-gradient-to-b from-cyan-50 to-teal-100">

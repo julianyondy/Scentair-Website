@@ -3,7 +3,7 @@ import { Brain } from 'lucide-react';
 
 export const HeroImageSection: React.FC = () => {
   return (
-    <section className="relative min-h-[70vh] md:min-h-[90vh] overflow-hidden bg-gradient-to-br from-cyan-50 to-teal-50">
+    <section className="relative min-h-[70vh] md:min-h-[90vh] overflow-hidden">
       {/* Decorative accent elements */}
       <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-cyan-500 to-teal-500"></div>
       <div className="absolute bottom-0 right-0 w-48 h-48 bg-cyan-200 rounded-full -mb-24 -mr-24 opacity-20 shadow-2xl"></div>

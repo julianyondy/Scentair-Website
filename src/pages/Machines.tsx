@@ -135,7 +135,7 @@ export const Machines: React.FC = () => {
   // };
 
   return (
-    <div className="pt-[160px] min-h-screen bg-white">
+    <div className="pt-[160px] min-h-screen bg-transparent">
       <Container>
         {/* Header */}
         <div className="text-center mb-12">
@@ -159,7 +159,7 @@ export const Machines: React.FC = () => {
                 onMouseLeave={() => setHovered(null)}
                 onFocus={() => setHovered(m.key)}
                 onBlur={() => setHovered(null)}
-                className="group inline-flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md transition-all duration-300 text-left w-full hover:border-cyan-300"
+                className="group inline-flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md transition-all duration-300 text-left w-full hover:border-cyan-300 hover:scale-105"
               >
                 <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-slate-50 p-2 flex-shrink-0">
                   <img
@@ -293,7 +293,7 @@ export const Machines: React.FC = () => {
                   <div className={`flex ${isTextLeft ? "justify-start" : "justify-end"}`}>
                     <Link
                       to={`/products/machines/${m.slug}`}
-                      className="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 inline-block"
+                      className="bg-primary text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 inline-block"
                     >
                       Learn More
                     </Link>

@@ -3,7 +3,7 @@ import { ProductCategories } from '../components/sections/ProductCategories';
 
 export const Products: React.FC = () => {
   return (
-    <div className="pt-[180px]">
+    <div className="pt-[180px] bg-transparent">
       <ProductCategories />
     </div>
   );

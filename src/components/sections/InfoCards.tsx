@@ -77,7 +77,7 @@ export const InfoCards: React.FC = () => {
 
   return (
     <>
-      <section className="py-8 bg-white">
+      <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {cards.map((card) => (
@@ -128,7 +128,7 @@ export const InfoCards: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-r from-primary/5 to-secondary/5">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center">
             <div className="relative mb-8">
@@ -139,7 +139,7 @@ export const InfoCards: React.FC = () => {
                 className="relative w-full max-w-7xl h-auto rounded-3xl shadow-2xl border-[12px] border-white"
               />
             </div>
-            <div className="max-w-4xl bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-100">
+            <div className="max-w-4xl backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-100">
               <p className="text-gray-800 text-xl md:text-2xl font-medium leading-relaxed">
                 ScentAir is the <span className="font-bold text-primary">PIONEER</span> in environmental scenting, as it was first created in 1994 by a Walt Disney's imagineer to present the 5<sup className="text-primary font-bold text-2xl">th</sup> dimensional experience for its visitors
               </p>
@@ -151,7 +151,7 @@ export const InfoCards: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-r from-primary/5 to-secondary/5">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center">
             <div className="relative mb-8">
@@ -162,7 +162,7 @@ export const InfoCards: React.FC = () => {
                 className="relative w-full max-w-7xl h-auto rounded-3xl shadow-2xl border-[12px] border-white"
               />
             </div>
-            <div className="max-w-4xl bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-100">
+            <div className="max-w-4xl backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-100">
               <p className="text-gray-800 text-xl md:text-2xl font-medium leading-relaxed">
                 Nearly all the famous and top tiers international hotel chains, leading corporations, airports, as well as government institutions are proudly using the products and services of ScentAir to enhance their corporate identity and customer experience.
               </p>

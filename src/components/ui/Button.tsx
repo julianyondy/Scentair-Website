@@ -19,12 +19,12 @@ export const Button: React.FC<ButtonProps> = ({
   type = 'button',
   disabled = false,
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variantClasses = {
-    primary: 'bg-primary hover:bg-primary-light text-light focus:ring-primary',
-    secondary: 'bg-secondary hover:bg-secondary-light text-light focus:ring-secondary',
-    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-light focus:ring-primary',
+    primary: 'bg-primary text-light focus:ring-primary hover:scale-105',
+    secondary: 'bg-secondary hover:bg-secondary-light text-light focus:ring-secondary hover:scale-105',
+    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-light focus:ring-primary hover:scale-105',
   };
   
   const sizeClasses = {

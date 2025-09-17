@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const ScentAirDirect: React.FC = () => {
   return (
-    <div className="pt-[180px] min-h-screen bg-white py-20">
+    <div className="pt-[180px] min-h-screen py-20 bg-transparent">
       <Container>
         {/* Back link */}
         <div className="mb-8">
@@ -77,10 +77,10 @@ export const ScentAirDirect: React.FC = () => {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <button className="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300">
+                <button className="bg-primary text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
                   Request a Demo
                 </button>
-                <button className="border-2 border-primary text-primary hover:bg-primary/10 font-medium py-3 px-6 rounded-lg transition-all duration-300">
+                <button className="border-2 border-primary text-primary hover:bg-primary/10 font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
                   Contact Sales
                 </button>
               </div>

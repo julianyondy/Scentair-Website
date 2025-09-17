@@ -27,7 +27,7 @@ export const HeroVideo: React.FC = () => {
       </video>
       
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0"></div>
       
       {/* Content */}
       <div className="relative z-10 h-full flex items-center justify-center">

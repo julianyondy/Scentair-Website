@@ -183,7 +183,7 @@ export const OurPartners: React.FC = () => {
   };
 
   return (
-    <section id="our-partners" className="pt-5 pb-20 bg-white relative overflow-visible">
+    <section id="our-partners" className="pt-5 pb-20 relative overflow-visible">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-secondary"></div>
       <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mb-16 -mr-16 opacity-20 shadow-xl"></div>
@@ -202,7 +202,7 @@ export const OurPartners: React.FC = () => {
           </div>
 
           {/* Description */}
-          <div className="prose max-w-none mb-8 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 shadow-lg animate-fadeInSlide">
+          <div className="prose max-w-none mb-8 rounded-2xl p-6 shadow-lg animate-fadeInSlide">
             <p className="text-gray-700 mb-6 text-lg">
               Our partnerships span across various industries, from luxury hotels and spas to retail chains and corporate offices.
               Each partner shares our commitment to excellence and quality in creating exceptional olfactory experiences.
@@ -243,7 +243,7 @@ export const OurPartners: React.FC = () => {
                     }}
                     aria-pressed={isActive}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 opacity-70 group-hover:opacity-50 transition-opacity rounded-full"></div>
+                    <div className="absolute inset-0 opacity-70 group-hover:opacity-50 transition-opacity rounded-full"></div>
                     <span className="relative z-10 text-white font-semibold text-center px-3 text-sm">
                       {cat.name}
                     </span>
@@ -280,7 +280,7 @@ export const OurPartners: React.FC = () => {
                     />
                   </div>
                 ))}
-                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 rounded-xl p-3 h-24 flex items-center justify-center shadow-sm">
+                <div className="border border-primary/20 rounded-xl p-3 h-24 flex items-center justify-center shadow-sm">
                   <span className="text-primary font-bold">and many more</span>
                 </div>
               </div>
@@ -288,7 +288,7 @@ export const OurPartners: React.FC = () => {
           )}
 
           {/* Contact */}
-          <div className="mt-10 text-center bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-6 animate-fadeInSlide">
+          <div className="mt-10 text-center rounded-2xl p-6 animate-fadeInSlide">
             <p className="text-gray-700 text-lg">
               Interested in becoming a partner?{' '}
               <a href="/contact" className="text-primary hover:underline font-semibold">Contact us</a>{' '}

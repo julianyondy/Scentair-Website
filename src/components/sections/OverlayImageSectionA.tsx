@@ -30,7 +30,7 @@ export const OverlayImageSectionA: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-[70vh] md:min-h-[90vh] overflow-hidden bg-gradient-to-br from-white to-cyan-50 py-16">
+    <section className="relative min-h-[70vh] md:min-h-[90vh] overflow-hidden py-16">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-100 rounded-full -mt-16 -mr-16 opacity-30 shadow-2xl"></div>
       <div className="absolute bottom-1/4 left-1/4 w-16 h-16 bg-teal-100 rounded-full opacity-40 shadow-xl"></div>
@@ -53,7 +53,7 @@ export const OverlayImageSectionA: React.FC = () => {
       <div className="relative z-10 h-full flex flex-col md:flex-row items-center justify-center gap-y-12 md:gap-x-16 px-6 md:px-16">
         {/* Content card with benefits grid */}
         <div className="w-full md:w-3/5 h-full">
-          <div className="bg-white rounded-2xl shadow-xl p-8 w-full border-l-4 border-cyan-500 transition-all duration-700 hover:shadow-2xl">
+          <div className="rounded-2xl shadow-xl p-8 w-full border-l-4 border-cyan-500 transition-all duration-700 hover:shadow-2xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
                 <div
@@ -82,7 +82,7 @@ export const OverlayImageSectionA: React.FC = () => {
           <div className="relative w-full max-w-xl h-80 md:h-[450px]">
             {/* Floating image elements */}
             <div className="absolute -top-4 -left-4 w-full h-full border-2 border-cyan-200 rounded-2xl z-0 shadow-2xl"></div>
-            <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl z-0 shadow-xl"></div>
+            <div className="absolute -top-2 -left-2 w-full h-full rounded-2xl z-0 shadow-xl"></div>
             
             <img
               src="/assets/whyscent/image2.jpg"

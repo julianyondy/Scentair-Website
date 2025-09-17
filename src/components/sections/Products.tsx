@@ -27,7 +27,7 @@ export const Products: React.FC = () => {
   };
 
   return (
-    <section id="products" className="py-20 bg-white">
+    <section id="products" className="py-20">
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
@@ -73,7 +73,7 @@ export const Products: React.FC = () => {
               id={`fragrance-${fragrance.replace(/ /g, '-').replace(/&/g, 'and')}`}
               className="scroll-mt-20"
             >
-              <div className="bg-white rounded-2xl shadow-lg p-8">
+              <div className="rounded-2xl shadow-lg p-8">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">
                   {fragrance}
                 </h2>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const ProductCategories: React.FC = () => {
   return (
-      <section className="pt-5 pb-20 flex flex-col items-center justify-center">
+      <section className="pt-5 pb-20 flex flex-col items-center justify-center bg-transparent">
         {/* Heading */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

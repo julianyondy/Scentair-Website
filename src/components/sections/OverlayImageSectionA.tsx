@@ -3,63 +3,92 @@ import { CheckCircle } from 'lucide-react';
 
 export const OverlayImageSectionA: React.FC = () => {
   const benefits = [
-    'Higher retention rates',
-    'Increased conversion',
-    'Favorable reviews',
-    'Brand differentiation',
-    'Stronger loyalty',
-    'Improved customer experience',
+    { 
+      title: 'Higher Retention Rates', 
+      description: 'Customers stay longer in scented environments, increasing engagement and satisfaction.' 
+    },
+    { 
+      title: 'Increased Conversion', 
+      description: 'Strategic scenting can boost purchase intent by creating positive emotional associations.' 
+    },
+    { 
+      title: 'Favorable Reviews', 
+      description: 'Pleasant scents contribute to memorable experiences that customers want to share.' 
+    },
+    { 
+      title: 'Brand Differentiation', 
+      description: 'A signature scent sets your brand apart and creates a unique sensory identity.' 
+    },
+    { 
+      title: 'Stronger Loyalty', 
+      description: 'Scent triggers emotional memories, making customers more likely to return.' 
+    },
+    { 
+      title: 'Improved Customer Experience', 
+      description: 'Thoughtfully designed scent environments enhance overall customer satisfaction.' 
+    },
   ];
 
   return (
-    <section className="relative min-h-[60vh] md:min-h-[80vh] overflow-hidden bg-white">
+    <section className="relative min-h-[70vh] md:min-h-[90vh] overflow-hidden bg-gradient-to-br from-white to-cyan-50 py-16">
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-50 rounded-full -mt-12 -mr-12 opacity-50 shadow-lg"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-8 h-8 bg-teal-50 rounded-full opacity-30 shadow-md"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-100 rounded-full -mt-16 -mr-16 opacity-30 shadow-2xl"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-16 h-16 bg-teal-100 rounded-full opacity-40 shadow-xl"></div>
+      <div className="absolute top-1/2 right-1/3 w-12 h-12 bg-cyan-200 rounded-full opacity-20 shadow-md"></div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col md:flex-row items-stretch justify-center gap-y-8 md:gap-x-10 px-4 md:px-12 py-12">
-        {/* Image on the left (matches card size) */}
-        <div className="w-full md:w-1/2 h-full">
-          <div className="relative w-full h-full">
-            <div className="absolute -top-4 -left-4 w-full h-full border-2 border-cyan-200 rounded-2xl z-0 shadow-xl"></div>
-            <div className="absolute -top-2 -left-2 w-full h-full bg-white rounded-2xl z-0 shadow-md"></div>
-            <img
-              src="/assets/whyscent/image2.jpg"
-              alt="Scent benefits visualization"
-              className="w-full h-full object-cover rounded-2xl shadow-2xl relative z-10 transition-transform duration-700 hover:translate-y-1"
-            />
-          </div>
-        </div>
-
-        {/* Headline + card column (same width/height as image) */}
-        <div className="w-full md:w-1/2 h-full flex flex-col">
-          {/* Headline centered above the card */}
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight mb-8 text-center">
+      <div className="relative z-10 h-full flex flex-col md:flex-row items-center justify-center gap-y-12 md:gap-x-16 px-6 md:px-16">
+        {/* Headline centered above the content */}
+        <div className="w-full text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight animate-fade-in">
             The Experience of Scent Drives Customer Behavior
           </h2>
+          <p className="text-gray-600 text-lg mt-4 max-w-3xl mx-auto animate-slide-up">
+            Strategic scenting creates powerful psychological effects that influence how customers 
+            perceive and interact with your brand.
+          </p>
+        </div>
+      </div>
 
-          {/* Content card fills remaining height to match image */}
-          <div className="flex-1 bg-gray-50 rounded-2xl shadow-lg p-6 md:p-8 w-full border-l-4 border-cyan-500 transition-all duration-700 hover:shadow-xl">
-            <ul className="space-y-4">
+      <div className="relative z-10 h-full flex flex-col md:flex-row items-center justify-center gap-y-12 md:gap-x-16 px-6 md:px-16">
+        {/* Content card with benefits grid */}
+        <div className="w-full md:w-3/5 h-full">
+          <div className="bg-white rounded-2xl shadow-xl p-8 w-full border-l-4 border-cyan-500 transition-all duration-700 hover:shadow-2xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
-                <li
+                <div
                   key={index}
-                  className="flex items-start text-gray-700 text-base group transition-transform duration-500 hover:translate-x-2"
+                  className="flex items-start group transition-all duration-500 hover:bg-cyan-50 p-4 rounded-xl"
                 >
-                  <div className="mr-3 flex-shrink-0 w-6 h-6 bg-cyan-100 rounded-full flex items-center justify-center mt-0.5 group-hover:bg-cyan-500 transition-colors duration-300">
+                  <div className="mr-4 flex-shrink-0 w-8 h-8 bg-cyan-100 rounded-full flex items-center justify-center mt-1 group-hover:bg-cyan-500 transition-colors duration-300">
                     <CheckCircle
                       className="text-cyan-600 group-hover:text-white transition-colors duration-300"
-                      size={16}
+                      size={20}
                       aria-hidden="true"
                     />
                   </div>
-                  <span className="pt-0.5 transition-all duration-300 group-hover:translate-x-1">
-                    {benefit}
-                  </span>
-                </li>
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">{benefit.title}</h3>
+                    <p className="text-gray-700">{benefit.description}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Image on the right */}
+        <div className="w-full md:w-2/5 h-full flex justify-center">
+          <div className="relative w-full max-w-xl h-80 md:h-[450px]">
+            {/* Floating image elements */}
+            <div className="absolute -top-4 -left-4 w-full h-full border-2 border-cyan-200 rounded-2xl z-0 shadow-2xl"></div>
+            <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl z-0 shadow-xl"></div>
+            
+            <img
+              src="/assets/whyscent/image2.jpg"
+              alt="Scent benefits visualization"
+              className="w-full h-full object-cover rounded-2xl shadow-2xl relative z-10 transition-all duration-700 hover:scale-105"
+            />
           </div>
         </div>
       </div>

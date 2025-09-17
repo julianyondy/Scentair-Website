@@ -40,21 +40,21 @@ export const ScentAirSplash: React.FC = () => {
               </h1>
 
               <p className="text-secondary mb-6 text-lg">
-                ScentAir Splash™ adalah sistem bertenaga baterai yang ringkas untuk menebarkan
-                wewangian di ruang kecil &amp; mikro. Jadwalkan langsung dari perangkat. Kartrid
-                mudah diganti, pelepasan aroma rapi dan merata hingga <strong>300 jam</strong>.
+                ScentAir Splash™ is a discreet, battery-powered system, best for scenting small and micro-spaces. 
+                Create scent schedules directly from the device. 
+                Easy-change cartridges release mess-free, even fragrance for up to <strong>300 hours</strong>.
               </p>
 
               <div className="mb-8">
                 <h2 className="text-xl font-bold text-primary mb-3">Key Features</h2>
                 <ul className="space-y-3">
                   {[
-                    'Targeted experience control — atomized fragrance untuk cakupan konsisten',
-                    'Select Scent Library — termasuk varian Odor Neutralizing',
-                    'Compact & battery powered — tidak perlu stopkontak',
-                    'Simple maintenance — kartrid mudah diganti & garansi penuh',
-                    '300 hours of scent — hingga 300 jam aroma per bulan',
-                    'Covers up to 500 sq ft — ideal untuk area kecil & sulit dijangkau',
+                    "Targeted experience control — Atomized fragrance delivers precise, consistent coverage",
+                    "Select Scent Library — Choose from a select fragrance library with Odor Neutralizing fragrances",
+                    "Compact & battery powered — Discreetly fights odorsanywhere- no power outlet needed",
+                    "Simple maintenance — Easy-change cartridges & full warranty",
+                    "300 hours of scent — Long-lasting cartridges contain up to 300 hours of odor-fighting fragrance",
+                    "Covers up to 500 SQ FT — Odor neutralizing coverage for small, hard to reach spaces",
                   ].map((t) => (
                     <li key={t} className="flex items-start">
                       <svg

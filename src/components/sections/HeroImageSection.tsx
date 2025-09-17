@@ -3,66 +3,70 @@ import { Brain } from 'lucide-react';
 
 export const HeroImageSection: React.FC = () => {
   return (
-    <section className="relative min-h-[60vh] md:min-h-[80vh] overflow-hidden bg-white">
+    <section className="relative min-h-[70vh] md:min-h-[90vh] overflow-hidden bg-gradient-to-br from-cyan-50 to-teal-50">
       {/* Decorative accent elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-teal-500"></div>
-      <div className="absolute bottom-0 right-0 w-32 h-32 bg-cyan-50 rounded-full -mb-16 -mr-16 opacity-50 shadow-lg"></div>
-      <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-teal-50 rounded-full opacity-30 shadow-md"></div>
+      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-cyan-500 to-teal-500"></div>
+      <div className="absolute bottom-0 right-0 w-48 h-48 bg-cyan-200 rounded-full -mb-24 -mr-24 opacity-20 shadow-2xl"></div>
+      <div className="absolute top-1/3 left-1/10 w-24 h-24 bg-teal-200 rounded-full opacity-30 shadow-xl"></div>
+      <div className="absolute top-1/4 right-1/4 w-16 h-16 bg-cyan-300 rounded-full opacity-40 shadow-md"></div>
       
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col md:flex-row items-stretch justify-center gap-y-8 md:gap-x-10 px-4 md:px-12 py-12">
+      <div className="relative z-10 h-full flex flex-col md:flex-row items-center justify-center gap-y-12 md:gap-x-16 px-6 md:px-16 py-16">
         
-        {/* Image on the left */}
-        <div className="w-full md:w-1/2 h-full">
-          <div className="relative w-full h-full">
-            <img
-              src="/assets/whyscent/image1.jpg"
-              alt="Scent visualization"
-              className="w-full h-full object-cover rounded-2xl shadow-2xl transition-transform duration-700 hover:translate-y-1"
-            />
+        {/* Text content on the left */}
+        <div className="w-full md:w-2/5 h-full flex flex-col items-start justify-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6 animate-fade-in">
+            Scent Makes an <span className="text-cyan-600">Emotional</span> Impact
+          </h1>
+          
+          <p className="text-gray-700 text-lg mb-8 max-w-2xl animate-slide-up">
+            The sense of smell is directly linked to the limbic system, the part of the brain responsible for emotions and memories. 
+            This powerful connection makes scent one of the most effective tools for creating lasting impressions.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 w-full animate-fadeInSlide">
+            <div className="bg-white rounded-xl shadow-lg p-4 flex items-center gap-3 border-l-4 border-cyan-500 hover:shadow-xl transition-all duration-500">
+              <Brain className="w-10 h-10 text-cyan-600 flex-shrink-0" />
+              <p className="text-gray-800 font-medium">
+                Scent is the <span className="text-cyan-600 font-bold">STRONGEST</span> sense linked to memory & emotion.
+              </p>
+            </div>
           </div>
         </div>
         
-        {/* Text + card */}
-        <div className="w-full md:w-1/2 h-full flex flex-col">
-          {/* Headline + card together */}
-          <div className="flex flex-col items-center justify-start h-full">
-            {/* Headline centered */}
-            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 text-center animate-fade-in">
-              Scent Makes an <span className="text-cyan-600">Emotional</span> Impact
-            </h1>
-
-            {/* Content card */}
-            <div className="flex-1 bg-gray-50 rounded-2xl shadow-lg p-6 md:p-8 w-full animate-slide-up border-l-4 border-cyan-500 transition-all duration-700 hover:shadow-xl">
-              <div className="space-y-6">
-                <div className="flex items-start gap-3 transition-transform duration-500 hover:translate-x-2">
-                  <Brain className="w-8 h-8 text-cyan-600 flex-shrink-0 mt-1 transition-transform duration-500 hover:scale-110" />
-                  <p className="text-gray-700 text-base">
-                    <span className="font-bold text-lg">Scent is the STRONGEST</span> sense linked to memory & emotion.
-                  </p>
-                </div>
-                
-                <div className="border-t border-gray-200 pt-4">
-                  <h3 className="text-4xl md:text-5xl font-bold text-cyan-600 mb-2">63%</h3>
-                  <p className="text-gray-600 text-base">
-                    Improvement in mood when exposed to a pleasing scent.
-                  </p>
-                </div>
-                
-                <div className="border-t border-gray-200 pt-4">
-                  <h3 className="text-4xl md:text-5xl font-bold text-cyan-600 mb-2">75%</h3>
-                  <p className="text-gray-600 text-base">
-                    Of our emotions are generated by what we smell.
-                  </p>
-                </div>
-                
-                <div className="border-t border-gray-200 pt-4">
-                  <h3 className="text-4xl md:text-5xl font-bold text-cyan-600 mb-2">100x</h3>
-                  <p className="text-gray-600 text-base">
-                    More likely to remember what they smell vs. what they see.
-                  </p>
-                </div>
-              </div>
+        {/* Image on the right */}
+        <div className="w-full md:w-3/5 h-full flex justify-center">
+          <div className="relative w-full max-w-2xl h-96 md:h-[500px]">
+            {/* Floating image elements */}
+            <div className="absolute -top-6 -left-6 w-full h-full border-2 border-cyan-200 rounded-2xl z-0 shadow-2xl"></div>
+            <div className="absolute -top-3 -left-3 w-full h-full bg-white rounded-2xl z-0 shadow-xl"></div>
+            
+            <img
+              src="/assets/whyscent/image1.jpg"
+              alt="Scent visualization"
+              className="w-full h-full object-cover rounded-2xl shadow-2xl relative z-10 transition-transform duration-700 hover:scale-105"
+            />
+            
+            {/* Floating statistic cards */}
+            <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-lg p-4 w-40 border-l-4 border-cyan-500 z-20 animate-fadeInSlide">
+              <h3 className="text-3xl font-bold text-cyan-600 mb-1">63%</h3>
+              <p className="text-gray-600 text-sm">
+                Improvement in mood when exposed to a pleasing scent.
+              </p>
+            </div>
+            
+            <div className="absolute top-1/4 -left-12 bg-white rounded-xl shadow-lg p-4 w-40 border-l-4 border-cyan-500 z-20 animate-fadeInSlide">
+              <h3 className="text-3xl font-bold text-cyan-600 mb-1">75%</h3>
+              <p className="text-gray-600 text-sm">
+                Of our emotions are generated by what we smell.
+              </p>
+            </div>
+            
+            <div className="absolute top-0 right-0 bg-white rounded-xl shadow-lg p-4 w-40 border-l-4 border-cyan-500 z-20 animate-fadeInSlide">
+              <h3 className="text-3xl font-bold text-cyan-600 mb-1">100x</h3>
+              <p className="text-gray-600 text-sm">
+                More likely to remember what they smell vs. what they see.
+              </p>
             </div>
           </div>
         </div>

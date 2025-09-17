@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Container } from '../ui/Container';
 
 type Category = {
@@ -7,15 +7,15 @@ type Category = {
   slug: string;      // folder name for logos
   img: string;       // background image for button
   logoCount: number; // number of logos for this category
-  logos?: string[];  // optional explicit logo paths (use when filenames aren't sequential)
+  logos?: string[];  // optional explicit logo paths
 };
 
 export const OurPartners: React.FC = () => {
   const categories: Category[] = [
-    { 
-      id: 1, name: 'Hotel & Resort',             
-      slug: 'hotel-resort',             
-      img: '/assets/fragrance/hotel.jpg',       
+    {
+      id: 1, name: 'Hotel & Resort',
+      slug: 'hotel-resort',
+      img: '/assets/hotel/westin.png',
       logoCount: 25,
       logos: [
         '/assets/hotel/aloft.png',
@@ -45,12 +45,11 @@ export const OurPartners: React.FC = () => {
         '/assets/hotel/westin.png',
       ],
     },
-
     {
-      id: 2, 
-      name: 'Retail & Mall',              
-      slug: 'retail-mall',              
-      img: '/assets/fragrance/retail.jpg',      
+      id: 2,
+      name: 'Retail & Mall',
+      slug: 'retail-mall',
+      img: '/assets/retail/mac.png',
       logoCount: 20,
       logos: [
         '/assets/retail/ash.png',
@@ -73,26 +72,24 @@ export const OurPartners: React.FC = () => {
         '/assets/retail/tif.png',
         '/assets/retail/toys.png',
         '/assets/retail/zar.png',
-      ], 
+      ],
     },
-
-    { 
-      id: 3, 
-      name: 'Spa & Fitness',              
-      slug: 'spa-fitness',              
-      img: '/assets/fragrance/spa.jpg',         
-      logoCount: 9,
+    {
+      id: 3,
+      name: 'Spa & Fitness',
+      slug: 'spa-fitness',
+      img: '/assets/hotel/langham.png',
+      logoCount: 2,
       logos: [
         '/assets/hotel/langham.png',
         '/assets/hotel/ritz.png',
-      ], 
+      ],
     },
-
     {
       id: 4,
       name: 'Airport & Lounge',
       slug: 'airport-lounge',
-      img: '/assets/fragrance/airport.jpg',
+      img: '/assets/airport/Heathrow.png',
       logoCount: 9,
       logos: [
         '/assets/airport/Air_France_Logo.svg.png',
@@ -106,13 +103,12 @@ export const OurPartners: React.FC = () => {
         '/assets/airport/Paris_Aéroport_logo.svg.png',
       ],
     },
-
-    { 
-      id: 5, 
-      name: 'Showroom',                   
-      slug: 'showroom',                 
-      img: '/assets/fragrance/showroom.jpg',    
-      logoCount: 5, 
+    {
+      id: 5,
+      name: 'Showroom',
+      slug: 'showroom',
+      img: '/assets/showroom/BMW.png',
+      logoCount: 5,
       logos: [
         '/assets/showroom/bentley-logo-2002-download.png',
         '/assets/showroom/BMW.png',
@@ -121,12 +117,11 @@ export const OurPartners: React.FC = () => {
         '/assets/showroom/loyloy.png',
       ],
     },
-
-    { 
-      id: 6, 
-      name: 'Hospitals & Healthcare',           
-      slug: 'hospitals-care',           
-      img: '/assets/fragrance/hospital.jpg',    
+    {
+      id: 6,
+      name: 'Hospitals & Healthcare',
+      slug: 'hospitals-care',
+      img: '/assets/hospital/florida.jpg',
       logoCount: 6,
       logos: [
         '/assets/hospital/bethsaida.png',
@@ -137,14 +132,13 @@ export const OurPartners: React.FC = () => {
         '/assets/hospital/west.png',
       ],
     },
-
-    { 
-      id: 7, 
-      name: 'Real Estate & Homebuilders', 
-      slug: 'real-estate-homebuilders', 
-      img: '/assets/fragrance/realestate.jpg',  
-      logoCount: 6, 
-            logos: [
+    {
+      id: 7,
+      name: 'Real Estate & Homebuilders',
+      slug: 'real-estate-homebuilders',
+      img: '/assets/realestate/horton.png',
+      logoCount: 6,
+      logos: [
         '/assets/realestate/baker.png',
         '/assets/realestate/centex.png',
         '/assets/realestate/horton.png',
@@ -157,7 +151,6 @@ export const OurPartners: React.FC = () => {
 
   const [selected, setSelected] = useState<Category | null>(null);
 
-  // ✅ Use explicit logos when provided; otherwise fall back to /assets/logos/<slug>/logo-N.png
   const logosForSelected = useMemo(() => {
     if (!selected) return [];
     if (selected.logos && selected.logos.length) return selected.logos;
@@ -167,57 +160,91 @@ export const OurPartners: React.FC = () => {
     );
   }, [selected]);
 
-  const handlePick = (cat: Category) => setSelected(cat);
+  useEffect(() => {
+    if (selected) {
+      const scrollX = window.scrollX;
+      const scrollY = window.scrollY;
+      const restoreScroll = () => {
+        window.scrollTo(scrollX, scrollY);
+      };
+      const rafId = requestAnimationFrame(restoreScroll);
+      const timeoutId = setTimeout(restoreScroll, 10);
+      return () => {
+        cancelAnimationFrame(rafId);
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [selected]);
+
+  const handlePick = (cat: Category, e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setSelected(cat);
+  };
 
   return (
-    <section id="our-partners" className="pt-5 pb-20 bg-white">
+    <section id="our-partners" className="pt-5 pb-20 bg-white relative overflow-visible">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-secondary"></div>
+      <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mb-16 -mr-16 opacity-20 shadow-xl"></div>
+      <div className="absolute top-1/3 left-1/10 w-16 h-16 bg-secondary/20 rounded-full opacity-30 shadow-lg"></div>
+      <div className="absolute top-1/4 right-1/4 w-12 h-12 bg-primary/30 rounded-full opacity-40 shadow-sm"></div>
+
       <Container>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Heading */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Partners</h1>
-            <div className="w-24 h-0.5 bg-primary mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 leading-relaxed">
+          <div className="text-center mb-8 animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Our Partners</h1>
+            <div className="w-24 h-0.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 rounded-full"></div>
+            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               We collaborate with industry leaders and innovative companies to bring you the best fragrance solutions.
             </p>
           </div>
 
           {/* Description */}
-          <div className="prose max-w-none mb-16">
-            <p className="text-secondary mb-6">
+          <div className="prose max-w-none mb-8 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 shadow-lg animate-fadeInSlide">
+            <p className="text-gray-700 mb-6 text-lg">
               Our partnerships span across various industries, from luxury hotels and spas to retail chains and corporate offices.
               Each partner shares our commitment to excellence and quality in creating exceptional olfactory experiences.
             </p>
-            <p className="text-secondary mb-6">
+            <p className="text-gray-700 mb-6 text-lg">
               Through these strategic alliances, we're able to deliver customized scenting solutions that enhance brand identity
               and create memorable experiences for customers in diverse environments.
             </p>
+            <div className="mt-4 flex justify-center">
+              <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+            </div>
           </div>
 
           {/* Category Buttons */}
-          <div className="mt-16">
+          <div className="mt-8 animate-slide-up">
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Partner Categories</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            <div className="flex flex-nowrap justify-center gap-6 overflow-x-auto overflow-y-visible px-4 py-4">
               {categories.map((cat) => {
                 const isActive = selected?.id === cat.id;
+
                 return (
                   <button
                     key={cat.id}
-                    onClick={() => handlePick(cat)}
+                    onClick={(e) => handlePick(cat, e)}
+                    onFocus={(e) => e.preventDefault()}
+                    tabIndex={-1}
                     className={[
-                      "cursor-pointer relative rounded-lg overflow-hidden h-32 flex items-center justify-center group focus:outline-none",
-                      "transition-transform hover:scale-[1.01]",
-                      isActive ? "ring-2 ring-primary" : "ring-1 ring-gray-200"
+                      "cursor-pointer relative rounded-full overflow-hidden w-32 h-32 flex-shrink-0 flex items-center justify-center group",
+                      "focus:outline-none focus:ring-0 transform transition-transform duration-300 hover:scale-[1.03]",
+                      "shadow-lg hover:shadow-xl",
+                      isActive ? "ring-4 ring-primary ring-offset-2 ring-offset-white scale-[1.03]" : "ring-2 ring-gray-300 ring-offset-2 ring-offset-white",
                     ].join(" ")}
                     style={{
-                      backgroundImage: `url(${cat.img})`,
+                      backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(${cat.img})`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                     }}
                     aria-pressed={isActive}
                   >
-                    <div className="absolute inset-0 bg-gray-700 opacity-70 group-hover:opacity-50 transition-opacity"></div>
-                    <span className="relative z-10 text-white font-semibold text-center px-3">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 opacity-70 group-hover:opacity-50 transition-opacity rounded-full"></div>
+                    <span className="relative z-10 text-white font-semibold text-center px-3 text-sm">
                       {cat.name}
                     </span>
                   </button>
@@ -228,19 +255,23 @@ export const OurPartners: React.FC = () => {
 
           {/* Logos Section */}
           {selected && (
-            <div className="mt-12">
-              <div className="text-center mb-6">
-                <h4 className="text-xl font-semibold text-gray-900">
+            <div className="mt-8 animate-fadeInSlide">
+              <div className="text-center mb-10">
+                <h4 className="text-2xl font-semibold text-gray-900 mb-2">
                   {selected.name} — Partner Logos
                 </h4>
                 <p className="text-sm text-gray-500">
                   Showing {selected.logos?.length ?? selected.logoCount} logos
                 </p>
+                <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary mx-auto mt-3 rounded-full"></div>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                 {logosForSelected.map((src, idx) => (
-                  <div key={src} className="bg-gray-50 border border-gray-200 rounded-lg p-4 h-28 flex items-center justify-center">
+                  <div
+                    key={src}
+                    className="bg-white border border-gray-200 rounded-xl p-3 h-24 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-300 transform hover:-translate-y-0.5"
+                  >
                     <img
                       src={src}
                       alt={`${selected.name} partner logo ${idx + 1}`}
@@ -249,20 +280,23 @@ export const OurPartners: React.FC = () => {
                     />
                   </div>
                 ))}
-                <div className="bg-gray-100 border border-gray-300 rounded-lg p-4 h-28 flex items-center justify-center">
-                  <span className="text-gray-500 font-medium">and many more</span>
+                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 rounded-xl p-3 h-24 flex items-center justify-center shadow-sm">
+                  <span className="text-primary font-bold">and many more</span>
                 </div>
               </div>
             </div>
           )}
 
           {/* Contact */}
-          <div className="mt-16 text-center">
-            <p className="text-muted">
+          <div className="mt-10 text-center bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-6 animate-fadeInSlide">
+            <p className="text-gray-700 text-lg">
               Interested in becoming a partner?{' '}
-              <a href="/contact" className="text-primary hover:underline">Contact us</a>{' '}
+              <a href="/contact" className="text-primary hover:underline font-semibold">Contact us</a>{' '}
               to learn more about our partnership opportunities.
             </p>
+            <div className="mt-4 flex justify-center">
+              <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+            </div>
           </div>
         </div>
       </Container>

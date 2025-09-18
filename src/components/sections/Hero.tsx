@@ -53,51 +53,87 @@ export const Hero: React.FC = () => {
         </Container>
       </section>
 
-      {/* ===== 2) WHY SCENT? Video ===== */}
-      <section className="py-10 md:py-14">
+      {/* ===== 2) WHY SCENT? (Simplified & Centered) ===== */}
+      <section className="relative py-14 md:py-20">
+        {/* soft background accents */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+          <div
+            className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full blur-3xl opacity-30"
+            style={{
+              background: 'radial-gradient(60% 60% at 50% 50%, #0c4384 0%, transparent 70%)',
+            }}
+          />
+          <div
+            className="absolute right-6 bottom-0 h-40 w-40 rounded-full blur-3xl opacity-20"
+            style={{
+              background: 'radial-gradient(60% 60% at 50% 50%, #60a5fa 0%, transparent 70%)',
+            }}
+          />
+        </div>
+
         <Container>
-          <div className="text-center mb-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              WHY SCENT?
+          {/* Centered Headline */}
+          <div className="text-center">
+            <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+              Why <span className="text-[#0c4384]">Scent</span>?
             </h2>
+
+            <p className="mx-auto mt-4 max-w-2xl text-slate-600">
+              Scent engages memory and emotion faster than any other sense—shaping how guests
+              feel, stay, and spend. See how it transforms spaces in seconds.
+            </p>
           </div>
 
-          <div className="relative w-full rounded-3xl overflow-hidden shadow-xl">
-            <video
-              ref={whyVideoRef}
-              className="w-full aspect-video"
-              controls
-              playsInline
-              src="/assets/Video/whyscentvid.mp4"
-              onPlay={() => setIsWhyPlaying(true)}
-              onPause={() => setIsWhyPlaying(false)}
-              onEnded={() => setIsWhyPlaying(false)}
-            >
-              Sorry, your browser doesn’t support the video tag.
-            </video>
+          {/* Bigger, simplified video card */}
+          <div className="relative mt-8">
+            <div className="relative mx-auto w-full max-w-7xl overflow-hidden rounded-[28px] bg-white shadow-2xl">
+              <div className="relative">
+                <video
+                  ref={whyVideoRef}
+                  className="w-full aspect-video md:aspect-[16/9]"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  src="/assets/Video/whyscentvid.mp4"
+                  onPlay={() => setIsWhyPlaying(true)}
+                  onPause={() => setIsWhyPlaying(false)}
+                  onEnded={() => setIsWhyPlaying(false)}
+                >
+                  Sorry, your browser doesn’t support the video tag.
+                </video>
 
-            {!isWhyPlaying && (
-              <button
-                type="button"
-                onClick={() => whyVideoRef.current?.play()}
-                className="absolute inset-0 flex items-center justify-center focus:outline-none"
-                aria-label="Play WHY SCENT video"
-              >
-                <span className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/95 text-slate-900 font-semibold shadow-lg hover:scale-105 transition">
-                  ▶ Play Me
-                </span>
-              </button>
-            )}
+                {/* Play overlay */}
+                {!isWhyPlaying && (
+                  <button
+                    type="button"
+                    onClick={() => whyVideoRef.current?.play()}
+                    className="group absolute inset-0 flex items-center justify-center focus:outline-none"
+                    aria-label="Play Why Scent video"
+                  >
+                    <span className="relative inline-flex items-center gap-3 rounded-full bg-white/95 px-5 py-3 font-semibold text-slate-900 shadow-lg ring-1 ring-slate-200 transition-transform group-hover:scale-105">
+                      <span className="relative grid h-9 w-9 place-items-center rounded-full bg-[#0c4384] text-white">
+                        ▶
+                        <span className="absolute inset-0 rounded-full ring-2 ring-[#0c4384]/40 animate-ping" />
+                      </span>
+                      Play Video
+                    </span>
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
 
-          {/* Learn More button under the video */}
+          {/* CTA */}
           <div className="mt-8 flex justify-center">
-            <Link to="/why-scent">
+            <Link
+              to="/why-scent"
+              onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })}
+            >
               <Button
                 size="lg"
-                className="px-6 rounded-full bg-[#0c4384] text-white hover:bg-[#0c4384]/90 shadow-lg"
+                className="px-7 rounded-full bg-[#0c4384] text-white shadow-lg hover:bg-[#0c4384]/90"
               >
-                Learn More
+                Learn More About Scent
               </Button>
             </Link>
           </div>
@@ -108,9 +144,7 @@ export const Hero: React.FC = () => {
       <section className="pb-16">
         <Container>
           <div className="bg-[#0c4384] text-white rounded-3xl shadow-xl px-6 md:px-10 py-12 md:py-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-              Why ScentAir?
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Why ScentAir?</h2>
             <p className="text-white/90 max-w-3xl mx-auto leading-relaxed">
               For over 30 years we’ve been enhancing environments, brands, and consumer experiences
               through improved air quality and the power of scent.

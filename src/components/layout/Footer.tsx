@@ -5,7 +5,7 @@ import { SocialIcon } from 'react-social-icons';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-primary text-light">
+    <footer className="bg-[#0c4384] text-light">
       <Container>
         <div className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

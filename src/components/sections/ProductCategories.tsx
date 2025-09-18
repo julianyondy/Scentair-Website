@@ -26,7 +26,7 @@ export const ProductCategories: React.FC = () => {
             <div
               className="absolute inset-0 bg-cover"
               style={{
-                backgroundImage: "url('/assets/productcard/machines.jpg')",
+                backgroundImage: "url('/assets/productcard/machines.png')",
                 backgroundPosition: "40% 50%", // move a bit left
                 backgroundSize: "cover"
               }}

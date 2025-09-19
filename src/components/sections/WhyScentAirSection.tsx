@@ -113,8 +113,7 @@ export const WhyScentAirSection: React.FC = () => {
               <SectionTitle num={1} title="Pioneer" className="mb-2 md:mb-3" />
               <h1 className="sr-only">Pioneer</h1>
               <p className="mt-3 text-slate-800/90 leading-relaxed text-[clamp(14px,1.9vw,18px)]">
-                ScentAir is the PIONEER in environment scenting, first created in 1994 by a Walt
-                Disney&apos;s Imagineer to present the 5th dimensional experience for its visitors.
+                When a Disney Imagineer was tasked with adding scent to a few popular attractions, the idea of ScentAir was born. In 1994 we were founded on the notion that scent could turn a moment into a magical memory.
               </p>
             </div>
           </div>
@@ -245,7 +244,7 @@ export const WhyScentAirSection: React.FC = () => {
                   <BulletWithLogo
                     src="/assets/logos/ecovadis.png"
                     alt="EcoVadis"
-                    label="ECOVADIS Sustainability Awarded (Bronze)"
+                    label="ECOVADIS Sustainability Awarded"
                   />
                 </ul>
 

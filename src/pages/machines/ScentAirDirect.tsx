@@ -40,10 +40,9 @@ export const ScentAirDirect: React.FC = () => {
               </h1>
 
               <p className="text-secondary mb-6 text-lg">
-                ScentAir Direct™ adalah sistem fleksibel yang memaksimalkan distribusi
-                wewangian untuk area target berukuran sedang. Teknologi atomisasi
-                canggih merilis kabut halus yang tak terlihat untuk membentuk zona
-                wewangian ataupun liputan menyeluruh.
+                ScentAir Direct™ is a flexible system that maximizes scent delivery over medium-sized target areas. 
+                Advanced atomization technology releases a fine, 
+                invisible mist that can create fragrance zones or an all-over fragrance experience.
               </p>
 
               {/* KEY FEATURES */}
@@ -51,12 +50,12 @@ export const ScentAirDirect: React.FC = () => {
                 <h2 className="text-xl font-bold text-primary mb-3">Key Features</h2>
                 <ul className="space-y-3">
                   {[
-                    'Advanced Atomized Technology — paten teknologi menyebarkan wewangian sebagai kabut halus tak terlihat',
-                    'Discreet Placement — opsi pemasangan di ceiling, wall, ledge, dan track lighting',
-                    'Precise Fragrance — dapat membuat fragrance zones atau cakupan merata (blanket coverage)',
-                    'Adjustable Settings — atur tanggal, waktu & intensitas sesuai kebutuhan',
-                    '180° Rotational Mount — fleksibilitas penempatan dan opsi cakupan yang luas',
-                    'Covers up to 3,000 sq ft — skalabel untuk berbagai ukuran bisnis',
+                    'Advanced Atomized Technology — Patented technology diffuses fragrance in a fine, invisible spray',
+                    'Discreet Placement — Ceiling, wall, ledge,and track lighting mounts',
+                    'Precise Fragrance — Creates fragrance zones or even, blanket coverage',
+                    'Adjustable Settings — Customizable with adjustable date, time and scent intensity settings',
+                    '180° Rotational Mount — Endless placement and coverage options',
+                    'Covers up to 3,000 sq ft — Scalable for any size business',
                   ].map((t) => (
                     <li key={t} className="flex items-start">
                       <svg
@@ -79,9 +78,6 @@ export const ScentAirDirect: React.FC = () => {
               <div className="flex flex-wrap gap-4">
                 <button className="bg-primary text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
                   Request a Demo
-                </button>
-                <button className="border-2 border-primary text-primary hover:bg-primary/10 font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
-                  Contact Sales
                 </button>
               </div>
             </div>
@@ -168,16 +164,14 @@ export const ScentAirDirect: React.FC = () => {
               {[
                 ['Fragrance Technology', 'Advanced Atomization'],
                 ['Fragrance Selection', 'Full ScentAir Library'],
-                ['Color(s)', 'Black or White; customizable to space & settings'],
-                ['Cartridge Replacement', 'Monthly'],
-                ['Shipment Frequency', 'Quarterly'],
-                ['ScentAir Install', 'Self-Install or ScentAir Full-Service'],
-                ['Service Available', 'Self-Service or ScentAir Full-Service'],
-                ['Mounting Options', 'Wall, Track, Ledge, Ceiling Mount; Freestanding'],
+                ['Color(s)', 'Black / White'],
+                ['Cartridge Replacement', 'Every 2 Month'],
+                ['ScentAir Install', 'ScentAir Full-Service'],
+                ['Service Available', 'ScentAir Full-Service'],
+                ['Mounting Options', 'Wall, Track, Ceiling Mount; Freestanding, Tower Casing'],
                 ['Freestanding Placement', 'Yes'],
-                ['Product Maintenance', 'None'],
+                ['Product Maintenance', 'ScentAir Full-Service Maintenance'],
                 ['Protected Technology', 'Patented Air Delivery & Diffusion Technology'],
-                ['Regional Availability', 'Global'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <dt className="text-slate-500 text-sm">{k}</dt>
@@ -204,14 +198,11 @@ export const ScentAirDirect: React.FC = () => {
               ['Coverage', 'Up to 3,000 sq ft (279 sq m)'],
               ['Fragrance Output Location', 'Side output fragrance delivery'],
               ['Scent Settings', '24/7 programmable weekly events'],
-              ['Max Run Hours', 'Up to 16 hours per day, 7 days a week (some exceptions apply)'],
+              ['Max Run Hours', 'Up to 12 hours per day, 7 days a week (some exceptions apply)'],
               ['Dimensions', 'Unit: 10.0" (25.0cm) H × 5.7" (14.5cm) Dia — Tower: 24.8" (62.9cm) H × 7.0" (18.0cm) Dia'],
               ['Weight', 'Unit: Machine & Cartridge – 4.7 lbs (2.1 kg) — Tower: Machine & Cartridge – 14.0 lbs (6.4 kg)'],
               ['Power Requirements', '100–240V AC, 50–60 Hz'],
               ['Power Consumption', '< 15 Watts'],
-              ['Materials / Finishes', 'Black or White (Tower also available in Brown, per spec)'],
-              ['ScentAir Direct™ User Manual', 'https://ebooks.scentair.com/view/26757983/'],
-              ['ScentAir Direct™ Tower User Manual', 'https://ebooks.scentair.com/view/848606391/'],
             ].map(([k, v]) => (
               <div key={k}>
                 <dt className="text-slate-500 text-sm">{k}</dt>
@@ -219,56 +210,6 @@ export const ScentAirDirect: React.FC = () => {
               </div>
             ))}
           </dl>
-        </section>
-
-        {/* CONTROL DETAILS */}
-        <section className="mt-10 bg-white rounded-2xl shadow-xl overflow-hidden p-6 md:p-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">Control Details</h2>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-            {[
-              { name: 'Manual Control', on: true },
-              { name: 'Wi-Fi Enabled', on: false },
-              { name: 'Bluetooth Enabled', on: false },
-              { name: 'Control with ScentAir App', on: false },
-              { name: 'Control with ScentConnect.com', on: false },
-              { name: 'Wi-Fi Details', on: false },
-              { name: 'Smart System Control', on: false },
-            ].map((c) => (
-              <div
-                key={c.name}
-                className={`rounded-xl border p-4 text-center ${
-                  c.on ? 'bg-emerald-50 border-emerald-200' : 'bg-slate-50 border-slate-200 opacity-75'
-                }`}
-                title={c.on ? 'Available' : 'Not available'}
-              >
-                <div
-                  className={`mx-auto mb-2 inline-flex h-8 w-8 items-center justify-center rounded-full ${
-                    c.on ? 'bg-emerald-500 text-white' : 'bg-slate-300 text-white'
-                  }`}
-                >
-                  {c.on ? (
-                    <svg viewBox="0 0 20 20" className="w-5 h-5" fill="currentColor">
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  ) : (
-                    <svg viewBox="0 0 20 20" className="w-5 h-5" fill="currentColor">
-                      <path
-                        fillRule="evenodd"
-                        d="M10 8.586l4.95-4.95 1.414 1.414L11.414 10l4.95 4.95-1.414 1.414L10 11.414l-4.95 4.95-1.414-1.414L8.586 10 3.636 5.05l1.414-1.414L10 8.586z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  )}
-                </div>
-                <div className="text-sm font-medium text-slate-800">{c.name}</div>
-              </div>
-            ))}
-          </div>
         </section>
       </Container>
     </div>

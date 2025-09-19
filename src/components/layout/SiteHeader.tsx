@@ -8,7 +8,7 @@ const navItems: NavItem[] = [
   { label: 'Why Scent', href: '/why-scent' },
   { label: 'Why ScentAir', href: '/why-scentair' },
   { label: 'Solutions', href: '/products' },
-  { label: 'Our Partners', href: '/our-partners' },
+  { label: 'Who We Work With', href: '/our-partners' },
   { label: 'Contact Us', href: '/contact' },
 ];
 

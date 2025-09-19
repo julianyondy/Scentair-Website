@@ -68,7 +68,7 @@ export const Machines: React.FC = () => {
       z: 30,
       slug: "scentair-breeze",
       description:
-        "ScentAir Breeze™ with Wi-Fi & Bluetooth releases consistent, no-fade fragrance. Easy-change cartridges and schedule control.",
+        "ScentAir BreezeTM with Wi-Fi & Bluetooth is a connected system that releases consistent, no-fade fragrance in a fine, invisible mist. Easy-change cartridges and simple schedule and intensity control from any internet- connected device make system management a breeze.",
       features: [
         "Wi-Fi/Bluetooth control",
         "Cloud management",

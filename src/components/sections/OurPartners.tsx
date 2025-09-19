@@ -15,7 +15,7 @@ export const OurPartners: React.FC = () => {
     {
       id: 1, name: 'Hotel & Resort',
       slug: 'hotel-resort',
-      img: '/assets/hotel/westin.png',
+      img: '/assets/logos/hotel.jpg',
       logoCount: 25,
       logos: [
         '/assets/hotel/aloft.png',
@@ -49,7 +49,7 @@ export const OurPartners: React.FC = () => {
       id: 2,
       name: 'Retail & Mall',
       slug: 'retail-mall',
-      img: '/assets/retail/mac.png',
+      img: '/assets/logos/mall.jpg',
       logoCount: 20,
       logos: [
         '/assets/retail/ash.png',
@@ -78,7 +78,7 @@ export const OurPartners: React.FC = () => {
       id: 3,
       name: 'Spa & Fitness',
       slug: 'spa-fitness',
-      img: '/assets/hotel/langham.png',
+      img: '/assets/logos/spa.jpg',
       logoCount: 2,
       logos: [
         '/assets/hotel/langham.png',
@@ -89,7 +89,7 @@ export const OurPartners: React.FC = () => {
       id: 4,
       name: 'Airport & Lounge',
       slug: 'airport-lounge',
-      img: '/assets/airport/Heathrow.png',
+      img: '/assets/logos/airport.jpg',
       logoCount: 9,
       logos: [
         '/assets/airport/Air_France_Logo.svg.png',
@@ -107,7 +107,7 @@ export const OurPartners: React.FC = () => {
       id: 5,
       name: 'Showroom',
       slug: 'showroom',
-      img: '/assets/showroom/BMW.png',
+      img: '/assets/logos/Maserati.png',
       logoCount: 5,
       logos: [
         '/assets/showroom/bentley-logo-2002-download.png',
@@ -121,7 +121,7 @@ export const OurPartners: React.FC = () => {
       id: 6,
       name: 'Hospitals & Healthcare',
       slug: 'hospitals-care',
-      img: '/assets/hospital/florida.jpg',
+      img: '/assets/logos/hospital.png',
       logoCount: 6,
       logos: [
         '/assets/hospital/bethsaida.png',
@@ -136,7 +136,7 @@ export const OurPartners: React.FC = () => {
       id: 7,
       name: 'Real Estate & Homebuilders',
       slug: 'real-estate-homebuilders',
-      img: '/assets/realestate/horton.png',
+      img: '/assets/logos/builder.png',
       logoCount: 6,
       logos: [
         '/assets/realestate/baker.png',
@@ -194,7 +194,7 @@ export const OurPartners: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
           <div className="text-center mb-8 animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Our Partners</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Who We Work With</h1>
             <div className="w-24 h-0.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 rounded-full"></div>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               We collaborate with industry leaders and innovative companies to bring you the best fragrance solutions.

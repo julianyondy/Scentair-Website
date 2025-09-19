@@ -8,7 +8,7 @@ export const WhyScent: React.FC = () => {
       <section className="py-12 px-6 bg-gradient-to-b from-white to-cyan-50">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Why Scent Matters
+            Why Scent
           </h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Discover the science behind scent marketing and how it can transform your business
@@ -20,7 +20,7 @@ export const WhyScent: React.FC = () => {
             <WhyScentSection />
       
       {/* Conclusion section */}
-      <section className="py-16 px-6 bg-gradient-to-b from-cyan-50 to-teal-100">
+      <section className="py-16 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Transform Your Space with the Power of Scent

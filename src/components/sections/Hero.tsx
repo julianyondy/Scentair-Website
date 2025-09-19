@@ -60,7 +60,7 @@ export const Hero: React.FC = () => {
           <div
             className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full blur-3xl opacity-30"
             style={{
-              background: 'radial-gradient(60% 60% at 50% 50%, #0c4384 0%, transparent 70%)',
+              background: 'radial-gradient(60% 60% at 50% 50%, #60c4dc 0%, transparent 70%)',
             }}
           />
           <div
@@ -75,7 +75,7 @@ export const Hero: React.FC = () => {
           {/* Centered Headline */}
           <div className="text-center">
             <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
-              Why <span className="text-[#0c4384]">Scent</span>?
+              Why <span className="text-[#60c4dc]">Scent</span>?
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-slate-600">

@@ -51,8 +51,8 @@ export const ScentAirSplash: React.FC = () => {
                   {[
                     "Targeted experience control — Atomized fragrance delivers precise, consistent coverage",
                     "Select Scent Library — Choose from a select fragrance library with Odor Neutralizing fragrances",
-                    "Compact & battery powered — Discreetly fights odorsanywhere- no power outlet needed",
-                    "Simple maintenance — Easy-change cartridges & full warranty",
+                    "Compact & battery powered — Discreetly fights odors anywhere- no power outlet needed",
+                    "Simple maintenance — ScentAir Full-Service",
                     "300 hours of scent — Long-lasting cartridges contain up to 300 hours of odor-fighting fragrance",
                     "Covers up to 500 SQ FT — Odor neutralizing coverage for small, hard to reach spaces",
                   ].map((t) => (
@@ -77,9 +77,6 @@ export const ScentAirSplash: React.FC = () => {
               <div className="flex flex-wrap gap-4">
                 <button className="bg-primary text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
                   Request a Demo
-                </button>
-                <button className="border-2 border-primary text-primary hover:bg-primary/10 font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
-                  Contact Sales
                 </button>
               </div>
             </div>
@@ -156,17 +153,15 @@ export const ScentAirSplash: React.FC = () => {
             <dl className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3">
               {[
                 ['Fragrance Technology', 'Atomization'],
-                ['Fragrance Selection', 'Limited Scent Offering'],
-                ['Color(s)', 'White Only'],
+                ['Fragrance Selection', 'Full ScentAir Library'],
+                ['Color(s)', 'Black / White'],
                 ['Cartridge Replacement', 'Monthly'],
-                ['Shipment Frequency', 'Quarterly'],
-                ['ScentAir Install', 'Self-Install or ScentAir Full-Service Install'],
-                ['Service Available', 'Self-Service atau ScentAir Full-Service'],
+                ['ScentAir Install', 'ScentAir Full-Service Install'],
+                ['Service Available', 'ScentAir Full-Service'],
                 ['Mounting Options', 'Wall Mount & Freestanding'],
                 ['Freestanding Placement', 'Yes'],
-                ['Product Maintenance', 'Batteries Required'],
+                ['Product Maintenance', 'ScentAir Full-Service Maintenance'],
                 ['Protected Technology', 'Proprietary Fragrance Diffusion'],
-                ['Regional Availability', 'Global'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <dt className="text-slate-500 text-sm">{k}</dt>
@@ -200,8 +195,6 @@ export const ScentAirSplash: React.FC = () => {
               ['Weight', 'Machine, Cartridge & Batteries – 1.7 lbs (0.77 kg)'],
               ['Power Requirements', '3 – D Batteries (≈90-day lifespan)'],
               ['Power Consumption', 'N/A'],
-              ['Materials / Finishes', 'White'],
-              ['User Manual', 'Visit scentair.com (QR/URL)'],
             ].map(([k, v]) => (
               <div key={k}>
                 <dt className="text-slate-500 text-sm">{k}</dt>
@@ -209,56 +202,6 @@ export const ScentAirSplash: React.FC = () => {
               </div>
             ))}
           </dl>
-        </section>
-
-        {/* Control Details */}
-        <section className="mt-10 bg-white rounded-2xl shadow-xl overflow-hidden p-6 md:p-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">Control Details</h2>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-            {[
-              { name: 'Manual Control', on: true },
-              { name: 'Wi-Fi Enabled', on: false },
-              { name: 'Bluetooth Enabled', on: false },
-              { name: 'Control with ScentAir App', on: false },
-              { name: 'Control with ScentConnect.com', on: false },
-              { name: 'Wi-Fi Details', on: false },
-              { name: 'Smart System Control', on: false },
-            ].map((c) => (
-              <div
-                key={c.name}
-                className={`rounded-xl border p-4 text-center ${
-                  c.on ? 'bg-emerald-50 border-emerald-200' : 'bg-slate-50 border-slate-200 opacity-75'
-                }`}
-                title={c.on ? 'Available' : 'Not available on Splash'}
-              >
-                <div
-                  className={`mx-auto mb-2 inline-flex h-8 w-8 items-center justify-center rounded-full ${
-                    c.on ? 'bg-emerald-500 text-white' : 'bg-slate-300 text-white'
-                  }`}
-                >
-                  {c.on ? (
-                    <svg viewBox="0 0 20 20" className="w-5 h-5" fill="currentColor">
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  ) : (
-                    <svg viewBox="0 0 20 20" className="w-5 h-5" fill="currentColor">
-                      <path
-                        fillRule="evenodd"
-                        d="M10 8.586l4.95-4.95 1.414 1.414L11.414 10l4.95 4.95-1.414 1.414L10 11.414l-4.95 4.95-1.414-1.414L8.586 10 3.636 5.05l1.414-1.414L10 8.586z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  )}
-                </div>
-                <div className="text-sm font-medium text-slate-800">{c.name}</div>
-              </div>
-            ))}
-          </div>
         </section>
       </Container>
     </div>

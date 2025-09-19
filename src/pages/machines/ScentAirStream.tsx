@@ -54,7 +54,7 @@ export const ScentAirStream: React.FC = () => {
                     'HVAC Connected Fragrance — Professional quality fragrance delivered invisibly through existing HVAC systems',
                     'Floor-to-Ceiling Coverage — Blanket coverage for a seamless fragrance experience',
                     'Adjustable Settings — Customizable with adjustable date, time and scent intensity settings',
-                    'Full-Service Maintenance & Warranty — Professional installation and service',
+                    'Full-Service Maintenance — Professional installation and service',
                     'Covers over 3,000 sq ft — Coverage for large or challenging indoor spaces',
                   ].map((t) => (
                     <li key={t} className="flex items-start">
@@ -79,9 +79,6 @@ export const ScentAirStream: React.FC = () => {
                 <button className="bg-primary text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
                   Request a Demo
                 </button>
-                <button className="border-2 border-primary text-primary hover:bg-primary/10 font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
-                  Contact Sales
-                </button>
               </div>
             </div>
           </div>
@@ -105,7 +102,7 @@ export const ScentAirStream: React.FC = () => {
                 </div>
                 <h4 className="font-semibold text-slate-800">Scalable Scent Solution</h4>
                 <p className="text-slate-600 text-sm">
-                  Dirancang untuk lingkungan kompleks & skala besar
+                  A solution designed for complex and large scale environments
                 </p>
               </div>
 
@@ -132,7 +129,7 @@ export const ScentAirStream: React.FC = () => {
                 </div>
                 <h4 className="font-semibold text-slate-800">Advanced Atomized Technology</h4>
                 <p className="text-slate-600 text-sm">
-                  Partikel ~1/50 ukuran aerosol untuk sebaran halus & konsisten
+                  Releases fragrance in particles 1/50th the size of aerosol 
                 </p>
               </div>
 
@@ -154,7 +151,7 @@ export const ScentAirStream: React.FC = () => {
                 </div>
                 <h4 className="font-semibold text-slate-800">Flexible Scheduling Options</h4>
                 <p className="text-slate-600 text-sm">
-                  Buat jadwal kustom & atur intensitas aroma
+                  Create custom scent schedules and adjust scent intensity
                 </p>
               </div>
             </div>
@@ -170,16 +167,13 @@ export const ScentAirStream: React.FC = () => {
                 ['Fragrance Technology', 'Advanced Atomization'],
                 ['Fragrance Selection', 'Full ScentAir Library'],
                 ['Color(s)', 'Black Only'],
-                ['Customization', 'Disesuaikan dengan ruang & kebutuhan'],
                 ['Cartridge Replacement', 'Yes'],
-                ['Shipment Frequency', 'Quarterly'],
-                ['ScentAir Install', 'Full-Service HVAC (harus dipasang ke HVAC)'],
-                ['Service Available', 'Full-Service'],
+                ['ScentAir Install', 'ScentAir Full-Service HVAC (harus dipasang ke HVAC)'],
+                ['Service Available', 'ScentAir Full-Service'],
                 ['Mounting Options', 'HVAC mount'],
                 ['Freestanding Placement', 'No (must be mounted to HVAC)'],
-                ['Product Maintenance', 'None'],
+                ['Product Maintenance', 'ScentAir Full-Service Maintenance'],
                 ['Protected Technology', 'Patented Atomization Technology & Cloud Platform'],
-                ['Regional Availability', 'Global'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <dt className="text-slate-500 text-sm">{k}</dt>

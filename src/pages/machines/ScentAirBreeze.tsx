@@ -40,10 +40,7 @@ export const ScentAirBreeze: React.FC = () => {
               </h1>
 
               <p className="text-secondary mb-6 text-lg">
-                ScentAir Breeze™ dengan Wi-Fi & Bluetooth adalah sistem terhubung yang
-                menebarkan aroma konsisten tanpa pudar dalam kabut halus tak terlihat.
-                Kartrid mudah diganti dan kontrol jadwal/intensitas dari perangkat mana pun
-                membuat pengelolaan aroma menjadi mudah.
+                ScentAir BreezeTM with Wi-Fi & Bluetooth is a connected system that releases consistent, no-fade fragrance in a fine, invisible mist. Easy-change cartridges and simple schedule and intensity control from any internet- connected device make system management a breeze.
               </p>
 
               {/* KEY FEATURES */}
@@ -51,12 +48,12 @@ export const ScentAirBreeze: React.FC = () => {
                 <h2 className="text-xl font-bold text-primary mb-3">Key Features</h2>
                 <ul className="space-y-3">
                   {[
-                    'Wi-Fi Control — buat jadwal & kendalikan via ScentAir App atau alat manajemen cloud',
-                    'Smart Cloud Management — atur jadwal kapan saja & di mana saja',
-                    'Vertical Diffusion — teknologi dengan paten menghadirkan pengalaman aroma mulus',
-                    'Advanced Atomized Technology — menyebar sebagai kabut halus tak terlihat',
-                    'Long-lasting Cartridges — 30 hari aroma yang konsisten',
-                    'Covers up to 2,000 sq ft — skalabel untuk berbagai ukuran bisnis',
+                    'Bluetooth Control — Seamlessly controllable within range, anytime, using your Bluetooth-enabled device—no internet connection required.',
+                    'Smart Cloud Management — Adjust your schedule anytime and anywhere',
+                    'Vertical Diffusion — Patent-pending technology creates a seamless scent experience ',
+                    'Advanced Atomized Technology — Patented technology diffuses fragrance in a fine, invisible spray',
+                    'Long-lasting Cartridges — 30 days of consistently vibrant fragrance',
+                    'Covers up to 2,000 sq ft — Scalable for any size business',
                   ].map((t) => (
                     <li key={t} className="flex items-start">
                       <svg
@@ -79,9 +76,6 @@ export const ScentAirBreeze: React.FC = () => {
               <div className="flex flex-wrap gap-4">
                 <button className="bg-primary text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
                   Request a Demo
-                </button>
-                <button className="border-2 border-primary text-primary hover:bg-primary/10 font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
-                  Contact Sales
                 </button>
               </div>
             </div>
@@ -128,9 +122,9 @@ export const ScentAirBreeze: React.FC = () => {
                     </g>
                   </svg>
                 </div>
-                <h4 className="font-semibold text-slate-800">Wi-Fi Device Control</h4>
+                <h4 className="font-semibold text-slate-800">Bluetooth Device Control</h4>
                 <p className="text-slate-600 text-sm">
-                  Controllable anytime, anywhere from any internet-connected device
+                  Easy control anytime, directly from a Bluetooth-enabled device without needing the internet.
                 </p>
               </div>
 
@@ -164,14 +158,12 @@ export const ScentAirBreeze: React.FC = () => {
                 ['Fragrance Selection', 'Full ScentAir Library'],
                 ['Color(s)', 'Black or White'],
                 ['Cartridge Replacement', 'Monthly'],
-                ['Shipment Frequency', 'Quarterly'],
-                ['ScentAir Install', 'SelfInstall'],
-                ['Service Available', 'SelfService'],
+                ['ScentAir Install', 'ScentAir Full-Service Install'],
+                ['Service Available', 'ScentAir Full-Service'],
                 ['Mounting Options', 'Wall Mount & Freestanding'],
                 ['Freestanding Placement', 'Yes'],
-                ['Product Maintenance', 'None'],
+                ['Product Maintenance', 'ScentAir Full-Service Maintenance'],
                 ['Protected Technology', 'Patented Atomization Technology'],
-                ['Regional Availability', 'EMEA and APAC'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <dt className="text-slate-500 text-sm">{k}</dt>
@@ -203,8 +195,6 @@ export const ScentAirBreeze: React.FC = () => {
               ['Weight', 'Machine & Cartridge – 2.9 lbs (1.315 kg)'],
               ['Power Requirements', '100–240V AC, 50–60 Hz'],
               ['Power Consumption', '< 15 Watts'],
-              ['Materials / Finishes', 'Black or White'],
-              ['User Manual', 'https://ebooks.scentair.com/view/6027770436/'],
             ].map(([k, v]) => (
               <div key={k}>
                 <dt className="text-slate-500 text-sm">{k}</dt>
@@ -212,56 +202,6 @@ export const ScentAirBreeze: React.FC = () => {
               </div>
             ))}
           </dl>
-        </section>
-
-        {/* CONTROL DETAILS */}
-        <section className="mt-10 bg-white rounded-2xl shadow-xl overflow-hidden p-6 md:p-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">Control Details</h2>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-            {[
-              { name: 'Connected & Manual Control', on: true },
-              { name: 'Wi-Fi Enabled', on: true },
-              { name: 'Bluetooth Enabled', on: true },
-              { name: 'Control with ScentAir App', on: true },
-              { name: 'Control with ScentConnect.com', on: true },
-              { name: 'Wi-Fi Details', on: true },
-              { name: 'Smart System Control', on: true },
-            ].map((c) => (
-              <div
-                key={c.name}
-                className={`rounded-xl border p-4 text-center ${
-                  c.on ? 'bg-emerald-50 border-emerald-200' : 'bg-slate-50 border-slate-200 opacity-75'
-                }`}
-                title={c.on ? 'Available' : 'Not available'}
-              >
-                <div
-                  className={`mx-auto mb-2 inline-flex h-8 w-8 items-center justify-center rounded-full ${
-                    c.on ? 'bg-emerald-500 text-white' : 'bg-slate-300 text-white'
-                  }`}
-                >
-                  {c.on ? (
-                    <svg viewBox="0 0 20 20" className="w-5 h-5" fill="currentColor">
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  ) : (
-                    <svg viewBox="0 0 20 20" className="w-5 h-5" fill="currentColor">
-                      <path
-                        fillRule="evenodd"
-                        d="M10 8.586l4.95-4.95 1.414 1.414L11.414 10l4.95 4.95-1.414 1.414L10 11.414l-4.95 4.95-1.414-1.414L8.586 10 3.636 5.05l1.414-1.414L10 8.586z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  )}
-                </div>
-                <div className="text-sm font-medium text-slate-800">{c.name}</div>
-              </div>
-            ))}
-          </div>
         </section>
       </Container>
     </div>

@@ -53,9 +53,9 @@ export const WhyScentSection: React.FC = () => {
       <section className="relative min-h-[70vh] md:min-h-[90vh] overflow-hidden">
         {/* Decorative accent elements */}
         <div className="absolute top-0 left-0 w-full h-2 bg-primary"></div>
-        <div className="absolute bottom-0 right-0 w-48 h-48 bg-primary rounded-full -mb-24 -mr-24 opacity-20 shadow-2xl"></div>
-        <div className="absolute top-1/3 left-1/10 w-24 h-24 bg-primary rounded-full opacity-30 shadow-xl"></div>
-        <div className="absolute top-1/4 right-1/4 w-16 h-16 bg-primary rounded-full opacity-40 shadow-md"></div>
+        <div className="absolute bottom-0 right-0 w-48 h-48  rounded-full -mb-24 -mr-24 opacity-20 shadow-2xl"></div>
+        <div className="absolute top-1/3 left-1/10 w-24 h-24  rounded-full opacity-30 shadow-xl"></div>
+        <div className="absolute top-1/4 right-1/4 w-16 h-16  rounded-full opacity-40 shadow-md"></div>
         
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col md:flex-row items-center justify-center gap-y-12 md:gap-x-16 px-6 md:px-16 py-16">
@@ -123,9 +123,9 @@ export const WhyScentSection: React.FC = () => {
       {/* Benefits Section */}
       <section className="relative min-h-[70vh] md:min-h-[90vh] overflow-hidden py-16">
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-100 rounded-full -mt-16 -mr-16 opacity-30 shadow-2xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-16 h-16 bg-cyan-100 rounded-full opacity-40 shadow-xl"></div>
-        <div className="absolute top-1/2 right-1/3 w-12 h-12 bg-cyan-200 rounded-full opacity-20 shadow-md"></div>
+        <div className="absolute top-0 right-0 w-32 h-32 rounded-full -mt-16 -mr-16 opacity-30 shadow-2xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-16 h-16 rounded-full opacity-40 shadow-xl"></div>
+        <div className="absolute top-1/2 right-1/3 w-12 h-12 rounded-full opacity-20 shadow-md"></div>
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col md:flex-row items-center justify-center gap-y-12 md:gap-x-16 px-6 md:px-16">
@@ -188,9 +188,9 @@ export const WhyScentSection: React.FC = () => {
       {/* Statistics Section */}
       <section className="relative min-h-[70vh] md:min-h-[90vh] overflow-hidden py-16">
         {/* Decorative elements */}
-        <div className="absolute bottom-0 left-0 w-40 h-40 bg-cyan-100 rounded-full -mb-20 -ml-20 opacity-30 shadow-2xl"></div>
-        <div className="absolute top-1/4 right-1/3 w-20 h-20 bg-teal-100 rounded-full opacity-40 shadow-xl"></div>
-        <div className="absolute top-1/3 left-1/4 w-16 h-16 bg-cyan-200 rounded-full opacity-20 shadow-md"></div>
+        <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full -mb-20 -ml-20 opacity-30 shadow-2xl"></div>
+        <div className="absolute top-1/4 right-1/3 w-20 h-20 rounded-full opacity-40 shadow-xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-16 h-16 rounded-full opacity-20 shadow-md"></div>
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col md:flex-row items-center justify-center gap-y-12 md:gap-x-16 px-6 md:px-16">

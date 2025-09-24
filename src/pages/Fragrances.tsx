@@ -1,19 +1,91 @@
 import React, { useState, useRef } from 'react';
 
-// kategori tetap, tapi isi fragrances hanya perlu id (karena semua kartu pakai gambar yang sama)
+// ====== Kategori (tetap) ======
 const fragranceCategories = [
-  { id: 'crisp', name: 'Crisp & Invigorating', image: '/assets/fragrance/Crisp & Invigorating.png', points: ['Bold','Lively','Stimulating'], fragrances: [{id:'1'},{id:'2'},{id:'3'}] },
-  { id: 'lux', name: 'Lux & Sophisticated', image: '/assets/fragrance/Lux & Sophisticated.png', points: ['Extravagance','Opulence','Refinement'], fragrances: [{id:'1'},{id:'2'},{id:'3'}] },
-  { id: 'passionate', name: 'Passionate & Sensual', image: '/assets/fragrance/Passionate & Sensual.png', points: ['Seductive','Lavish','Irresistible'], fragrances: [{id:'1'},{id:'2'},{id:'3'}] },
-  { id: 'relaxing', name: 'Relaxing & Soothing', image: '/assets/fragrance/Relaxing & Soothing.png', points: ['Calming','Peaceful','Serene'], fragrances: [{id:'1'},{id:'2'},{id:'3'}] },
-  { id: 'savoury', name: 'Savoury & Gourmand', image: '/assets/fragrance/Savoury & Gourmand.png', points: ['Delicious','Comforting','Indulgent'], fragrances: [{id:'1'},{id:'2'},{id:'3'}] },
-  { id: 'timeless', name: 'Timeless & Floral', image: '/assets/fragrance/Timeless & Floral.png', points: ['Classic','Elegant','Enduring'], fragrances: [{id:'1'},{id:'2'},{id:'3'}] },
-  { id: 'voyage', name: 'Voyage & Escape', image: '/assets/fragrance/Voyage & Escape.png', points: ['Exotic','Adventurous','Escapist'], fragrances: [{id:'1'},{id:'2'},{id:'3'}] },
-  { id: 'warm', name: 'Warm & Inviting', image: '/assets/fragrance/Warm & Inviting.png', points: ['Cozy','Comforting','Inviting'], fragrances: [{id:'1'},{id:'2'},{id:'3'}] },
+  { id: 'crisp',       name: 'Crisp & Invigorating',     image: '/assets/fragrance/Crisp & Invigorating.png',     points: ['Bold','Lively','Stimulating'] },
+  { id: 'lux',         name: 'Lux & Sophisticated',      image: '/assets/fragrance/Lux & Sophisticated.png',      points: ['Extravagance','Opulence','Refinement'] },
+  { id: 'passionate',  name: 'Passionate & Sensual',     image: '/assets/fragrance/Passionate & Sensual.png',     points: ['Seductive','Lavish','Irresistible'] },
+  { id: 'relaxing',    name: 'Relaxing & Soothing',      image: '/assets/fragrance/Relaxing & Soothing.png',      points: ['Calming','Peaceful','Serene'] },
+  { id: 'savory',     name: 'Savory & Gourmand',       image: '/assets/fragrance/Savoury & Gourmand.png',       points: ['Delicious','Comforting','Indulgent'] },
+  { id: 'timeless',    name: 'Timeless & Floral',        image: '/assets/fragrance/Timeless & Floral.png',        points: ['Classic','Elegant','Enduring'] },
+  { id: 'voyage',      name: 'Voyage & Escape',          image: '/assets/fragrance/Voyage & Escape.png',          points: ['Exotic','Adventurous','Escapist'] },
+  { id: 'warm',        name: 'Warm & Inviting',          image: '/assets/fragrance/Warm & Inviting.png',          points: ['Cozy','Comforting','Inviting'] },
 ];
 
-const FRONT = '/assets/cardfrag/ecoserenityfront.jpg';
-const BACK  = '/assets/cardfrag/ecoserenityback.jpg';
+// ====== Default fallback ======
+const FRONT = '/assets/cardfrag/agavefront.png';
+const BACK  = '/assets/cardfrag/agaveback.png';
+
+// ====== Mapping gambar per kategori (boleh kurang dari 6; akan di-loop) ======
+const imagesByCategory: Record<string, { front: string; back: string }[]> = {
+  crisp: [
+    { front: '/assets/crisp/AGAVEFRONT.png', back: '/assets/crisp/AGAVEBACK.png' },
+    { front: '/assets/crisp/FRESHLINENFRONT.png', back: '/assets/crisp/FRESHLINENBACK.png' },
+    { front: '/assets/crisp/GREENTEA&LEMONGRASSFRONT.png', back: '/assets/crisp/GREENTEA&LEMONGRASSBACK.png' },
+    { front: '/assets/crisp/LEMONVERBENAFRONT.png', back: '/assets/crisp/LEMONVERBENABACK.png' },
+    { front: '/assets/crisp/TUSCANORANGEFRONT.png', back: '/assets/crisp/TUSCANORANGEBACK.png' },
+    { front: '/assets/crisp/WHITETEA&THYMEFRONT.png', back: '/assets/crisp/WHITETEA&THYMEBACK.png' }
+  ],
+  lux: [
+    { front: '/assets/lux/AMALFICOASTFRONT.png', back: '/assets/lux/AMALFICOASTBACK.png' },
+    { front: '/assets/lux/ASIANGARDENFRONT.png',   back: '/assets/lux/ASIANGARDENBACK.png' },
+    { front: '/assets/lux/AWALKINTHEWOODSFRONT.png',    back: '/assets/lux/AWALKINTHEWOODSBACK.png' },
+    { front: '/assets/lux/DARKVANILLAPOMELOFRONT.png',    back: '/assets/lux/DARKVANILLAPOMELOBACK.png' },
+    { front: '/assets/lux/GOLDENBAMBOOFRONT.png',    back: '/assets/lux/GOLDENBAMBOOBACK.png' },
+    { front: '/assets/lux/OUDHFRONT.png',    back: '/assets/lux/OUDHBACK.png' },
+  ],
+  passionate: [
+    { front: '/assets/passionate/BLACKMINKFRONT.png',  back: '/assets/passionate/BLACKMINKBACK.png' },
+    { front: '/assets/passionate/BLACKORCHIDFRONT.png',  back: '/assets/passionate/BLACKORCHIDBACK.png' },
+    { front: '/assets/passionate/BLACKTEAFIGFRONT.png',  back: '/assets/passionate/BLACKTEAFIGBACK.png' },
+    { front: '/assets/passionate/COBALTFRONT.png',  back: '/assets/passionate/COBALTBACK.png' },
+    { front: '/assets/passionate/MEDITERRANEANFIGFRONT.png',  back: '/assets/passionate/MEDITERRANEANFIGBACK.png' },
+    { front: '/assets/passionate/SAGE&POMEGRANATEFRONT.png',  back: '/assets/passionate/SAGE&POMEGRANATEBACK.png' },
+  ],
+  relaxing: [
+    { front: '/assets/passionate/BLACKMINKFRONT.png',  back: '/assets/passionate/BLACKMINKBACK.png' },
+    { front: '/assets/passionate/BLACKORCHIDFRONT.png',  back: '/assets/passionate/BLACKORCHIDBACK.png' },
+    { front: '/assets/passionate/BLACKTEAFIGFRONT.png',  back: '/assets/passionate/BLACKTEAFIGBACK.png' },
+    { front: '/assets/passionate/COBALTFRONT.png',  back: '/assets/passionate/COBALTBACK.png' },
+    { front: '/assets/passionate/MEDITERRANEANFIGFRONT.png',  back: '/assets/passionate/MEDITERRANEANFIGBACK.png' },
+    { front: '/assets/passionate/SAGE&POMEGRANATEFRONT.png',  back: '/assets/passionate/SAGE&POMEGRANATEBACK.png' },
+  ],
+  savory: [
+    { front: '/assets/passionate/BLACKMINKFRONT.png',  back: '/assets/passionate/BLACKMINKBACK.png' },
+    { front: '/assets/passionate/BLACKORCHIDFRONT.png',  back: '/assets/passionate/BLACKORCHIDBACK.png' },
+    { front: '/assets/passionate/BLACKTEAFIGFRONT.png',  back: '/assets/passionate/BLACKTEAFIGBACK.png' },
+    { front: '/assets/passionate/COBALTFRONT.png',  back: '/assets/passionate/COBALTBACK.png' },
+    { front: '/assets/passionate/MEDITERRANEANFIGFRONT.png',  back: '/assets/passionate/MEDITERRANEANFIGBACK.png' },
+    { front: '/assets/passionate/SAGE&POMEGRANATEFRONT.png',  back: '/assets/passionate/SAGE&POMEGRANATEBACK.png' },
+  ],
+  timeless: [
+    { front: '/assets/passionate/BLACKMINKFRONT.png',  back: '/assets/passionate/BLACKMINKBACK.png' },
+    { front: '/assets/passionate/BLACKORCHIDFRONT.png',  back: '/assets/passionate/BLACKORCHIDBACK.png' },
+    { front: '/assets/passionate/BLACKTEAFIGFRONT.png',  back: '/assets/passionate/BLACKTEAFIGBACK.png' },
+    { front: '/assets/passionate/COBALTFRONT.png',  back: '/assets/passionate/COBALTBACK.png' },
+    { front: '/assets/passionate/MEDITERRANEANFIGFRONT.png',  back: '/assets/passionate/MEDITERRANEANFIGBACK.png' },
+    { front: '/assets/passionate/SAGE&POMEGRANATEFRONT.png',  back: '/assets/passionate/SAGE&POMEGRANATEBACK.png' },
+  ],
+  voyage: [
+    { front: '/assets/passionate/BLACKMINKFRONT.png',  back: '/assets/passionate/BLACKMINKBACK.png' },
+    { front: '/assets/passionate/BLACKORCHIDFRONT.png',  back: '/assets/passionate/BLACKORCHIDBACK.png' },
+    { front: '/assets/passionate/BLACKTEAFIGFRONT.png',  back: '/assets/passionate/BLACKTEAFIGBACK.png' },
+    { front: '/assets/passionate/COBALTFRONT.png',  back: '/assets/passionate/COBALTBACK.png' },
+    { front: '/assets/passionate/MEDITERRANEANFIGFRONT.png',  back: '/assets/passionate/MEDITERRANEANFIGBACK.png' },
+    { front: '/assets/passionate/SAGE&POMEGRANATEFRONT.png',  back: '/assets/passionate/SAGE&POMEGRANATEBACK.png' },
+  ],
+  warm: [
+    { front: '/assets/warm/APPLE&OAKFRONT.png',  back: '/assets/warm/APPLE&OAKBACK.png' },
+    { front: '/assets/warm/CEDARWOODFRONT.png',  back: '/assets/warm/CEDARWOODBACK.png' },
+    { front: '/assets/warm/FRESHBREWEDCOFFEEFRONT.png',  back: '/assets/warm/FRESHBREWEDCOFFEEBACK.png' },
+    { front: '/assets/warm/MAHOGANYFRONT.png',  back: '/assets/warm/MAHOGANYBACK.png' },
+    { front: '/assets/warm/SEASONSGREETINGSFRONT.png',  back: '/assets/warm/SEASONSGREETINGSBACK.png' },
+    { front: '/assets/warm/VANILLAWOODSFRONT.png',  back: '/assets/warm/VANILLAWOODSBACK.png' },
+  ],
+
+};
+
+const CARDS_PER_CATEGORY = 6;
 
 export const Fragrances: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -41,6 +113,17 @@ export const Fragrances: React.FC = () => {
   };
 
   const selectedCategoryData = fragranceCategories.find(c => c.id === selectedCategory);
+
+  // helper ambil pasangan gambar per kartu
+  const getPair = (catId: string | null, idx: number) => {
+    if (!catId) return { front: FRONT, back: BACK };
+    const arr = imagesByCategory[catId];
+    if (arr && arr.length > 0) {
+      const use = arr[idx % arr.length]; // loop kalau kurang
+      return { front: use.front || FRONT, back: use.back || BACK };
+    }
+    return { front: FRONT, back: BACK };
+    };
 
   return (
     <div className="pt-[180px] min-h-screen py-20 bg-transparent">
@@ -81,7 +164,11 @@ export const Fragrances: React.FC = () => {
 
               {/* small tooltip */}
               <div className="absolute left-full top-0 ml-4 w-36 bg-white rounded-lg shadow-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
-                <ul className="space-y-2">{category.points.map((p) => (<li key={p} className="text-primary font-medium">{p}</li>))}</ul>
+                <ul className="space-y-2">
+                  {category.points.map((p) => (
+                    <li key={p} className="text-primary font-medium">{p}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
@@ -101,15 +188,19 @@ export const Fragrances: React.FC = () => {
 
               {/* Rata kanan + wrap */}
               <div className="flex flex-wrap gap-6 justify-end">
-                {selectedCategoryData.fragrances.map((f, idx) => {
-                  const id = `${selectedCategoryData.id}-${f.id}-${idx}`;
+                {Array.from({ length: CARDS_PER_CATEGORY }, (_, idx) => {
+                  const id = `${selectedCategoryData.id}-${idx+1}`;
                   const isFlipped = flipped.has(id);
+                  const pair = getPair(selectedCategory, idx);
+
                   return (
                     <div
                       key={id}
                       className="relative [perspective:1500px] w-[240px] sm:w-[280px] md:w-[320px] lg:w-[360px] aspect-[650/1122] rounded-2xl"
                     >
-                      <div className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${isFlipped ? 'rotate-y-180' : ''}`}>
+                      <div
+                        className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${isFlipped ? 'rotate-y-180' : ''}`}
+                      >
                         {/* FRONT */}
                         <button
                           type="button"
@@ -117,7 +208,11 @@ export const Fragrances: React.FC = () => {
                           className="absolute inset-0 rounded-2xl overflow-hidden shadow-md hover:shadow-xl [backface-visibility:hidden] focus:outline-none focus:ring-2 focus:ring-primary"
                           aria-label="Flip card"
                         >
-                          <img src={FRONT} alt="Fragrance card front" className="h-full w-full object-cover" />
+                          <img
+                            src={pair.front}
+                            alt={`${selectedCategoryData.name} card front ${idx+1}`}
+                            className="h-full w-full object-cover"
+                          />
                         </button>
 
                         {/* BACK */}
@@ -127,7 +222,11 @@ export const Fragrances: React.FC = () => {
                           className="absolute inset-0 rounded-2xl overflow-hidden shadow-md hover:shadow-xl rotate-y-180 [backface-visibility:hidden] bg-white focus:outline-none focus:ring-2 focus:ring-primary"
                           aria-label="Flip card back"
                         >
-                          <img src={BACK} alt="Fragrance card back" className="h-full w-full object-cover" />
+                          <img
+                            src={pair.back}
+                            alt={`${selectedCategoryData.name} card back ${idx+1}`}
+                            className="h-full w-full object-cover"
+                          />
                         </button>
                       </div>
                     </div>

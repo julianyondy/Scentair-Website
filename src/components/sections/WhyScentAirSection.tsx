@@ -6,20 +6,15 @@ type Classable = { className?: string };
 
 // ========== Reusable bits ==========
 const SectionTitle = ({
-  num,
   title,
   accent = 'text-[#0c4384]',
   className = '',
 }: {
-  num: number;
   title: string;
   accent?: string;
   className?: string;
 }) => (
-  <div className={`flex items-center gap-3 md:gap-4 ${className}`}>
-    <div className="grid h-10 w-10 md:h-12 md:w-12 place-items-center rounded-full bg-[#0c4384]/10 text-[#0c4384] font-extrabold text-lg md:text-xl shadow-sm">
-      {num}
-    </div>
+  <div className={`flex items-center ${className}`}>
     <h2
       className={`font-extrabold tracking-tight ${accent} 
       text-[clamp(22px,2.2vw,28px)] md:text-[clamp(28px,2.2vw,36px)]`}
@@ -96,7 +91,7 @@ const FiveLogosRow: React.FC<{ logos: { src: string; alt: string }[] } & Classab
 export const WhyScentAirSection: React.FC = () => {
   return (
     <main className="bg-white text-slate-900">
-      {/* ===== 1) PIONEER ===== */}
+      {/* ===== PIONEER ===== */}
       <section id="pioneer" className="relative">
         <div className="absolute inset-0">
           <img
@@ -110,7 +105,7 @@ export const WhyScentAirSection: React.FC = () => {
         <Container>
           <div className="relative min-h-[460px] md:min-h-[560px] flex items-center py-10 md:py-0">
             <div className="max-w-xl">
-              <SectionTitle num={1} title="Pioneer" className="mb-2 md:mb-3" />
+              <SectionTitle title="Pioneer" className="mb-2 md:mb-3" />
               <h1 className="sr-only">Pioneer</h1>
               <p className="mt-3 text-slate-800/90 leading-relaxed text-[clamp(14px,1.9vw,18px)]">
                 When a Disney Imagineer was tasked with adding scent to a few popular attractions, the idea of ScentAir was born. In 1994 we were founded on the notion that scent could turn a moment into a magical memory.
@@ -123,7 +118,7 @@ export const WhyScentAirSection: React.FC = () => {
       {/* Divider */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent my-8 md:my-12" />
 
-      {/* ===== 2) PRESTIGIOUS ===== */}
+      {/* ===== PRESTIGIOUS ===== */}
       <section id="prestigious" className="relative py-12 md:py-16">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -143,7 +138,7 @@ export const WhyScentAirSection: React.FC = () => {
 
             {/* Copy */}
             <div className="order-1 md:order-2">
-              <SectionTitle num={2} title="Prestigious" className="mb-3 md:mb-4" />
+              <SectionTitle title="Prestigious" className="mb-3 md:mb-4" />
               <p className="text-slate-700 leading-relaxed max-w-xl text-[clamp(14px,1.9vw,18px)]">
                 Nearly all the famous and top-tier international hotel chains, leading corporations,
                 airports, as well as government institutions are proudly using ScentAir to enhance
@@ -165,11 +160,11 @@ export const WhyScentAirSection: React.FC = () => {
       {/* Divider */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent my-8 md:my-12" />
 
-      {/* ===== 3) SAFETY ===== */}
+      {/* ===== SAFETY ===== */}
       <section id="safety" className="relative py-12 md:py-16">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* LEFT: big image + 5 logos underneath (centered, proportional) */}
+            {/* LEFT: big image + 5 logos underneath */}
             <div className="lg:col-span-5">
               <div className="relative overflow-hidden rounded-2xl ring-1 ring-slate-100 shadow-[0_10px_30px_rgba(2,6,23,0.08)]">
                 <div className="aspect-[3/4] w-full">
@@ -182,7 +177,6 @@ export const WhyScentAirSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Logos row (separate from image so spacing is always clean) */}
               <FiveLogosRow
                 className="mt-4"
                 logos={[
@@ -195,18 +189,9 @@ export const WhyScentAirSection: React.FC = () => {
               />
             </div>
 
-            {/* RIGHT: title + two-column list + fine print */}
+            {/* RIGHT */}
             <div className="lg:col-span-7">
-              {/* Title row: green number + heading */}
-              <div className="flex items-baseline gap-3">
-                <span className="leading-none font-extrabold text-[#41B650] text-[clamp(34px,4.2vw,48px)]">
-                  3
-                </span>
-                <h2 className="font-extrabold tracking-tight text-slate-900 text-[clamp(22px,2.4vw,32px)]">
-                  Fragrance safety standards
-                </h2>
-              </div>
-
+              <SectionTitle title="Fragrance safety standards" />
               <p className="mt-3 text-slate-700 max-w-2xl leading-relaxed text-[clamp(14px,1.9vw,18px)]">
                 As a global organization, we know our products touch the lives of countless consumers.
                 <span className="text-[#0c4384] font-semibold"> ScentAir</span> meets or exceeds
@@ -216,64 +201,19 @@ export const WhyScentAirSection: React.FC = () => {
               {/* Two-column list */}
               <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <ul className="space-y-3">
-                  <BulletWithLogo
-                    src="/assets/logos/ifra.png"
-                    alt="IFRA"
-                    label="International Fragrance Association (IFRA) – Code of Practice"
-                  />
-                  <BulletWithLogo
-                    src="/assets/logos/osha.png"
-                    alt="OSHA"
-                    label="Occupational Safety and Health Administration (OSHA)"
-                  />
-                  <BulletWithLogo
-                    src="/assets/logos/reach.jpg"
-                    alt="REACH"
-                    label="EU REACH Compliant & Korea K-REACH Compliant"
-                  />
-                  <BulletWithLogo
-                    src="/assets/logos/fragrancecreator.png"
-                    alt="FCA"
-                    label="Fragrance Creators Association"
-                  />
-                  <BulletWithLogo
-                    src="/assets/logos/alcumus.png"
-                    alt="Alcumus"
-                    label="ALCUMUS SafeContractor Accredited"
-                  />
-                  <BulletWithLogo
-                    src="/assets/logos/ecovadis.png"
-                    alt="EcoVadis"
-                    label="ECOVADIS Sustainability Awarded"
-                  />
+                  <BulletWithLogo src="/assets/logos/ifra.png" alt="IFRA" label="International Fragrance Association (IFRA) – Code of Practice" />
+                  <BulletWithLogo src="/assets/logos/osha.png" alt="OSHA" label="Occupational Safety and Health Administration (OSHA)" />
+                  <BulletWithLogo src="/assets/logos/reach.jpg" alt="REACH" label="EU REACH Compliant & Korea K-REACH Compliant" />
+                  <BulletWithLogo src="/assets/logos/fragrancecreator.png" alt="FCA" label="Fragrance Creators Association" />
+                  <BulletWithLogo src="/assets/logos/alcumus.png" alt="Alcumus" label="ALCUMUS SafeContractor Accredited" />
+                  <BulletWithLogo src="/assets/logos/ecovadis.png" alt="EcoVadis" label="ECOVADIS Sustainability Awarded" />
                 </ul>
-
                 <ul className="space-y-3">
-                  <BulletWithLogo
-                    src="/assets/logos/rifm.jpg"
-                    alt="RIFM"
-                    label="Research Institute for Fragrance Materials (RIFM)"
-                  />
-                  <BulletWithLogo
-                    src="/assets/logos/epa.jpg"
-                    alt="EPA"
-                    label="EPA Toxic Substances Control Act (TSCA)"
-                  />
-                  <BulletWithLogo
-                    src="/assets/logos/carb.jpg"
-                    alt="CARB"
-                    label="California Air Resources Board (CARB)"
-                  />
-                  <BulletWithLogo
-                    src="/assets/logos/oehha.png"
-                    alt="OEHHA"
-                    label="State of California’s Prop 65 per OEHHA"
-                  />
-                  <BulletWithLogo
-                    src="/assets/logos/cites.jpg"
-                    alt="CITES"
-                    label="CITES Global Treaty Compliance"
-                  />
+                  <BulletWithLogo src="/assets/logos/rifm.jpg" alt="RIFM" label="Research Institute for Fragrance Materials (RIFM)" />
+                  <BulletWithLogo src="/assets/logos/epa.jpg" alt="EPA" label="EPA Toxic Substances Control Act (TSCA)" />
+                  <BulletWithLogo src="/assets/logos/carb.jpg" alt="CARB" label="California Air Resources Board (CARB)" />
+                  <BulletWithLogo src="/assets/logos/oehha.png" alt="OEHHA" label="State of California’s Prop 65 per OEHHA" />
+                  <BulletWithLogo src="/assets/logos/cites.jpg" alt="CITES" label="CITES Global Treaty Compliance" />
                 </ul>
               </div>
 
@@ -305,48 +245,42 @@ export const WhyScentAirSection: React.FC = () => {
       {/* Divider */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent my-8 md:my-12" />
 
-      {/* ===== 4) GREEN TO ENVIRONMENT ===== */}
-      <section id="green" className="relative text-white">
-        <div className="absolute inset-0">
-          <img
-            src="/assets/whyscentair/green.jpg"
-            alt="Green to Environment"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0c4384]/90 via-[#0c4384]/70 to-transparent" />
-        </div>
-
+      {/* ===== GREEN (static like mock) ===== */}
+      <section id="green" className="relative py-12 md:py-16 bg-white">
         <Container>
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center py-14 md:py-20">
-            {/* Left: Button */}
-            <div className="flex justify-center md:justify-start">
-              <a
-                href="https://heyzine.com/flip-book/7536231544.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Open ScentAir sustainability flipbook in new tab"
-              >
-                <Button
-                  size="lg"
-                  className="px-7 py-3 md:px-8 md:py-4 rounded-full bg-[#0c4384] hover:bg-[#092e5a] text-white font-semibold shadow-lg text-[clamp(13px,1.8vw,16px)]"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            {/* Left: Text & Button */}
+            <div>
+              <SectionTitle title="Corporate Responsibility & Sustainability" />
+              <p className="mt-4 text-slate-700 leading-relaxed text-[clamp(14px,1.9vw,18px)]">
+                As a worldwide organization, we take our role as global citizens seriously.
+                We continuously strive to reduce our environmental impact and make our slice
+                of the world a more just and equitable place.
+              </p>
+              <div className="mt-6">
+                <a
+                  href="https://heyzine.com/flip-book/7536231544.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Learn More in Flipbook
-                </Button>
-              </a>
+                  <Button
+                    size="lg"
+                    className="px-7 py-3 md:px-8 md:py-4 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold shadow text-[clamp(13px,1.8vw,16px)]"
+                  >
+                    Read Report
+                  </Button>
+                </a>
+              </div>
             </div>
 
-            {/* Right: Text */}
-            <div className="md:ml-auto max-w-2xl">
-              <SectionTitle num={4} title="Green to Environment" accent="text-white" />
-              <p className="mt-3 md:mt-4 leading-relaxed text-white/90 text-[clamp(14px,1.9vw,18px)]">
-                Our sustainable fragrances start with materials that make sense for the planet—crafted
-                with a blend of essential oils, sustainable materials, naturally derived and upcycled
-                ingredients. This reflects our commitment to environmental responsibility and
-                eco-friendly practices.
-              </p>
-              <div className="mt-5 md:mt-6 text-white/80 text-[clamp(12px,1.6vw,14px)]">
-                Recyclable cartridges use recycled commercial plastics and ~11% less plastic than before.
-              </div>
+            {/* Right: Static image */}
+            <div className="flex justify-center">
+              <img
+                src="/assets/whyscentair/green-report.jpg"
+                alt="Corporate responsibility & sustainability report"
+                className="w-full max-w-[560px] rounded-lg shadow-lg"
+                loading="lazy"
+              />
             </div>
           </div>
         </Container>

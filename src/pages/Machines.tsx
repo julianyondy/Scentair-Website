@@ -47,12 +47,12 @@ export const Machines: React.FC = () => {
       description:
         "ScentAir Splash™ is a discreet, battery-powered system, best for scenting small and micro-spaces. Create scent schedules directly from the device. Easy-change cartridges release mess-free, even fragrance for up to 300 hours.",
       features: [
-        "Targeted experience control — Atomized fragrance delivers precise, consistent coverage",
-        "Select Scent Library — Choose from a select fragrance library with Odor Neutralizing fragrances",
-        "Compact & battery powered — Discreetly fights odors anywhere",
-        "Simple maintenance — Easy-change cartridges & full warranty",
-        "300 hours of scent — Long-lasting cartridges",
-        "Covers up to 500 SQ FT",
+        "TARGETED EXPERIENCE CONTROL — Atomized fragrance delivers precise, consistent coverage",
+        "SELECT SCENT LIBRARY — Choose from a select fragrance library with Odor Neutralizing fragrances",
+        "COMPACT & BATTERY POWERED — Discreetly fights odors anywhere - no power outlet needed",
+        "SIMPLE MAINTENANCE — Easy-change cartridges & full warranty",
+        "300 HOURS OF SCENT — Long-lasting cartridges contain up to 300 hours of odor-fighting fragrance",
+        "COVERS UP TO 500 SQ FT - neutralizing coverage for small, hard to reach spaces",
       ],
     },
     {
@@ -70,12 +70,12 @@ export const Machines: React.FC = () => {
       description:
         "ScentAir BreezeTM with Wi-Fi & Bluetooth is a connected system that releases consistent, no-fade fragrance in a fine, invisible mist. Easy-change cartridges and simple schedule and intensity control from any internet- connected device make system management a breeze.",
       features: [
-        "Wi-Fi/Bluetooth control",
-        "Cloud management",
-        "Vertical diffusion",
-        "Advanced atomization",
-        "30-day cartridges",
-        "Up to 2,000 ft²",
+        "BLUETOOTH CONTROL - Create schedules and control with your phone using the ScentAir app or cloud-based management tool",
+        "SMART CLOUD MANAGEMENT - Adjust your schedule anytime and anywhere",
+        "VERTICAL DIFFUSION - Patent-pending technology creates a seamless scent experience",
+        "ADVANCED ATOMIZED TECHNOLOGY - Patented technology diffuses fragrance in a fine, invisible spray",
+        "LONG-LASTING CARTRIDGES - 30 days of consistently vibrant fragrance",
+        "COVERS UP TO 2,000 SQ FT - Scalable for any size business",
       ],
     },
     {
@@ -91,14 +91,14 @@ export const Machines: React.FC = () => {
       z: 20,
       slug: "scentair-direct",
       description:
-        "ScentAir Direct™ maximizes delivery over medium areas with fine, invisible mist.",
+        "ScentAir Direct™ is a flexible system that maximizes scent delivery over medium-sized target areas. Advanced atomization technology releases a fine, invisible mist that can create fragrance zones or an all-over fragrance experience.",
       features: [
-        "Patented fine spray",
-        "Flexible mounting",
-        "Zones or blanket coverage",
-        "Date/time/intensity control",
-        "180° rotational mount",
-        "Up to 3,000 ft²",
+        "ADVANCED ATOMIZED TECHNOLOGY - Patented technology diffuses fragrance in a fine, invisible spray",
+        "DISCREET PLACEMENT - Ceiling, wall, ledge, and track lighting mounts",
+        "PRECISE FRAGRANCE - Creates fragrancezones or even, blanket coverage",
+        "ADJUSTABLE SETTINGS - Customizable withadjustable date, time and scent intensity settings",
+        "180° ROTATIONAL MOUNT - Endless placementand coverage options",
+        "COVERS UP TO 3,000 SQ FT - Scalable for any size business",
       ],
     },
     {
@@ -114,14 +114,14 @@ export const Machines: React.FC = () => {
       z: 10,
       slug: "scentair-stream",
       description:
-        "ScentAir Stream™ connects to HVAC for large spaces with customizable scheduling.",
+        "ScentAir Stream™ is an invisible, high-performance system, best for large spaces. Advanced diffusion technology releases fragrance through existing HVAC systems. Customizable scheduling and intensity settings make it easy to tailor scent experiences in any environment.",
       features: [
-        "HVAC-connected diffusion",
-        "Floor-to-ceiling coverage",
-        "Flexible scheduling",
-        "Full-service maintenance",
-        "Ideal for large spaces",
-        "3,000+ ft²",
+        "ADVANCED ATOMIZED TECHNOLOGY - Patented technology diffuses fragrance in a fine, invisible spray",
+        "HVAC CONNECTED FRAGRANCE - Professional quality fragrance delivered invisibly through existing HVAC systems",
+        "FLOOR-TO-CEILING COVERAGE - Blanket coverage for a seamless fragrance experience",
+        "ADJUSTABLE SETTINGS - Customizable with adjustable date, time and scent intensity settings",
+        "FULL-SERVICE MAINTENANCE & WARRANTY - Professional installation and service",
+        "COVERS OVER 3,000 SQ FT - Coverage for large or challenging indoor spaces",
       ],
     },
   ] as const;

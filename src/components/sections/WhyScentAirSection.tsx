@@ -127,7 +127,7 @@ export const WhyScentAirSection: React.FC = () => {
               <div className="rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(2,6,23,0.08)] ring-1 ring-slate-100">
                 <div className="aspect-[4/3] w-full">
                   <img
-                    src="/assets/whyscentair/prestigious.jpg"
+                    src="/assets/whyscentair/prestigious.png"
                     alt="Prestigious clients worldwide"
                     className="h-full w-full object-cover"
                     loading="lazy"

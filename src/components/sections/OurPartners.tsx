@@ -10,6 +10,27 @@ type Category = {
   logos?: string[];  // optional explicit logo paths
 };
 
+const LogoCell: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
+  return (
+    <div
+      className="bg-white border border-gray-200 rounded-xl shadow-sm 
+                 hover:shadow-md transition-shadow duration-300 
+                 transform hover:-translate-y-0.5 
+                 flex items-center justify-center"
+    >
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        className="object-contain 
+                   max-h-16 md:max-h-20 lg:max-h-24 
+                   max-w-[80%] mx-auto"
+      />
+    </div>
+  );
+};
+
 export const OurPartners: React.FC = () => {
   const categories: Category[] = [
     {
@@ -219,7 +240,6 @@ export const OurPartners: React.FC = () => {
           {/* Category Buttons */}
           <div className="mt-8 animate-slide-up">
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Partner Categories</h3>
-            
             <div className="flex flex-nowrap justify-center gap-6 overflow-x-auto overflow-y-visible px-4 py-4">
               {categories.map((cat) => {
                 const isActive = selected?.id === cat.id;
@@ -268,19 +288,13 @@ export const OurPartners: React.FC = () => {
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                 {logosForSelected.map((src, idx) => (
-                  <div
+                  <LogoCell
                     key={src}
-                    className="bg-white border border-gray-200 rounded-xl p-3 h-24 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-300 transform hover:-translate-y-0.5"
-                  >
-                    <img
-                      src={src}
-                      alt={`${selected.name} partner logo ${idx + 1}`}
-                      className="max-h-full max-w-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
+                    src={src}
+                    alt={`${selected.name} partner logo ${idx + 1}`}
+                  />
                 ))}
-                <div className="border border-primary/20 rounded-xl p-3 h-24 flex items-center justify-center shadow-sm">
+                <div className="bg-white border border-primary/20 rounded-xl p-3 h-24 flex items-center justify-center shadow-sm">
                   <span className="text-primary font-bold">and many more</span>
                 </div>
               </div>

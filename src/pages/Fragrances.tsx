@@ -43,36 +43,36 @@ const imagesByCategory: Record<string, { front: string; back: string }[]> = {
     { front: '/assets/passionate/SAGE&POMEGRANATEFRONT.png',  back: '/assets/passionate/SAGE&POMEGRANATEBACK.png' },
   ],
   relaxing: [
-    { front: '/assets/passionate/BLACKMINKFRONT.png',  back: '/assets/passionate/BLACKMINKBACK.png' },
-    { front: '/assets/passionate/BLACKORCHIDFRONT.png',  back: '/assets/passionate/BLACKORCHIDBACK.png' },
-    { front: '/assets/passionate/BLACKTEAFIGFRONT.png',  back: '/assets/passionate/BLACKTEAFIGBACK.png' },
-    { front: '/assets/passionate/COBALTFRONT.png',  back: '/assets/passionate/COBALTBACK.png' },
-    { front: '/assets/passionate/MEDITERRANEANFIGFRONT.png',  back: '/assets/passionate/MEDITERRANEANFIGBACK.png' },
-    { front: '/assets/passionate/SAGE&POMEGRANATEFRONT.png',  back: '/assets/passionate/SAGE&POMEGRANATEBACK.png' },
+    { front: '/assets/relaxing/GREENBAMBOOFRONT.png',  back: '/assets/relaxing/GREENBAMBOOBACK.png' },
+    { front: '/assets/relaxing/GREENCLOVER&ALOEFRONT.png',  back: '/assets/relaxing/GREENCLOVER&ALOEBACK.png' },
+    { front: '/assets/relaxing/LAVENDERLEMONVERBENAFRONT.png',  back: '/assets/relaxing/LAVENDERLEMONVERBENABACK.png' },
+    { front: '/assets/relaxing/SEASALTFRONT.png',  back: '/assets/relaxing/SEASALTBACK.png' },
+    { front: '/assets/relaxing/TRANQUILWATERSFRONT.png',  back: '/assets/relaxing/TRANQUILWATERSBACK.png' },
+    { front: '/assets/relaxing/VETIVERNOIRFRONT.png',  back: '/assets/relaxing/VETIVERNOIRBACK.png' },
   ],
   savory: [
-    { front: '/assets/passionate/BLACKMINKFRONT.png',  back: '/assets/passionate/BLACKMINKBACK.png' },
-    { front: '/assets/passionate/BLACKORCHIDFRONT.png',  back: '/assets/passionate/BLACKORCHIDBACK.png' },
-    { front: '/assets/passionate/BLACKTEAFIGFRONT.png',  back: '/assets/passionate/BLACKTEAFIGBACK.png' },
-    { front: '/assets/passionate/COBALTFRONT.png',  back: '/assets/passionate/COBALTBACK.png' },
-    { front: '/assets/passionate/MEDITERRANEANFIGFRONT.png',  back: '/assets/passionate/MEDITERRANEANFIGBACK.png' },
-    { front: '/assets/passionate/SAGE&POMEGRANATEFRONT.png',  back: '/assets/passionate/SAGE&POMEGRANATEBACK.png' },
+    { front: '/assets/savory/CORNUCOPIAFRONT.png',  back: '/assets/savory/CORNUCOPIABACK.png' },
+    { front: '/assets/savory/CRANBERRYAPPLEMARMALADEFRONT.png',  back: '/assets/savory/CRANBERRYAPPLEMARMALADEBACK.png' },
+    { front: '/assets/savory/HOTAPPLEPIEFRONT.png',  back: '/assets/savory/HOTAPPLEPIEBACK.png' },
+    { front: '/assets/savory/PUMPKINPIEFRONT.png',  back: '/assets/savory/PUMPKINPIEBACK.png' },
+    { front: '/assets/savory/SUGARCOOKIEFRONT.png',  back: '/assets/savory/SUGARCOOKIEBACK.png' },
+    { front: '/assets/savory/VANILLABOURBONFRONT.png',  back: '/assets/savory/VANILLABOURBONBACK.png' },
   ],
   timeless: [
-    { front: '/assets/passionate/BLACKMINKFRONT.png',  back: '/assets/passionate/BLACKMINKBACK.png' },
-    { front: '/assets/passionate/BLACKORCHIDFRONT.png',  back: '/assets/passionate/BLACKORCHIDBACK.png' },
-    { front: '/assets/passionate/BLACKTEAFIGFRONT.png',  back: '/assets/passionate/BLACKTEAFIGBACK.png' },
-    { front: '/assets/passionate/COBALTFRONT.png',  back: '/assets/passionate/COBALTBACK.png' },
-    { front: '/assets/passionate/MEDITERRANEANFIGFRONT.png',  back: '/assets/passionate/MEDITERRANEANFIGBACK.png' },
-    { front: '/assets/passionate/SAGE&POMEGRANATEFRONT.png',  back: '/assets/passionate/SAGE&POMEGRANATEBACK.png' },
+    { front: '/assets/timeless/GARDENIAFRONT.png',  back: '/assets/timeless/GARDENIABACK.png' },
+    { front: '/assets/timeless/GINGERLILYFRONT.png',  back: '/assets/timeless/GINGERLILYBACK.png' },
+    { front: '/assets/timeless/KAIJASMINEFRONT.png',  back: '/assets/timeless/KAIJASMINEBACK.png' },
+    { front: '/assets/timeless/ROSEGARDENFRONT.png',  back: '/assets/timeless/ROSEGARDENBACK.png' },
+    { front: '/assets/timeless/WHITEBLOSSOMTEAFRONT.png',  back: '/assets/timeless/WHITEBLOSSOMTEABACK.png' },
+    { front: '/assets/timeless/WHITETEA&FIGFRONT.png',  back: '/assets/timeless/WHITETEA&FIGBACK.png' },
   ],
   voyage: [
-    { front: '/assets/passionate/BLACKMINKFRONT.png',  back: '/assets/passionate/BLACKMINKBACK.png' },
-    { front: '/assets/passionate/BLACKORCHIDFRONT.png',  back: '/assets/passionate/BLACKORCHIDBACK.png' },
-    { front: '/assets/passionate/BLACKTEAFIGFRONT.png',  back: '/assets/passionate/BLACKTEAFIGBACK.png' },
-    { front: '/assets/passionate/COBALTFRONT.png',  back: '/assets/passionate/COBALTBACK.png' },
-    { front: '/assets/passionate/MEDITERRANEANFIGFRONT.png',  back: '/assets/passionate/MEDITERRANEANFIGBACK.png' },
-    { front: '/assets/passionate/SAGE&POMEGRANATEFRONT.png',  back: '/assets/passionate/SAGE&POMEGRANATEBACK.png' },
+    { front: '/assets/voyage/AUSTRALIANCOASTFRONT.png',  back: '/assets/voyage/AUSTRALIANCOASTBACK.png' },
+    { front: '/assets/voyage/ISLANDBREEZEFRONT.png',  back: '/assets/voyage/ISLANDBREEZEBACK.png' },
+    { front: '/assets/voyage/ISLEOFCAPRIFRONT.png',  back: '/assets/voyage/ISLEOFCAPRIBACK.png' },
+    { front: '/assets/voyage/OCEANFRONT.png',  back: '/assets/voyage/OCEANBACK.png' },
+    { front: '/assets/voyage/PINEFORESTFRONT.png',  back: '/assets/voyage/PINEFORESTBACK.png' },
+    { front: '/assets/voyage/TROPICALCOCONUTFRONT.png',  back: '/assets/voyage/TROPICALCOCONUTBACK.png' },
   ],
   warm: [
     { front: '/assets/warm/APPLE&OAKFRONT.png',  back: '/assets/warm/APPLE&OAKBACK.png' },
@@ -133,6 +133,14 @@ export const Fragrances: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             Fragrance choices & Exclusives
           </h1>
+          <p className="text-lg text-secondary max-w-3xl mx-auto leading-relaxed mb-4">
+            Every brand has a story to tell, and fragrance offers a unique way to bring that story to life. 
+            Experience the endless possibilities of fragrance and discover a new way to tell your brand story.
+            <br />
+            <span className="font-semibold">
+              650 active fragrances with 350 signature fragrances and more than 2,400 fragrances to choose from.
+            </span>
+          </p>
           <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
             Choose a category below to view our fragrances.
           </p>

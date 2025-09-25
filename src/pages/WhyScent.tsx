@@ -5,7 +5,7 @@ export const WhyScent: React.FC = () => {
   return (
     <div className="pt-[180px] bg-transparent">
       {/* Introduction section */}
-      <section className="py-12 px-6 bg-gradient-to-b from-white to-cyan-50">
+      <section className="py-12 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Why Scent

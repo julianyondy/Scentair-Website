@@ -62,6 +62,7 @@ const BulletWithLogo: React.FC<{ src: string; alt: string; label: string }> = ({
   </li>
 );
 
+// Boleh dibiarkan meskipun tidak dipakai di section safety
 const FiveLogosRow: React.FC<{ logos: { src: string; alt: string }[] } & Classable> = ({
   logos,
   className,
@@ -164,29 +165,46 @@ export const WhyScentAirSection: React.FC = () => {
       <section id="safety" className="relative py-12 md:py-16">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* LEFT: big image + 5 logos underneath */}
+            {/* LEFT: big image + logos overlapping bottom (logos fill, no white circles) */}
             <div className="lg:col-span-5">
-              <div className="relative overflow-hidden rounded-2xl ring-1 ring-slate-100 shadow-[0_10px_30px_rgba(2,6,23,0.08)]">
-                <div className="aspect-[3/4] w-full">
-                  <img
-                    src="/assets/whyscentair/momandchild.jpg"
-                    alt="Family enjoying clean and safe air"
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                  />
+              <div className="relative overflow-visible">
+                {/* photo */}
+                <div className="relative rounded-2xl overflow-hidden ring-1 ring-slate-100 shadow-[0_10px_30px_rgba(2,6,23,0.08)]">
+                  <div className="aspect-[3/4] w-full">
+                    <img
+                      src="/assets/whyscentair/momandchild.jpg"
+                      alt="Family enjoying clean and safe air"
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                {/* badges: only icons, fill size, no white background */}
+                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 w-full px-2 md:px-4">
+                  <div className="mx-auto grid grid-cols-5 gap-3 md:gap-4 max-w-[560px]">
+                    {[
+                      { src: '/assets/logos/respir.png',      alt: 'No respiratory allergens' },
+                      { src: '/assets/logos/free.png',        alt: 'Phthalate free' },
+                      { src: '/assets/logos/cruelty.png',     alt: 'Cruelty free' },
+                      { src: '/assets/logos/ecovadiscer.png', alt: 'EcoVadis certified sustainable' },
+                      { src: '/assets/logos/safe.png',        alt: 'Internationally certified safe' },
+                    ].map((i) => (
+                      <div key={i.src} className="grid place-items-center w-16 h-16 md:w-20 md:h-20">
+                        <img
+                          src={i.src}
+                          alt={i.alt}
+                          className="w-full h-full object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <FiveLogosRow
-                className="mt-4"
-                logos={[
-                  { src: '/assets/logos/respir.png', alt: 'No respiratory allergens' },
-                  { src: '/assets/logos/free.png', alt: 'Phthalate free' },
-                  { src: '/assets/logos/cruelty.png', alt: 'Cruelty free' },
-                  { src: '/assets/logos/ecovadiscer.png', alt: 'EcoVadis certified' },
-                  { src: '/assets/logos/safe.png', alt: 'Internationally certified safe' },
-                ]}
-              />
+              {/* spacer so layout doesn't overlap */}
+              <div className="h-10 md:h-12" />
             </div>
 
             {/* RIGHT */}
@@ -205,15 +223,15 @@ export const WhyScentAirSection: React.FC = () => {
                   <BulletWithLogo src="/assets/logos/osha.png" alt="OSHA" label="Occupational Safety and Health Administration (OSHA)" />
                   <BulletWithLogo src="/assets/logos/reach.jpg" alt="REACH" label="EU REACH Compliant & Korea K-REACH Compliant" />
                   <BulletWithLogo src="/assets/logos/fragrancecreator.png" alt="FCA" label="Fragrance Creators Association" />
-                  <BulletWithLogo src="/assets/logos/alcumus.png" alt="Alcumus" label="ALCUMUS SafeContractor Accredited" />
-                  <BulletWithLogo src="/assets/logos/ecovadis.png" alt="EcoVadis" label="ECOVADIS Sustainability Awarded" />
+                  <BulletWithLogo src="/assets/logos/alcumus.png" alt="ALCUMUS" label="ALCUMUS SafeContractor Accredited" />
+                  <BulletWithLogo src="/assets/logos/rifm.jpg" alt="RIFM" label="Research Institute for Fragrance Materials (RIFM)" />
                 </ul>
                 <ul className="space-y-3">
-                  <BulletWithLogo src="/assets/logos/rifm.jpg" alt="RIFM" label="Research Institute for Fragrance Materials (RIFM)" />
                   <BulletWithLogo src="/assets/logos/epa.jpg" alt="EPA" label="EPA Toxic Substances Control Act (TSCA)" />
                   <BulletWithLogo src="/assets/logos/carb.jpg" alt="CARB" label="California Air Resources Board (CARB)" />
                   <BulletWithLogo src="/assets/logos/oehha.png" alt="OEHHA" label="State of California’s Prop 65 per OEHHA" />
                   <BulletWithLogo src="/assets/logos/cites.jpg" alt="CITES" label="CITES Global Treaty Compliance" />
+                  <BulletWithLogo src="/assets/logos/ecovadis.png" alt="EcoVadis" label="ECOVADIS Sustainability Awarded" />
                 </ul>
               </div>
 
@@ -276,7 +294,7 @@ export const WhyScentAirSection: React.FC = () => {
             {/* Right: Static image */}
             <div className="flex justify-center">
               <img
-                src="/assets/whyscentair/green-report.jpg"
+                src="/assets/whyscentair/sustain.png"
                 alt="Corporate responsibility & sustainability report"
                 className="w-full max-w-[560px] rounded-lg shadow-lg"
                 loading="lazy"

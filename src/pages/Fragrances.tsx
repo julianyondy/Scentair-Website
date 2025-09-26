@@ -6,7 +6,7 @@ const fragranceCategories = [
   { id: 'lux',         name: 'Lux & Sophisticated',      image: '/assets/fragrance/Lux & Sophisticated.png',      points: ['Extravagance','Opulence','Refinement'] },
   { id: 'passionate',  name: 'Passionate & Sensual',     image: '/assets/fragrance/Passionate & Sensual.png',     points: ['Seductive','Lavish','Irresistible'] },
   { id: 'relaxing',    name: 'Relaxing & Soothing',      image: '/assets/fragrance/Relaxing & Soothing.png',      points: ['Calming','Peaceful','Serene'] },
-  { id: 'savory',     name: 'Savory & Gourmand',       image: '/assets/fragrance/Savoury & Gourmand.png',       points: ['Delicious','Comforting','Indulgent'] },
+  { id: 'savory',      name: 'Savory & Gourmand',        image: '/assets/fragrance/Savoury & Gourmand.png',       points: ['Delicious','Comforting','Indulgent'] },
   { id: 'timeless',    name: 'Timeless & Floral',        image: '/assets/fragrance/Timeless & Floral.png',        points: ['Classic','Elegant','Enduring'] },
   { id: 'voyage',      name: 'Voyage & Escape',          image: '/assets/fragrance/Voyage & Escape.png',          points: ['Exotic','Adventurous','Escapist'] },
   { id: 'warm',        name: 'Warm & Inviting',          image: '/assets/fragrance/Warm & Inviting.png',          points: ['Cozy','Comforting','Inviting'] },
@@ -123,7 +123,7 @@ export const Fragrances: React.FC = () => {
       return { front: use.front || FRONT, back: use.back || BACK };
     }
     return { front: FRONT, back: BACK };
-    };
+  };
 
   return (
     <div className="pt-[180px] min-h-screen py-20 bg-transparent">
@@ -240,6 +240,13 @@ export const Fragrances: React.FC = () => {
                     </div>
                   );
                 })}
+
+                {/* Always show this text under the 6 cards */}
+                <div className="w-full text-center mt-6">
+                  <span className="text-2xl md:text-3xl font-semibold text-primary">
+                    ...and many more
+                  </span>
+                </div>
               </div>
             </>
           )}

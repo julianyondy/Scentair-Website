@@ -82,7 +82,6 @@ const imagesByCategory: Record<string, { front: string; back: string }[]> = {
     { front: '/assets/warm/SEASONSGREETINGSFRONT.png',  back: '/assets/warm/SEASONSGREETINGSBACK.png' },
     { front: '/assets/warm/VANILLAWOODSFRONT.png',  back: '/assets/warm/VANILLAWOODSBACK.png' },
   ],
-
 };
 
 const CARDS_PER_CATEGORY = 6;
@@ -197,45 +196,54 @@ export const Fragrances: React.FC = () => {
               {/* Rata kanan + wrap */}
               <div className="flex flex-wrap gap-6 justify-end">
                 {Array.from({ length: CARDS_PER_CATEGORY }, (_, idx) => {
-                  const id = `${selectedCategoryData.id}-${idx+1}`;
+                  const id = `${selectedCategoryData.id}-${idx + 1}`;
                   const isFlipped = flipped.has(id);
                   const pair = getPair(selectedCategory, idx);
 
                   return (
-                    <div
-                      key={id}
-                      className="relative [perspective:1500px] w-[240px] sm:w-[280px] md:w-[320px] lg:w-[360px] aspect-[650/1122] rounded-2xl"
-                    >
-                      <div
-                        className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${isFlipped ? 'rotate-y-180' : ''}`}
-                      >
-                        {/* FRONT */}
-                        <button
-                          type="button"
-                          onClick={() => toggleFlip(id)}
-                          className="absolute inset-0 rounded-2xl overflow-hidden shadow-md hover:shadow-xl [backface-visibility:hidden] focus:outline-none focus:ring-2 focus:ring-primary"
-                          aria-label="Flip card"
-                        >
-                          <img
-                            src={pair.front}
-                            alt={`${selectedCategoryData.name} card front ${idx+1}`}
-                            className="h-full w-full object-cover"
-                          />
-                        </button>
+                    <div key={id} className="flex flex-col items-center">
+                      {/* Hint block above card — shown only for first 3 cards */}
+                      {idx < 3 && (
+                        <div className="mb-3 text-xs md:text-sm font-medium text-primary/90 animate-pulse">
+                          Tap / Click to flip
+                        </div>
+                      )}
 
-                        {/* BACK */}
-                        <button
-                          type="button"
-                          onClick={() => toggleFlip(id)}
-                          className="absolute inset-0 rounded-2xl overflow-hidden shadow-md hover:shadow-xl rotate-y-180 [backface-visibility:hidden] bg-white focus:outline-none focus:ring-2 focus:ring-primary"
-                          aria-label="Flip card back"
+                      {/* Card */}
+                      <div className="relative [perspective:1500px] w-[240px] sm:w-[280px] md:w-[320px] lg:w-[360px] aspect-[650/1122] rounded-2xl">
+                        <div
+                          className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${
+                            isFlipped ? 'rotate-y-180' : ''
+                          }`}
                         >
-                          <img
-                            src={pair.back}
-                            alt={`${selectedCategoryData.name} card back ${idx+1}`}
-                            className="h-full w-full object-cover"
-                          />
-                        </button>
+                          {/* FRONT */}
+                          <button
+                            type="button"
+                            onClick={() => toggleFlip(id)}
+                            className="absolute inset-0 rounded-2xl overflow-hidden shadow-md hover:shadow-xl [backface-visibility:hidden] focus:outline-none focus:ring-2 focus:ring-primary"
+                            aria-label="Flip card"
+                          >
+                            <img
+                              src={pair.front}
+                              alt={`${selectedCategoryData.name} card front ${idx + 1}`}
+                              className="h-full w-full object-cover"
+                            />
+                          </button>
+
+                          {/* BACK */}
+                          <button
+                            type="button"
+                            onClick={() => toggleFlip(id)}
+                            className="absolute inset-0 rounded-2xl overflow-hidden shadow-md hover:shadow-xl rotate-y-180 [backface-visibility:hidden] bg-white focus:outline-none focus:ring-2 focus:ring-primary"
+                            aria-label="Flip card back"
+                          >
+                            <img
+                              src={pair.back}
+                              alt={`${selectedCategoryData.name} card back ${idx + 1}`}
+                              className="h-full w-full object-cover"
+                            />
+                          </button>
+                        </div>
                       </div>
                     </div>
                   );

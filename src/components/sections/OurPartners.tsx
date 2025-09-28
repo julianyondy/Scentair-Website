@@ -96,20 +96,22 @@ export const OurPartners: React.FC = () => {
     ));
 
   return (
-    <section id="our-partners" className="pt-5 pb-20 relative overflow-visible">
+    <section id="our-partners" className="pt-4 pb-20 relative overflow-visible">
       <Container>
         <div className="max-w-6xl mx-auto">
-          {/* Page heading */}
-          <div className="text-center mb-8 animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Who We Work With</h1>
-            <div className="w-24 h-0.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 rounded-full"></div>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          {/* Header styled like Contact page */}
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+              Who We Work With
+            </h1>
+            <div className="w-24 h-0.5 bg-cyan-400 mx-auto mb-4"></div>
+            <p className="text-lg text-secondary leading-relaxed max-w-3xl mx-auto">
               We collaborate with industry leaders and innovative companies to bring you the best fragrance solutions.
             </p>
           </div>
 
           {/* Category circles — visible, decorative, non-interactive */}
-          <div className="mt-8 animate-slide-up">
+          <div className="mt-6">
             <div className="flex flex-nowrap justify-center gap-6 overflow-x-auto overflow-y-visible px-4 py-4">
               {categories.map((cat) => (
                 <div
@@ -133,7 +135,7 @@ export const OurPartners: React.FC = () => {
             </div>
           </div>
 
-          {/* All logos in one grid (no per-category headlines) */}
+          {/* All logos in one grid */}
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
             {categories.flatMap((cat) =>
               getLogos(cat).map((src, idx) => (
@@ -150,14 +152,14 @@ export const OurPartners: React.FC = () => {
           </div>
 
           {/* Contact */}
-          <div className="mt-12 text-center rounded-2xl p-6 animate-fadeInSlide">
+          <div className="mt-12 text-center rounded-2xl p-6">
             <p className="text-gray-700 text-lg">
               Interested in becoming a partner?{' '}
               <a href="/contact" className="text-primary hover:underline font-semibold">Contact us</a>{' '}
               to learn more about our partnership opportunities.
             </p>
             <div className="mt-4 flex justify-center">
-              <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              <div className="w-12 h-0.5 bg-cyan-400 rounded-full"></div>
             </div>
           </div>
         </div>

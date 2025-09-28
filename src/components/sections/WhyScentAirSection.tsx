@@ -51,12 +51,18 @@ const FiveLogosRow: React.FC<{ logos: { src: string; alt: string }[] } & Classab
 export const WhyScentAirSection: React.FC = () => {
   return (
     <main className="bg-white text-slate-900">
-      {/* ===== PAGE HEADER (added) ===== */}
-      <section className="w-full bg-white py-16 text-center border-b-4 border-cyan-400">
-        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-4">
+      {/* ===== PAGE HEADER (without bottom line) ===== */}
+      <section className="w-full bg-white py-6 md:py-8 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           Why ScentAir
         </h1>
+        <div className="w-24 h-0.5 bg-cyan-400 mx-auto mb-6"></div>
+        <p className="text-lg text-secondary max-w-3xl mx-auto leading-relaxed">
+          Discover why global brands and businesses trust ScentAir to create 
+          memorable experiences through fragrance.
+        </p>
       </section>
+
 
       {/* ===== PIONEER (responsive proportional image) ===== */}
       <section id="pioneer" className="w-full bg-white flex justify-center">

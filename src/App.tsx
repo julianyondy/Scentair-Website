@@ -13,6 +13,7 @@ import { ScentAirBreeze } from './pages/machines/ScentAirBreeze';
 import { ScentAirStream } from './pages/machines/ScentAirStream';
 import { ScentAirDirect } from './pages/machines/ScentAirDirect';
 import { OurPartners } from './pages/OurPartners';
+import { SafetyStandards } from './pages/SafetyStandards';
 import { ScrollToTop } from './components/layout/ScrollToTop';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/why-scent" element={<WhyScent />} />
               <Route path="/why-scentair" element={<WhyScentAir />} />
+              <Route path="/safety-standards" element={<SafetyStandards />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/fragrances" element={<Fragrances />} />
               <Route path="/products/machines" element={<Machines />} />

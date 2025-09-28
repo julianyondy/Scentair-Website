@@ -41,7 +41,7 @@ export const OverlayImageSectionA: React.FC = () => {
         {/* Headline centered above the content */}
         <div className="w-full text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight animate-fade-in">
-            The Experience of Scent Drives Customer Behavior
+            Scent Drives Customer Behavior
           </h2>
           <p className="text-gray-600 text-lg mt-4 max-w-3xl mx-auto animate-slide-up">
             Strategic scenting creates powerful psychological effects that influence how customers 

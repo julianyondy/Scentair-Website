@@ -7,6 +7,7 @@ import { NavItem } from '../../types';
 const navItems: NavItem[] = [
   { label: 'Why Scent', href: '/why-scent' },
   { label: 'Why ScentAir', href: '/why-scentair' },
+  { label: 'Safety Standards', href: '/safety-standards' },
   { label: 'Solutions', href: '/products' },
   { label: 'Who We Work With', href: '/our-partners' },
   { label: 'Contact Us', href: '/contact' },

@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
           </video>
 
           {/* Overlay with opacity */}
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 " />
         </div>
 
         <Container className="relative z-10 h-full">

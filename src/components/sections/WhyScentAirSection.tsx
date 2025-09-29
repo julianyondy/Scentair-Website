@@ -63,13 +63,12 @@ export const WhyScentAirSection: React.FC = () => {
         </p>
       </section>
 
-
       {/* ===== PIONEER (responsive proportional image) ===== */}
       <section id="pioneer" className="w-full bg-white flex justify-center">
         <img
           src="/assets/whyscentair/pioneer.png"
           alt="ScentAir Pioneer"
-          className="w-full max-w-7xl max-h-[90vh] object-contain"
+          className="rounded-3xl w-full max-w-7xl max-h-[90vh] object-contain"
           loading="lazy"
         />
       </section>
@@ -82,7 +81,7 @@ export const WhyScentAirSection: React.FC = () => {
         <img
           src="/assets/whyscentair/prestigious.png"
           alt="Prestigious clients worldwide"
-          className="w-full max-w-7xl max-h-[90vh] object-contain"
+          className="w-full max-w-7xl max-h-[90vh] object-contain rounded-3xl"
           loading="lazy"
         />
       </section>
@@ -93,24 +92,26 @@ export const WhyScentAirSection: React.FC = () => {
       {/* ===== SAFETY (raw picture only) ===== */}
       <section id="safety" className="w-full bg-white flex justify-center">
         <img
-          src="/assets/whyscentair/scentaircares.jpg"
+          src="/assets/whyscentair/scentaircares.png"
           alt="ScentAir Cares"
-          className="w-full max-w-7xl max-h-[90vh] object-contain"
+          className="rounded-3xl w-full max-w-7xl max-h-[90vh] object-contain"
           loading="lazy"
         />
       </section>
 
-      {/* Divider */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent my-8 md:my-12" />
+      {/* Divider — diperkecil jaraknya */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent my-4 md:my-6" />
 
       {/* ===== GREEN ===== */}
-      <section id="green" className="relative py-12 md:py-16 bg-white">
+      {/* Padding atas diperkecil agar lebih rapat dengan divider di atas */}
+      <section id="green" className="relative pt-6 md:pt-8 pb-12 md:pb-16 bg-white">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             {/* Left: Text & Button */}
             <div>
-              <h1 className="text-4xl md:text-6xl font-bold text-[#0c4384] leading-tight mb-6">
-                CORPORATE RESPONSIBILITY &amp; SUSTAINABILITY
+              {/* Font size disamakan dengan header "Why ScentAir" */}
+              <h1 className="text-4xl md:text-5xl font-bold text-[#0c4384] leading-tight mb-6">
+                Corporate Responsibility &amp; Sustainability
               </h1>
               <p className="mt-4 text-slate-700 leading-relaxed text-[clamp(14px,1.9vw,18px)]">
                 As a worldwide organization, we take our role as global citizens seriously.

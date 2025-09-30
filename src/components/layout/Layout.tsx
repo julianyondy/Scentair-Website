@@ -11,7 +11,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader />
-      <main>
+      <main className="pt-16">
         {children}
       </main>
       <Footer />

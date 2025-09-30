@@ -135,7 +135,7 @@ export const Machines: React.FC = () => {
   // };
 
   return (
-    <div className="pt-[160px] min-h-screen bg-transparent">
+    <div className="pt-[80px] min-h-screen bg-transparent">
       <Container>
         {/* Header */}
         <div className="text-center mb-12">
@@ -185,17 +185,13 @@ export const Machines: React.FC = () => {
             <div
               ref={planRef}
               // onClick={handlePlanClick}
-              className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl"
+              className="relative w-full aspect-[16/9]"
             >
-              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg z-50">
-                <h3 className="font-bold text-slate-800">Coverage Preview</h3>
-                <p className="text-sm text-slate-600">Hover list on the left</p>
-              </div>
 
               <img
-                src="/assets/houseplan.png"
+                src="/assets/houseplan.jpg"
                 alt="House plan"
-                className="absolute inset-0 w-full h-full object-contain object-right"
+                className="absolute inset-0 w-full h-full object-contain"
               />
 
               {/* Overlay coverage: clamp agar tetap di dalam plan */}

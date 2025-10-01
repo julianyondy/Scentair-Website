@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
                 <span className="text-white/90 block">Loved by Families</span>
               </h1>
               <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-                Differentiate your space with scent.
+                Differentiate your space with scent
               </p>
             </div>
           </div>
@@ -147,7 +147,7 @@ export const Hero: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Why ScentAir?</h2>
             <p className="text-white/90 max-w-3xl mx-auto leading-relaxed">
               For over 30 years we’ve been enhancing environments, brands, and consumer experiences
-              through improved air quality and the power of scent.
+              <br />through improved air quality and the power of scent.
             </p>
 
             <Link to="/why-scentair">

@@ -3,7 +3,7 @@ import { OurPartners as OurPartnersSection } from '../components/sections/OurPar
 
 export const OurPartners: React.FC = () => {
   return (
-    <div className="pt-[80px] bg-transparent">
+    <div className="bg-transparent">
       <OurPartnersSection />
     </div>
   );

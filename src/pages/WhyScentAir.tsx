@@ -3,7 +3,7 @@ import { WhyScentAirSection } from '../components/sections/WhyScentAirSection';
 
 export const WhyScentAir: React.FC = () => {
   return (
-    <div className="pt-[80px] bg-transparent">
+    <div className="bg-transparent">
       <WhyScentAirSection />
     </div>
   );

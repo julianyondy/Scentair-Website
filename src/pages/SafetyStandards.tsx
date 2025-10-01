@@ -3,7 +3,7 @@ import { SafetyStandardsSection } from '../components/sections/SafetyStandardsSe
 
 export const SafetyStandards: React.FC = () => {
   return (
-    <div className="pt-[80px] bg-transparent">
+    <div className="bg-transparent">
       <SafetyStandardsSection />
     </div>
   );

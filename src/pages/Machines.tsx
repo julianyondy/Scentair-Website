@@ -135,7 +135,7 @@ export const Machines: React.FC = () => {
   // };
 
   return (
-    <div className="pt-[80px] min-h-screen bg-transparent">
+    <div className="min-h-screen bg-transparent">
       <Container>
         {/* Header */}
         <div className="text-center mb-12">

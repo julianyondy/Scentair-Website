@@ -96,16 +96,16 @@ export const OurPartners: React.FC = () => {
     ));
 
   return (
-    <section id="our-partners" className="pt-4 pb-20 relative overflow-visible">
+    <section id="our-partners" className="pt-8 pb-10 md:pt-12 md:pb-16 relative overflow-visible">
       <Container>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header styled like Contact page */}
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               Who We Work With
             </h1>
-            <div className="w-24 h-0.5 bg-cyan-400 mx-auto mb-4"></div>
-            <p className="text-lg text-secondary leading-relaxed max-w-3xl mx-auto">
+            <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
+            <p className="text-lg md:text-xl text-secondary leading-relaxed max-w-3xl mx-auto">
               We collaborate with industry leaders and innovative companies to bring you the best fragrance solutions.
             </p>
           </div>
@@ -122,12 +122,13 @@ export const OurPartners: React.FC = () => {
                              flex items-center justify-center shadow-lg ring-2 ring-gray-300
                              ring-offset-2 ring-offset-white cursor-default select-none"
                   style={{
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(${cat.img})`,
+                    backgroundImage: `url(${cat.img})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                   }}
                 >
-                  <span className="relative z-10 text-white font-semibold text-center px-3 text-sm">
+                  <span className="relative z-10 text-white font-semibold text-center px-3 text-sm"
+                        style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
                     {cat.name}
                   </span>
                 </div>
@@ -147,7 +148,7 @@ export const OurPartners: React.FC = () => {
               ))
             )}
             <div className="bg-white border border-primary/20 rounded-xl p-3 h-24 flex items-center justify-center shadow-sm">
-              <span className="text-primary font-bold">and many more</span>
+              <span className="text-primary font-bold">and many more ...</span>
             </div>
           </div>
 

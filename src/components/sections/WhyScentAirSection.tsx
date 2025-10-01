@@ -52,15 +52,18 @@ export const WhyScentAirSection: React.FC = () => {
   return (
     <main className="bg-white text-slate-900">
       {/* ===== PAGE HEADER (without bottom line) ===== */}
-      <section className="w-full bg-white py-6 md:py-8 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Why ScentAir
-        </h1>
-        <div className="w-24 h-0.5 bg-cyan-400 mx-auto mb-6"></div>
-        <p className="text-lg text-secondary max-w-3xl mx-auto leading-relaxed">
-          Discover why global brands and businesses trust ScentAir to create 
-          memorable experiences through fragrance.
-        </p>
+      <section className="pt-8 pb-10 md:pt-12 md:pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+              Why ScentAir
+            </h1>
+            <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
+            <p className="whitespace-nowrap text-lg md:text-2xl text-secondary leading-relaxed max-w-3xl mx-auto">
+              Discover why global brands and businesses trust ScentAir to create memorable experiences through fragrance.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* ===== PIONEER (responsive proportional image) ===== */}

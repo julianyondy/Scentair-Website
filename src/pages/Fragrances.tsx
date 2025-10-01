@@ -125,22 +125,23 @@ export const Fragrances: React.FC = () => {
   };
 
   return (
-    <div className="pt-[80px] min-h-screen py-20 bg-transparent">
+    <div className="min-h-screen py-20 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             Fragrance choices & Exclusives
           </h1>
-          <p className="text-lg text-secondary max-w-3xl mx-auto leading-relaxed mb-4">
-            Every brand has a story to tell, and fragrance offers a unique way to bring that story to life. 
+          <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-lg md:text-xl text-secondary leading-relaxed max-w-3xl mx-auto mb-4">
+            Every brand has a story to tell, and fragrance offers a unique way to bring that story to life.
             Experience the endless possibilities of fragrance and discover a new way to tell your brand story.
             <br />
             <span className="font-semibold">
               650 active fragrances with 350 signature fragrances and more than 2,400 fragrances to choose from.
             </span>
           </p>
-          <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-secondary leading-relaxed max-w-3xl mx-auto">
             Choose a category below to view our fragrances.
           </p>
         </div>

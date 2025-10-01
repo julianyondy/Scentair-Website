@@ -3,17 +3,19 @@ import { Link } from 'react-router-dom';
 
 export const ProductCategories: React.FC = () => {
   return (
-      <section className="pt-5 pb-20 flex flex-col items-center justify-center bg-transparent">
+      <section className="pt-8 pb-10 md:pt-12 md:pb-16 flex flex-col items-center justify-center bg-transparent">
         {/* Heading */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Products
-          </h1>
-          <div className="w-24 h-0.5 bg-primary mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover our advanced scenting machines and premium fragrances —
-            crafted to elevate every space.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+              Our Products
+            </h1>
+            <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
+            <p className="text-lg md:text-xl text-secondary leading-relaxed max-w-3xl mx-auto">
+              Discover our advanced scenting machines and premium fragrances —
+              crafted to elevate every space.
+            </p>
+          </div>
         </div>
 
         {/* Cards Container */}

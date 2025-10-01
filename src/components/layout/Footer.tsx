@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
             <div className="col-span-1 md:col-span-2">
               <img src="/assets/footerlogo.png" alt="ScentAir Logo" className="h-35 mb-4" />
               <p className="text-white mb-5 text-2xl">
-                Differentiate your space with scent.
+                Differentiate your space with scent
               </p>
               <div className="flex space-x-4">
                 <div className="transition-colors duration-300 filter invert-0 hover:invert">

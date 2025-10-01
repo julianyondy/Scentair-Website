@@ -102,61 +102,51 @@ const safetyLogos: SafetyLogo[] = [
   }
 ];
 
-// Zigzag pattern component
+// Zigzag pattern background
 const ZigzagPattern: React.FC = () => (
   <div className="absolute inset-0 overflow-hidden">
     <div className="absolute inset-0 bg-[linear-gradient(135deg,_#ffffff_25%,_transparent_25%),_linear-gradient(225deg,_#ffffff_25%,_transparent_25%),_linear-gradient(315deg,_#ffffff_25%,_transparent_25%),_linear-gradient(45deg,_#60c4dc_25%,_#ffffff_25%)] bg-[length:40px_40px] opacity-10"></div>
   </div>
 );
 
-// ===== Aligned version of the extra card =====
-const AboveAndBeyondCard: React.FC = () => {
-  const rows: { left: string; right: string }[] = [
-    {
-      left: 'National Toxicology Department (NTD)',
-      right: 'Have NO identified respiratory allergens',
-    },
-    {
-      left: 'International Agency for Research on Cancer (IARC)',
-      right: 'Do NOT contain phthalates; known endocrine disruptor',
-    },
-    {
-      left: 'Occupational Safety and Health Association (OSHA)',
-      right: 'Do NOT contain R59; contributes to depletion of ozone',
-    },
-  ];
+// “Copy & paste” text from the image
+const AboveBeyond: React.FC = () => (
+  <section className="py-6 md:py-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="rounded-2xl border border-cyan-100 bg-cyan-50/50 p-6 md:p-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-cyan-700 mb-5">
+          ScentAir goes above and beyond industry regulations:
+        </h2>
 
-  return (
-    <div className="bg-[#e7eef1] rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm">
-      <h3 className="text-2xl md:text-3xl font-bold text-[#41b3c5] leading-tight mb-4">
-        ScentAir goes above and beyond<br />industry regulations:
-      </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Left column */}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              Our fragrances are compliant with the following regulatory bodies:
+            </h3>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>National Toxicology Department (NTD)</li>
+              <li>International Agency for Research on Cancer (IARC)</li>
+              <li>Occupational Safety and Health Association (OSHA)</li>
+            </ul>
+          </div>
 
-      {/* Two-column grid keeps headers and bullets aligned row-by-row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
-        {/* Row 1: left intro, right subtitle */}
-        <p className="text-gray-800 font-semibold mb-4 md:mb-2 max-w-3xl">
-          ScentAir fragrances do NOT contain components found to be carcinogenic per:
-        </p>
-        <p className="text-gray-800 font-semibold mb-4 md:mb-2">ScentAir fragrances:</p>
-
-        {/* Bullet rows */}
-        {rows.map((r, idx) => (
-          <React.Fragment key={idx}>
-            <div className="flex items-start gap-3 py-2">
-              <span className="mt-2 h-2 w-2 rounded-full bg-[#41b3c5] shrink-0" />
-              <span className="text-gray-800 leading-relaxed">{r.left}</span>
-            </div>
-            <div className="flex items-start gap-3 py-2">
-              <span className="mt-2 h-2 w-2 rounded-full bg-[#41b3c5] shrink-0" />
-              <span className="text-gray-800 leading-relaxed">{r.right}</span>
-            </div>
-          </React.Fragment>
-        ))}
+          {/* Right column */}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              ScentAir fragrances:
+            </h3>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>Have NO identified respiratory allergens</li>
+              <li>Do NOT contain phthalates; known endocrine disruptor</li>
+              <li>Do NOT contain R59; contributes to depletion of ozone</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  );
-};
+  </section>
+);
 
 export const SafetyStandardsSection: React.FC = () => {
   const Header = () => (
@@ -167,8 +157,8 @@ export const SafetyStandardsSection: React.FC = () => {
             ScentAir Sustainability and Safety Standards
           </h1>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-lg md:text-xl text-secondary leading-relaxed max-w-3xl mx-auto">
-            As a global organization, we know our products touch the lives of countless consumers. So we take our role as global corporate citizens very seriously.
+          <p className="whitespace-nowrap text-lg md:text-2xl text-secondary leading-relaxed max-w-3xl mx-auto">
+            As a global organization, we know our products touch the lives of countless consumers. <br />So we take our role as global corporate citizens very seriously.
           </p>
         </div>
       </div>
@@ -178,6 +168,10 @@ export const SafetyStandardsSection: React.FC = () => {
   return (
     <div className="min-h-screen bg-white font-[Futura] pb-16">
       <Header />
+
+      {/* NEW: content from the screenshot */}
+      <AboveBeyond />
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Zigzag background container */}
         <div className="relative">
@@ -236,10 +230,6 @@ export const SafetyStandardsSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Extra card copied from image (aligned) */}
-            <div className="mt-10">
-              <AboveAndBeyondCard />
-            </div>
           </div>
         </div>
       </div>

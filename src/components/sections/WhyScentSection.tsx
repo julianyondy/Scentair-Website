@@ -32,7 +32,80 @@ const BannerBlock: React.FC<{
   poster?: string;
   isReversed?: boolean;
   description?: string;
-}> = ({ type, src, headline, points, poster, isReversed = false, description }) => {
+  isVideoSection?: boolean;
+}> = ({ type, src, headline, points, poster, isReversed = false, description, isVideoSection = false }) => {
+  // Special layout for the video section
+  if (isVideoSection) {
+    return (
+      <section className="relative w-full py-12 md:py-16 bg-white">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Video container */}
+          <div className="relative flex flex-col items-center">
+            {/* Headline on top of video */}
+            <h2 className="text-slate-900 text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-center mb-6 z-10">
+              {headline}
+            </h2>
+            
+            {/* Video centered and larger */}
+            <div className="relative w-full max-w-6xl mx-auto">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/10 transition-all duration-300 hover:shadow-2xl">
+                {type === 'video' ? (
+                  <video
+                    className="block w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    controls={false}
+                    disablePictureInPicture
+                    onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
+                    onEnded={(e) => {
+                      e.currentTarget.currentTime = 0;
+                      e.currentTarget.play().catch(() => {});
+                    }}
+                    poster={poster}
+                  >
+                    <source src={src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img
+                    src={src}
+                    alt={headline}
+                    className="block w-full h-full object-cover"
+                    loading="eager"
+                    decoding="async"
+                  />
+                )}
+              </div>
+            </div>
+            
+            {/* Circle bubbles for points - positioned under the video */}
+            <div className="flex flex-row justify-center gap-10 w-full max-w-5xl mt-12">
+              {points.map((p, i) => (
+                <div
+                  key={`${i}-${String(p.value)}`}
+                  className="relative flex flex-col items-center group"
+                >
+                  {/* Circle bubble with value and label inside */}
+                  <div className="w-56 h-56 rounded-full bg-primary flex flex-col items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg p-6">
+                    <div className="text-white font-extrabold text-4xl">
+                      {p.value}
+                    </div>
+                    <div className="text-white text-lg text-center mt-3 px-3">
+                      {p.label}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+  
+  // Default layout for other sections
   return (
     <section className={`relative w-full py-12 md:py-16 ${isReversed ? 'bg-slate-50' : 'bg-white'}`}>
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -134,6 +207,7 @@ export const WhyScentSection: React.FC = () => {
         src="/assets/whyscent/emotional.mp4"
         headline="Scent Makes an Emotional Impact"
         points={emotionalPoints}
+        isVideoSection={true}
       />
 
       {/* Image section */}

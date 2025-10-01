@@ -12,14 +12,14 @@ export const ProductCategories: React.FC = () => {
             </h1>
             <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
             <p className="text-lg md:text-xl text-secondary leading-relaxed max-w-3xl mx-auto">
-              Discover our advanced scenting machines and premium fragrances —
-              crafted to elevate every space.
+              Discover our advanced scenting machines and premium fragrances
+              <br/>crafted to elevate every space.
             </p>
           </div>
         </div>
 
         {/* Cards Container */}
-        <div className="flex flex-col md:flex-row gap-12 w-full max-w-7xl mx-auto px-6 h-[80vh]">
+        <div className="flex flex-col md:flex-row gap-12 w-full max-w-7xl mx-auto px-6 h-[80vh] mt-16">
           {/* Machines Card */}
           <Link
             to="/products/machines"

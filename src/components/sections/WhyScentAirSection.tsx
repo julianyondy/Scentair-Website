@@ -59,8 +59,8 @@ export const WhyScentAirSection: React.FC = () => {
               Why ScentAir
             </h1>
             <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="whitespace-nowrap text-lg md:text-2xl text-secondary leading-relaxed max-w-3xl mx-auto">
-              Discover why global brands and businesses trust ScentAir to create memorable experiences through fragrance.
+            <p className="text-center text-lg md:text-2xl text-secondary leading-relaxed max-w-3xl mx-auto">
+              Discover why global brands and businesses trust ScentAir <br />to create memorable experiences through fragrance.
             </p>
           </div>
         </div>

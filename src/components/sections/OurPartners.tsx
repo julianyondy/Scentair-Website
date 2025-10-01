@@ -29,6 +29,98 @@ const LogoCell: React.FC<{ src: string; alt: string }> = ({ src, alt }) => (
   </div>
 );
 
+// ====== RANKING: 1 (paling luxury) → 99 (paling biasa) ======
+const logoRank: Record<string, number> = {
+  // ——— Hotels & Resorts ———
+  '/assets/hotel/fours.png': 1,        // Four Seasons
+  '/assets/hotel/ritz.png': 1,         // The Ritz-Carlton
+  '/assets/hotel/st.png': 1,           // St. Regis
+  '/assets/hotel/w.png': 1,            // W Hotels
+  '/assets/hotel/jw.png': 1,           // JW Marriott
+  '/assets/hotel/langham.png': 1,      // The Langham
+  '/assets/hotel/shang.png': 1,        // Shangri-La
+  '/assets/hotel/park.png': 1,         // Park Hyatt
+  '/assets/hotel/venet.png': 2,        // The Venetian
+  '/assets/hotel/man.png': 2,          // Mandarin Oriental (asumsi 'man')
+  '/assets/hotel/Le.png': 2,           // Le Méridien
+  '/assets/hotel/westin.png': 2,       // Westin
+  '/assets/hotel/sheraton.png': 2,     // Sheraton
+  '/assets/hotel/hil.png': 2,          // Hilton
+  '/assets/hotel/doubletree.png': 3,   // DoubleTree
+  '/assets/hotel/mov.png': 3,          // Mövenpick
+  '/assets/hotel/rad.png': 3,          // Radisson
+  '/assets/hotel/hard.png': 3,         // Hard Rock
+  '/assets/hotel/fourpoints.png': 4,   // Four Points
+  '/assets/hotel/aloft.png': 4,        // Aloft
+  '/assets/hotel/court.png': 4,        // Courtyard
+  '/assets/hotel/fairfield.png': 4,    // Fairfield
+  '/assets/hotel/hol.png': 4,          // Holiday Inn
+  '/assets/hotel/embassy.png': 4,      // Embassy Suites
+
+  // ——— Retail & Mall ———
+  '/assets/retail/tif.png': 1,         // Tiffany & Co.
+  '/assets/retail/gal.png': 1,         // Galeries Lafayette
+  '/assets/retail/saks.png': 2,        // Saks Fifth Avenue
+  '/assets/retail/bloom.png': 2,       // Bloomingdale's
+  '/assets/retail/nord.png': 2,        // Nordstrom
+  '/assets/retail/mac.png': 3,         // M·A·C
+  '/assets/retail/sony.png': 3,        // Sony
+  '/assets/retail/jim.png': 3,         // Jim Thompson
+  '/assets/retail/ash.png': 3,         // ASH
+  '/assets/retail/zar.png': 4,         // Zara
+  '/assets/retail/stra.png': 4,        // Stradivarius
+  '/assets/retail/guess.png': 4,       // Guess
+  '/assets/retail/gap.png': 4,         // GAP
+  '/assets/retail/luck.png': 4,        // Lucky Brand (asumsi)
+  '/assets/retail/lulu.png': 4,        // Lulu
+  '/assets/retail/bod.png': 4,         // Bath & Body Works (asumsi 'bod')
+  '/assets/retail/hall.png': 5,        // Hallmark
+  '/assets/retail/toys.png': 5,        // Toys"R"Us
+  '/assets/retail/ifc.png': 2,         // IFC (premium mall)
+  '/assets/retail/ion.png': 2,         // ION Orchard (premium mall)
+
+  // ——— Spa & Fitness (brand dari hotel di-heritage-kan rank hotelnya) ———
+  // pakai logo hotelnya:
+  '/assets/hotel/ritz.png#spa': 1,
+  '/assets/hotel/langham.png#spa': 1,
+
+  // ——— Airports & Lounges ———
+  '/assets/airport/Changi_Airport_logo.svg.png': 2,   // Changi
+  '/assets/airport/Heathrow.png': 2,                  // Heathrow
+  '/assets/airport/HongKongAirportlogo.svg.png': 2,   // Hong Kong
+  '/assets/airport/Air_France_Logo.svg.png': 2,       // Air France (lounge/brand)
+  '/assets/airport/Paris_Aéroport_logo.svg.png': 3,   // Paris Aéroport (operator)
+  '/assets/airport/Melbourne_Airport_logo.svg.png': 3,
+  '/assets/airport/Flughafen_Charlotte_Logo.svg.png': 3,
+  '/assets/airport/Delta_logo.svg.png': 3,
+  '/assets/airport/Air_New_Zealand_logo.svg.png': 3,
+
+  // ——— Showroom (automotive) ———
+  '/assets/showroom/bentley-logo-2002-download.png': 1, // Bentley
+  '/assets/showroom/maserati.png': 1,                   // Maserati
+  '/assets/showroom/BMW.png': 2,                        // BMW
+  '/assets/showroom/genesis.png': 2,                    // Genesis
+  '/assets/showroom/loyloy.png': 5,                     // (unknown → mass)
+
+  // ——— Hospitals & Healthcare ———
+  '/assets/hospital/pondok.jpg': 3,     // RS Pondok Indah (premium private)
+  '/assets/hospital/bethsaida.png': 4,
+  '/assets/hospital/horizon.png': 4,
+  '/assets/hospital/florida.jpg': 4,
+  '/assets/hospital/west.png': 4,
+  '/assets/hospital/morning.png': 5,
+
+  // ——— Real Estate & Homebuilders ———
+  '/assets/realestate/toll.png': 3,     // Toll Brothers (upscale in US)
+  '/assets/realestate/baker.png': 3,
+  '/assets/realestate/post.png': 3,
+  '/assets/realestate/centex.png': 4,
+  '/assets/realestate/horton.png': 4,
+  '/assets/realestate/sp.png': 4,
+};
+
+const rankOf = (src: string) => logoRank[src] ?? 99;
+
 export const OurPartners: React.FC = () => {
   const categories: Category[] = [
     {
@@ -54,7 +146,8 @@ export const OurPartners: React.FC = () => {
     },
     {
       id: 3, name: 'Spa & Fitness', slug: 'spa-fitness', img: '/assets/logos/spa.jpg', logoCount: 2,
-      logos: ['/assets/hotel/langham.png','/assets/hotel/ritz.png'],
+      // gunakan suffix #spa untuk bisa punya rank khusus bila diperlukan
+      logos: ['/assets/hotel/langham.png#spa','/assets/hotel/ritz.png#spa'],
     },
     {
       id: 4, name: 'Airport & Lounge', slug: 'airport-lounge', img: '/assets/logos/airport.jpg', logoCount: 9,
@@ -89,17 +182,27 @@ export const OurPartners: React.FC = () => {
     },
   ];
 
+  // Helper untuk ambil list logo dari kategori
   const getLogos = (cat: Category) =>
-    (cat.logos?.length ? cat.logos : Array.from(
-      { length: cat.logoCount },
-      (_, i) => `/assets/logos/${cat.slug}/logo-${i + 1}.png`
-    ));
+    (cat.logos?.length
+      ? cat.logos
+      : Array.from({ length: cat.logoCount }, (_, i) => `/assets/logos/${cat.slug}/logo-${i + 1}.png`)
+    );
+
+  // Flatten semua logo, beri rank, lalu urutkan
+  const sortedLogos = categories
+    .flatMap((cat) => getLogos(cat).map((src, idx) => ({
+      src,
+      alt: `${cat.name} partner logo ${idx + 1}`,
+      rank: rankOf(src),
+    })))
+    .sort((a, b) => a.rank - b.rank);
 
   return (
     <section id="our-partners" className="pt-8 pb-10 md:pt-12 md:pb-16 relative overflow-visible">
       <Container>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header styled like Contact page */}
+          {/* Header */}
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               Who We Work With
@@ -110,25 +213,25 @@ export const OurPartners: React.FC = () => {
             </p>
           </div>
 
-          {/* Category circles — visible, decorative, non-interactive */}
+          {/* Circle kategori (tetap terlihat, dekoratif) */}
           <div className="mt-6">
             <div className="flex flex-nowrap justify-center gap-6 overflow-x-auto overflow-y-visible px-4 py-4">
               {categories.map((cat) => (
-                <div
-                  key={cat.id}
-                  role="img"
-                  aria-label={cat.name}
-                  className="relative rounded-full overflow-hidden w-32 h-32 flex-shrink-0 
-                             flex items-center justify-center shadow-lg ring-2 ring-gray-300
-                             ring-offset-2 ring-offset-white cursor-default select-none"
-                  style={{
-                    backgroundImage: `url(${cat.img})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                >
-                  <span className="relative z-10 text-white font-semibold text-center px-3 text-sm"
-                        style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
+                <div key={cat.id} className="flex flex-col items-center">
+                  <div
+                    role="img"
+                    aria-label={cat.name}
+                    className="relative rounded-full overflow-hidden w-32 h-32 flex-shrink-0
+                               flex items-center justify-center shadow-lg ring-2 ring-gray-300
+                               ring-offset-2 ring-offset-white cursor-default select-none"
+                    style={{
+                      backgroundImage: `url(${cat.img})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }}
+                  >
+                  </div>
+                  <span className="mt-2 text-gray-900 font-semibold text-center text-sm">
                     {cat.name}
                   </span>
                 </div>
@@ -136,17 +239,11 @@ export const OurPartners: React.FC = () => {
             </div>
           </div>
 
-          {/* All logos in one grid */}
+          {/* Grid semua logo — sudah terurut by luxury */}
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-            {categories.flatMap((cat) =>
-              getLogos(cat).map((src, idx) => (
-                <LogoCell
-                  key={`${cat.slug}-${idx}`}
-                  src={src}
-                  alt={`${cat.name} partner logo ${idx + 1}`}
-                />
-              ))
-            )}
+            {sortedLogos.map(({ src, alt }, i) => (
+              <LogoCell key={`${src}-${i}`} src={src} alt={alt} />
+            ))}
             <div className="bg-white border border-primary/20 rounded-xl p-3 h-24 flex items-center justify-center shadow-sm">
               <span className="text-primary font-bold">and many more ...</span>
             </div>

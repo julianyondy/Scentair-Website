@@ -5,6 +5,14 @@ import { Link } from "react-router-dom";
 export const Machines: React.FC = () => {
   // Hover state (mini cards)
   const [hovered, setHovered] = useState<string | null>(null);
+  // Pinned state (click mini cards to toggle)
+  const [pinned, setPinned] = useState<Set<string>>(new Set());
+  const togglePinned = (key: string) =>
+    setPinned((prev) => {
+      const next = new Set(prev);
+      next.has(key) ? next.delete(key) : next.add(key);
+      return next;
+    });
 
   // Plan sizing + scaling
   const planRef = useRef<HTMLDivElement | null>(null);
@@ -38,12 +46,14 @@ export const Machines: React.FC = () => {
       name: "ScentAir Splash",
       image: "/assets/machines/splash.png",
       sqft: 500,
-      color: "#bee7d7",
+      color: "#FF5EA8", // pink
       textColor: "#0b1b2b",
-      xPct: 12,  // << posisi contoh
-      yPct: 18,  // << posis contoh
+      xPct: 35,
+      yPct: 38,
       z: 40,
       slug: "scentair-splash",
+      // 👇 Customizable label shown in the LEFT LIST (not used for circle math)
+      listLabel: "500 ft²",
       description:
         "ScentAir Splash™ is a discreet, battery-powered system, best for scenting small and micro-spaces. Create scent schedules directly from the device. Easy-change cartridges release mess-free, even fragrance for up to 300 hours.",
       features: [
@@ -60,13 +70,14 @@ export const Machines: React.FC = () => {
       key: "breeze", // B (kiri-bawah)
       name: "ScentAir Breeze",
       image: "/assets/machines/breeze.png",
-      sqft: 2000,
-      color: "#0e4d73",
+      sqft: 2250,
+      color: "#FFD84D", // yellow,
       textColor: "#ffffff",
-      xPct: 22,  // << contoh
-      yPct: 72,  // << contoh
-      z: 30,
+      xPct: 61,
+      yPct: 72,
+      z: 21,
       slug: "scentair-breeze",
+      listLabel: "2,250 ft²", // 👈 edit this anytime
       description:
         "ScentAir BreezeTM with Wi-Fi & Bluetooth is a connected system that releases consistent, no-fade fragrance in a fine, invisible mist. Easy-change cartridges and simple schedule and intensity control from any internet- connected device make system management a breeze.",
       features: [
@@ -83,13 +94,14 @@ export const Machines: React.FC = () => {
       key: "direct", // D (kanan-atas/kanan-tengah)
       name: "ScentAir Direct",
       image: "/assets/machines/direct.png",
-      sqft: 3000,
-      color: "#6fb6bb",
+      sqft: 2500,
+      color: "#5BC0FF", // blue
       textColor: "#ffffff",
-      xPct: 82,  // << contoh
-      yPct: 40,  // << contoh
+      xPct: 29,
+      yPct: 72,
       z: 20,
       slug: "scentair-direct",
+      listLabel: "2,500 ft²",
       description:
         "ScentAir Direct™ is a flexible system that maximizes scent delivery over medium-sized target areas. Advanced atomization technology releases a fine, invisible mist that can create fragrance zones or an all-over fragrance experience.",
       features: [
@@ -107,12 +119,13 @@ export const Machines: React.FC = () => {
       name: "ScentAir Stream",
       image: "/assets/machines/stream.png",
       sqft: 3000,
-      color: "#c7d6e7",
+      color: "#8B6CFF", // purple
       textColor: "#0b1b2b",
-      xPct: 52,  // << contoh
-      yPct: 58,  // << contoh
+      xPct: 67,
+      yPct: 39,
       z: 10,
       slug: "scentair-stream",
+      listLabel: "3,000+ ft²",
       description:
         "ScentAir Stream™ is an invisible, high-performance system, best for large spaces. Advanced diffusion technology releases fragrance through existing HVAC systems. Customizable scheduling and intensity settings make it easy to tailor scent experiences in any environment.",
       features: [
@@ -134,14 +147,23 @@ export const Machines: React.FC = () => {
   //   console.log('xPct:', xPct.toFixed(1), 'yPct:', yPct.toFixed(1));
   // };
 
+  // === Add per-machine radius multipliers to match the reference image ===
+  const radiusScale: Record<string, number> = {
+    splash: 0.75,
+    breeze: 0.62,
+    direct: 0.95,
+    stream: 1.20,
+  };
+
   return (
-    <div className="min-h-screen bg-transparent">
+    <div className="min-h-screen bg-transparent py-20">
       <Container>
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Our Scenting Machines
           </h1>
+        <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg md:text-xl text-secondary max-w-3xl mx-auto">
             Hover a machine to preview its coverage on the floor plan.
           </p>
@@ -159,6 +181,9 @@ export const Machines: React.FC = () => {
                 onMouseLeave={() => setHovered(null)}
                 onFocus={() => setHovered(m.key)}
                 onBlur={() => setHovered(null)}
+                onClick={() => togglePinned(m.key)}
+                onTouchStart={() => setHovered(m.key)}             
+                onTouchEnd={() => setHovered(null)}                
                 className="group inline-flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md transition-all duration-300 text-left w-full hover:border-cyan-300 hover:scale-105"
               >
                 <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-slate-50 p-2 flex-shrink-0">
@@ -169,11 +194,31 @@ export const Machines: React.FC = () => {
                   />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <div className="font-bold text-slate-800 truncate text-lg">
-                    {m.name}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      {/* 1) Small legend dot with machine color */}
+                      <span
+                        className="inline-block h-2.5 w-2.5 rounded-full ring-2 ring-white"
+                        style={{ backgroundColor: m.color, boxShadow: "0 0 0 1px rgba(0,0,0,.06)" }}
+                        aria-hidden
+                      />
+                      <div className="font-bold text-slate-800 truncate text-lg">
+                        {m.name}
+                      </div>
+                    </div>
+                    {/* existing pinned hint */}
+                    {pinned.has(m.key) && (
+                      <span className="ml-2 inline-flex items-center gap-1 rounded-md bg-cyan-50 px-2 py-0.5 text-[11px] font-semibold text-cyan-700 ring-1 ring-cyan-200">
+                        <svg className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        Pinned
+                      </span>
+                    )}
                   </div>
+                  {/* Use your custom label instead of the actual sqft */}
                   <div className="text-sm text-cyan-600 font-medium mt-1">
-                    {m.sqft.toLocaleString()} ft²
+                    {m.listLabel}
                   </div>
                 </div>
               </button>
@@ -196,10 +241,12 @@ export const Machines: React.FC = () => {
 
               {/* Overlay coverage: clamp agar tetap di dalam plan */}
               {machines.map((m) => {
-                const visible = hovered === m.key;
+                const visible = hovered === m.key || pinned.has(m.key); // <-- show pinned + hovered
                 if (!visible) return null;
 
-                const rPx = k * Math.sqrt(m.sqft);
+                // === Apply the per-machine radius multiplier here ===
+                const baseR = k * Math.sqrt(m.sqft);
+                const rPx = baseR * (radiusScale[m.key] ?? 1);
                 const d = 2 * rPx;
 
                 let leftPx = (m.xPct / 100) * planDims.w - rPx;
@@ -207,23 +254,29 @@ export const Machines: React.FC = () => {
                 leftPx = Math.max(0, Math.min(leftPx, planDims.w - d));
                 topPx = Math.max(0, Math.min(topPx, planDims.h - d));
 
+                // 2) Better overlay look + smooth scale on hover
+                const emphasis = hovered === m.key && !pinned.has(m.key) ? 1 : 0;
+
                 return (
                   <div
                     key={m.key}
-                    className="absolute rounded-full flex items-center justify-center transition-all duration-500 ease-out pointer-events-none"
+                    className="absolute rounded-full flex items-center justify-center transition-[opacity,transform,box-shadow] duration-500 ease-out pointer-events-none"
                     style={{
                       width: d,
                       height: d,
                       left: `${leftPx}px`,
                       top: `${topPx}px`,
                       backgroundColor: m.color,
-                      opacity: 0.85,
-                      zIndex: m.z,
+                      mixBlendMode: "multiply",
+                      opacity: 0.42 + emphasis * 0.08,
+                      zIndex: m.z + (emphasis ? 50 : 0),
                       boxShadow:
-                        "0 10px 30px rgba(0,0,0,.15), inset 0 0 0 2px rgba(255,255,255,.5)",
+                        "0 14px 38px rgba(0,0,0,.18), inset 0 0 0 3px rgba(255,255,255,.6)",
+                      transform: `scale(${1 + emphasis * 0.03})`,
                     }}
                   >
-                    <div className="text-center px-2" style={{ color: m.textColor }}>
+                    {/* Force text to black and prevent any blending */}
+                    <div className="text-center px-2" style={{ color: "#000000", filter: "drop-shadow(0 1px 0 rgba(255,255,255,.35))" }}>
                       <div className="text-sm font-bold uppercase tracking-wide">
                         {m.name}
                       </div>

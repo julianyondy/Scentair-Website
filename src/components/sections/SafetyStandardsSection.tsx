@@ -17,88 +17,77 @@ const safetyLogos: SafetyLogo[] = [
     src: '/assets/logos/ifra.png',
     name: 'International Fragrance Association (IFRA) Code of Practice',
     description: 'Global guideline ensuring that fragrances are safe for human use and the environment.',
-    label: 'ScentAir is proud to be the first company from the environmental scent industry to become a direct and active member of IFRA.',
-    scale: 1.25
+    label: 'ScentAir is proud to be the first company from the environmental scent industry to become a direct and active member of IFRA.'
   },
   {
     id: 'osha',
     src: '/assets/logos/osha.png',
     name: 'Occupational Safety and Health Administration (OSHA)',
     description: 'U.S. regulatory body ensuring safe working conditions.',
-    label: 'Compliance means ScentAir products and processes meet worker health & safety standards.',
-    scale: 1.25
+    label: 'Compliance means ScentAir products and processes meet worker health & safety standards.'
   },
   {
     id: 'reach',
     src: '/assets/logos/reach.jpg',
     name: 'EU Reach Compliant & Korea K-Reach Compliant',
     description: 'REACH = Registration, Evaluation, Authorisation, and Restriction of Chemicals (EU law). K-REACH is Korea\'s equivalent.',
-    label: 'Ensures all chemicals in products are assessed for safety, environmental impact, and restricted use.',
-    scale: 1.25
+    label: 'Ensures all chemicals in products are assessed for safety, environmental impact, and restricted use.'
   },
   {
     id: 'fragrancecreator',
     src: '/assets/logos/fragrancecreator.png',
     name: 'Fragrance Creators Association',
     description: 'U.S. based trade group promoting safe, sustainable, and innovative fragrance',
-    label: 'As a proud and active FCA member, Scentair is shaping the future of fragrance that is safe, sustainable, and responsible',
-    scale: 1.25
+    label: 'As a proud and active FCA member, Scentair is shaping the future of fragrance that is safe, sustainable, and responsible'
   },
   {
     id: 'rifm',
     src: '/assets/logos/rifm.jpg',
     name: 'Research Institute For Fragrance Materials',
     description: 'Scientific body that tests fragrance ingredients for safety and toxicology.',
-    label: 'Ensures all fragrance ingredients are backed by scientific safety data.',
-    scale: 1.25
+    label: 'Ensures all fragrance ingredients are backed by scientific safety data.'
   },
   {
     id: 'epa',
     src: '/assets/logos/epa.jpg',
     name: 'EPA Toxic Substance Control Act',
     description: 'U.S. regulation that ensures chemicals are evaluated and managed for environmental & health safety.',
-    label: 'Compliance = ingredients are safe and legally allowed in U.S. markets.',
-    scale: 1.25
+    label: 'Compliance = ingredients are safe and legally allowed in U.S. markets.'
   },
   {
     id: 'carb',
     src: '/assets/logos/carb.jpg',
     name: 'California Air Resource Board (CARB)',
     description: 'Regulates air quality and emissions in California. It is widely considered one of the most influential environmental regulatory.',
-    label: 'Compliance means ScentAir fragrances are low-emission and air-safe.',
-    scale: 1.25
+    label: 'Compliance means ScentAir fragrances are low-emission and air-safe.'
   },
   {
     id: 'oehha',
     src: '/assets/logos/oehha.png',
     name: 'State of California\'s Prop 65 per OEHHA',
     description: 'To protect California residents from exposure to chemicals known to cause cancer, birth defects, or other reproductive harm.',
-    label: 'Compliance means products are tested and safe for California standards (one of the strictest globally).',
-    scale: 1.25
+    label: 'Compliance means products are tested and safe for California standards (one of the strictest globally).'
   },
   {
     id: 'cites',
     src: '/assets/logos/cites.jpg',
     name: 'CITES Global Treaty Compliance for Endangered Plants & Animals',
     description: 'Global treaty ensuring no endangered plants or animals are exploited in trade.',
-    label: 'Compliance ensures ScentAir fragrances do not contain endangered botanicals or animal-derived substances.',
-    scale: 1.25
+    label: 'Compliance ensures ScentAir fragrances do not contain endangered botanicals or animal-derived substances.'
   },
   {
     id: 'alcumus',
     src: '/assets/logos/alcumus.png',
     name: 'ALCUMUS Safe Contractor Accredited',
     description: 'UK-based accreditation showing high standards of health, safety, and risk management in operations.',
-    label: 'ScentAir has been evaluated and meets recognized UK standards for health and safety management for contractors.',
-    scale: 1.25
+    label: 'ScentAir has been evaluated and meets recognized UK standards for health and safety management for contractors.'
   },
   {
     id: 'ecovadis',
     src: '/assets/logos/ecovadis.png',
     name: 'ECOVADIS Sustainability Awarded',
     description: 'Independent global rating platform assessing corporate sustainability performance.',
-    label: 'ScentAir is EcoVadis certified, demonstrating its commitment to the highest global standards of environmental, social, and ethical performance.',
-    scale: 1.25
+    label: 'ScentAir is EcoVadis certified, demonstrating its commitment to the highest global standards of environmental, social, and ethical performance.'
   }
 ];
 
@@ -148,6 +137,38 @@ const AboveBeyond: React.FC = () => (
   </section>
 );
 
+// New section for the bottom 3 cards (independent + centered)
+const BottomThreeSection: React.FC<{ items: SafetyLogo[] }> = ({ items }) => (
+  <section className="mt-10">
+    <div className="w-full flex justify-center px-4 sm:px-6 lg:px-8">
+      {/* Standalone centered grid, not tied to the 4-col rules above */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl w-full">
+        {items.map((logo) => (
+          <div
+            key={logo.id}
+            className="bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col items-center text-center border border-gray-100 h-full"
+          >
+            <div className="w-20 h-20 mb-4 flex items-center justify-center min-h-[80px]">
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="max-w-full max-h-full object-contain"
+                loading="lazy"
+              />
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 mb-2 font-[Futura] min-h-[60px]">{logo.name}</h3>
+            <div className="border-t border-black w-16 my-2 mx-auto"></div>
+            <p className="text-base text-gray-600 mb-3 leading-relaxed font-[Futura] flex-grow min-h-[80px]">{logo.description}</p>
+            <div className="mt-auto pt-3 border-t border-black w-full">
+              <p className="text-base text-gray-600 font-medium font-[Futura]">{logo.label}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 export const SafetyStandardsSection: React.FC = () => {
   const Header = () => (
     <section className="pt-8 pb-10 md:pt-12 md:pb-16">
@@ -169,70 +190,45 @@ export const SafetyStandardsSection: React.FC = () => {
     <div className="min-h-screen bg-white font-[Futura] pb-16">
       <Header />
 
-      {/* NEW: content from the screenshot */}
-      <AboveBeyond />
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Zigzag background container */}
         <div className="relative">
           <ZigzagPattern />
 
-          {/* Safety logos grid */}
+          {/* Top 8 cards (unchanged, 4-col responsive grid) */}
           <div className="relative z-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {safetyLogos.slice(0, 8).map((logo) => (
                 <div
                   key={logo.id}
-                  className="bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col items-center text-center border border-gray-100"
+                  className="bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col items-center text-center border border-gray-100 h-full"
                 >
-                  <div className="w-20 h-20 mb-4 flex items-center justify-center">
+                  <div className="w-20 h-20 mb-4 flex items-center justify-center min-h-[80px]">
                     <img
                       src={logo.src}
                       alt={logo.name}
                       className="max-w-full max-h-full object-contain"
-                      style={{ transform: `scale(${logo.scale || 1})` }}
                       loading="lazy"
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 font-[Futura]">{logo.name}</h3>
-                  <p className="text-sm text-gray-600 mb-3 leading-relaxed font-[Futura]">{logo.description}</p>
-                  <div className="mt-auto pt-3 border-t border-gray-100 w-full">
-                    <p className="text-xs text-cyan-600 font-medium font-[Futura]">{logo.label}</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 font-[Futura] min-h-[60px]">{logo.name}</h3>
+                  <div className="border-t border-black w-16 my-2 mx-auto"></div>
+                  <p className="text-base text-gray-600 mb-3 leading-relaxed font-[Futura] flex-grow min-h-[80px]">{logo.description}</p>
+                  <div className="mt-auto pt-3 border-t border-black w-full">
+                    <p className="text-base text-gray-600 font-medium font-[Futura]">{logo.label}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Centered last three cards */}
-            <div className="flex justify-center mt-8">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl">
-                {safetyLogos.slice(8).map((logo) => (
-                  <div
-                    key={logo.id}
-                    className="bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col items-center text-center border border-gray-100"
-                  >
-                    <div className="w-20 h-20 mb-4 flex items-center justify-center">
-                      <img
-                        src={logo.src}
-                        alt={logo.name}
-                        className="max-w-full max-h-full object-contain"
-                        style={{ transform: `scale(${logo.scale || 1})` }}
-                        loading="lazy"
-                      />
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 font-[Futura]">{logo.name}</h3>
-                    <p className="text-sm text-gray-600 mb-3 leading-relaxed font-[Futura]">{logo.description}</p>
-                    <div className="mt-auto pt-3 border-t border-gray-100 w-full">
-                      <p className="text-xs text-cyan-600 font-medium font-[Futura]">{logo.label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
+            {/* New independent, centered section for the last 3 cards */}
+            <BottomThreeSection items={safetyLogos.slice(8)} />
           </div>
         </div>
       </div>
+
+      {/* NEW: content from the screenshot - moved to bottom */}
+      <AboveBeyond />
     </div>
   );
 };

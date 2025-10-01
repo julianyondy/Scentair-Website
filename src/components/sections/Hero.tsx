@@ -144,8 +144,8 @@ export const Hero: React.FC = () => {
       <section className="pb-16">
         <Container>
           <div className="bg-[#0c4384] text-white rounded-3xl shadow-xl px-6 md:px-10 py-12 md:py-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Why ScentAir?</h2>
-            <p className="text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-3xl md:text-5xl font-semibold mb-4">Why ScentAir?</h2>
+            <p className="text-white/90 text-[25px] max-w-4xl mx-auto leading-relaxed">
               For over 30 years we’ve been enhancing environments, brands, and consumer experiences
               <br />through improved air quality and the power of scent.
             </p>
@@ -153,7 +153,7 @@ export const Hero: React.FC = () => {
             <Link to="/why-scentair">
               <Button
                 size="lg"
-                className="mt-8 rounded-full px-6 bg-white text-slate-900 hover:bg-white/90"
+                className="mt-10 rounded-full px-20 bg-white text-slate-900"
               >
                 Learn More
               </Button>

@@ -14,7 +14,6 @@ const COUNTRIES = [
   { code: "+62", label: "ID" },
   { code: "+65", label: "SG" },
   { code: "+60", label: "MY" },
-  { code: "+81", label: "JP" },
 ];
 
 export const Contact: React.FC = () => {
@@ -28,7 +27,6 @@ export const Contact: React.FC = () => {
     zip: "",
     request: "" as RequestType | "",
     message: "",
-    consent: false,
   });
 
   // ===== word-limit helpers (500 words) =====
@@ -69,65 +67,68 @@ export const Contact: React.FC = () => {
       zip: "",
       request: "",
       message: "",
-      consent: false,
     });
   };
 
   return (
-    <section id="contact" className="bg-[#f8f8f8] pt-8 pb-12 md:pt-12 md:pb-16">
+    <section id="contact" className="bg-white pt-8 pb-10 md:pt-12 md:pb-16">
       <Container>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           {/* ===== Header (kept) ===== */}
-          <div className="text-center mb-10">
-            <h1 className="text-[34px] md:text-[44px] font-bold text-[#111] tracking-tight mb-4">
+          <div className="text-center mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               Get In Touch
             </h1>
-            <div className="w-24 h-[3px] bg-primary mx-auto" />
+            <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
+            <p className="text-lg md:text-xl text-secondary leading-relaxed max-w-3xl mx-auto">
+              Have questions or want to learn more about our scent solutions? Reach out to our team.
+            </p>
           </div>
 
           {/* ===== “Image content” → Exact-looking form ===== */}
-          <form
-            onSubmit={onSubmit}
-            className="bg-[#f8f8f8] text-[#111] rounded-none shadow-none"
-          >
+          <div className="rounded-2xl p-2 ring-1 ring-slate-100 bg-primary">
+            <form
+              onSubmit={onSubmit}
+              className="bg-transparent text-[#111]"
+            >
             {/* 2 columns like the screenshot */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4">
               {/* First/Last Name */}
               <div>
-                <label className="block text-[18px] mb-2">First Name <span className="text-[#111]">*</span></label>
+                <label className="block text-[14px] mb-1">First Name <span className="text-[#111]">*</span></label>
                 <input
                   name="firstName"
                   value={data.firstName}
                   onChange={onChange}
                   required
-                  className="w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black placeholder-black/50 text-[18px] py-2"
+                  className="w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black placeholder-black/50 text-[14px] py-1"
                 />
               </div>
               <div>
-                <label className="block text-[18px] mb-2">Last Name <span className="text-[#111]">*</span></label>
+                <label className="block text-[14px] mb-1">Last Name <span className="text-[#111]">*</span></label>
                 <input
                   name="lastName"
                   value={data.lastName}
                   onChange={onChange}
                   required
-                  className="w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black placeholder-black/50 text-[18px] py-2"
+                  className="w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black placeholder-black/50 text-[14px] py-1"
                 />
               </div>
 
               {/* Email / Phone (+ code) */}
               <div>
-                <label className="block text-[18px] mb-2">Email <span className="text-[#111]">*</span></label>
+                <label className="block text-[14px] mb-1">Email <span className="text-[#111]">*</span></label>
                 <input
                   type="email"
                   name="email"
                   value={data.email}
                   onChange={onChange}
                   required
-                  className="w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black placeholder-black/50 text-[18px] py-2"
+                  className="w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black placeholder-black/50 text-[14px] py-1"
                 />
               </div>
               <div>
-                <label className="block text-[18px] mb-2">Phone Number</label>
+                <label className="block text-[14px] mb-1">Phone Number</label>
                 <div className="flex items-center gap-3">
                   <div className="min-w-[84px]">
                     <div className="relative">
@@ -135,7 +136,7 @@ export const Contact: React.FC = () => {
                         name="phoneCode"
                         value={data.phoneCode}
                         onChange={onChange}
-                        className="appearance-none w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black text-[18px] py-2 pr-6"
+                        className="appearance-none w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black text-[14px] py-1 pr-6"
                       >
                         {COUNTRIES.map((c) => (
                           <option key={c.code} value={c.code}>
@@ -150,7 +151,7 @@ export const Contact: React.FC = () => {
                     name="phone"
                     value={data.phone}
                     onChange={onChange}
-                    className="flex-1 bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black text-[18px] py-2"
+                    className="flex-1 bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black text-[14px] py-1"
                     placeholder="Phone Number"
                   />
                 </div>
@@ -158,24 +159,24 @@ export const Contact: React.FC = () => {
 
               {/* Address / Zip */}
               <div>
-                <label className="block text-[18px] mb-2">Address</label>
+                <label className="block text-[14px] mb-1">Address</label>
                 <input
                   name="address"
                   value={data.address}
                   onChange={onChange}
-                  className="w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black text-[18px] py-2"
+                  className="w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black text-[14px] py-1"
                   placeholder="Street, City, State"
                 />
               </div>
               <div>
-                <label className="block text-[18px] mb-2">Zip <span className="text-[#111]">*</span></label>
+                <label className="block text-[14px] mb-1">Zip <span className="text-[#111]">*</span></label>
                 <div className="relative">
                   <input
                     name="zip"
                     value={data.zip}
                     onChange={onChange}
                     required
-                    className="w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black text-[18px] py-2 pr-6"
+                    className="w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black text-[14px] py-1 pr-6"
                   />
                   <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-black/70">▾</span>
                 </div>
@@ -183,7 +184,7 @@ export const Contact: React.FC = () => {
 
               {/* Request type (dropdown spans full width like screenshot’s next row) */}
               <div className="md:col-span-2">
-                <label className="block text-[18px] mb-2">
+                <label className="block text-[14px] mb-1">
                   Your requests is for… <span className="text-[#111]">*</span>
                 </label>
                 <div className="relative">
@@ -192,7 +193,7 @@ export const Contact: React.FC = () => {
                     name="request"
                     value={data.request}
                     onChange={onChange}
-                    className="appearance-none w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black text-[18px] py-2 pr-6"
+                    className="appearance-none w-full bg-transparent border-0 border-b border-black/60 focus:outline-none focus:ring-0 focus:border-black text-[14px] py-1 pr-6"
                   >
                     <option value="" disabled>
                       Select one
@@ -210,15 +211,15 @@ export const Contact: React.FC = () => {
 
               {/* Message box */}
               <div className="md:col-span-2">
-                <label className="block text-[18px] mb-2">How can we help you?</label>
+                <label className="block text-[14px] mb-1">How can we help you?</label>
                 <textarea
                   name="message"
                   value={data.message}
                   onChange={onChange}
-                  rows={5}
+                  rows={3}
                   className={`w-full bg-transparent border-0 border-b ${
                     overLimit ? "border-red-500" : "border-black/60"
-                  } focus:outline-none focus:ring-0 focus:border-black text-[18px] py-3 resize-y`}
+                  } focus:outline-none focus:ring-0 focus:border-black text-[14px] py-2 resize-y`}
                   placeholder="How can we help you?"
                 />
                 <div
@@ -233,42 +234,24 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Consent + Submit */}
-            <div className="mt-8 space-y-6">
-              <label className="flex items-start gap-3 text-[16px] leading-6 text-[#111]">
-                <input
-                  type="checkbox"
-                  name="consent"
-                  checked={data.consent}
-                  onChange={onChange}
-                  className="mt-1 w-5 h-5 border border-black/60 rounded-none"
-                />
-                <span className="text-black/80">
-                  By providing my email I agree to receiving periodic emails from ScentAir
-                  regarding product and special offers. I understand that I can withdraw my
-                  consent at any time. You can find out more by reading our{" "}
-                  <a href="#" className="underline">
-                    privacy policy
-                  </a>
-                  .
-                </span>
-              </label>
-
+            {/* Submit */}
+            <div className="mt-4 space-y-2">
               <div className="flex justify-center">
                 <button
                   type="submit"
                   disabled={overLimit}
-                  className="px-10 md:px-16 py-4 rounded-full text-[22px] font-semibold bg-primary text-white disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="px-4 md:px-6 py-1 rounded-full text-[16px] font-semibold bg-[#0c4384] text-white disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   SUBMIT
                 </button>
               </div>
             </div>
           </form>
+        </div>
 
           {/* ===== Contact Information (below the content form) ===== */}
           <div className="max-w-4xl mx-auto mt-16">
-            <div className="rounded-2xl p-8 ring-1 ring-slate-100 bg-white">
+            <div>
               <h3 className="text-2xl font-semibold text-primary mb-6">
                 Contact Information
               </h3>

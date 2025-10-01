@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="col-span-1 md:col-span-2">
-              <img src="/assets/footerlogo.png" alt="ScentAir Logo" className="h-35 mb-4" />
+              <img src="/assets/footerlogo.png" alt="ScentAir Logo" className="h-25  mb-4" />
               <p className="text-white mb-5 text-2xl">
                 Differentiate your space with scent
               </p>
@@ -33,10 +33,13 @@ export const Footer: React.FC = () => {
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li><Link to="/why-scent" className="text-white hover:text-accent transition-colors">Why Scent</Link></li>
-                <li><Link to="/products" className="text-white hover:text-accent transition-colors">Products</Link></li>
-                <li><Link to="/our-partners" className="text-white hover:text-accent transition-colors">Who We Work With</Link></li>
                 <li><Link to="/why-scentair" className="text-white hover:text-accent transition-colors">Why ScentAir</Link></li>
-                <li><Link to="/contact" className="text-white hover:text-accent transition-colors">Contact</Link></li>
+                <li><Link to="/safety-standards" className="text-white hover:text-accent transition-colors">Safety Standards</Link></li>
+                <li><Link to="/products" className="text-white hover:text-accent transition-colors">Solutions</Link></li>
+                <li><Link to="/products/machines" className="text-white hover:text-accent transition-colors">Machines</Link></li>
+                <li><Link to="/products/fragrances" className="text-white hover:text-accent transition-colors">Fragrance</Link></li>
+                <li><Link to="/our-partners" className="text-white hover:text-accent transition-colors">Who We Work With</Link></li>
+                <li><Link to="/contact" className="text-white hover:text-accent transition-colors">Contact Us</Link></li>
               </ul>
             </div>
 
@@ -46,7 +49,7 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2 text-white">
                 <li>PT. Graha Lestari Agung Makmur</li>
                 <li>Komplek Duta Merlin Blok D No. 2</li>
-                <li>Jl. Gajah Mada No. 3-5,</li>
+                <li>Jl. Gajah Mada No. 3-5, 10130</li>
                 <li>Phone: (021) 6306979/081-SCENTAIR (081-7236824)</li>
                 <li>Email: sales@scentair.co.id</li>
               </ul>

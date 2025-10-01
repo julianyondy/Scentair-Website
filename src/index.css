@@ -93,6 +93,7 @@
     box-shadow: 0 4px 6px -1px rgb(var(--shadow-color));
   }
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -207,4 +208,14 @@ a:focus-visible {
 
 .glassmorphism-card:hover {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Underline effect for footer links on hover */
+footer a {
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }

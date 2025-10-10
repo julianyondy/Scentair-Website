@@ -104,7 +104,6 @@ const logoRank: Record<string, number> = {
 
   // ——— Hospitals & Healthcare ———
   '/assets/hospital/pondok.jpg': 3,     // RS Pondok Indah (premium private)
-  '/assets/hospital/bethsaida.png': 4,
   '/assets/hospital/horizon.png': 4,
   '/assets/hospital/florida.jpg': 4,
   '/assets/hospital/west.png': 4,

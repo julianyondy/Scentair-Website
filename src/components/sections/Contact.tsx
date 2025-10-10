@@ -10,8 +10,8 @@ type RequestType =
   | "additional_questions";
 
 const COUNTRIES = [
-  { code: "+1", label: "US/CA" },
   { code: "+62", label: "ID" },
+  { code: "+1", label: "US/CA" },
   { code: "+65", label: "SG" },
   { code: "+60", label: "MY" },
 ];
@@ -21,7 +21,7 @@ export const Contact: React.FC = () => {
     firstName: "",
     lastName: "",
     email: "",
-    phoneCode: "+1",
+    phoneCode: "+62",
     phone: "",
     address: "",
     zip: "",
@@ -165,11 +165,11 @@ export const Contact: React.FC = () => {
                   value={data.address}
                   onChange={onChange}
                   className="w-full bg-gray-50 border-0 border-b border-gray-300 focus:outline-none focus:ring-0 focus:border-primary text-[14px] py-2 rounded"
-                  placeholder="Street, City, State"
+                  placeholder="Street, City"
                 />
               </div>
               <div>
-                <label className="block text-[14px] mb-1">Zip <span className="text-[#111]">*</span></label>
+                <label className="block text-[14px] mb-1">Postal Code <span className="text-[#111]">*</span></label>
                 <div className="relative">
                   <input
                     name="zip"
@@ -201,8 +201,6 @@ export const Contact: React.FC = () => {
                     <option value="account_help">Account help</option>
                     <option value="diffuser_recommendations">Diffuser recommendations</option>
                     <option value="fragrance_suggestion">Fragrance suggestion</option>
-                    <option value="order_tracking">Order tracking</option>
-                    <option value="return">Return</option>
                     <option value="additional_questions">Additional questions</option>
                   </select>
                   <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-black/70">▾</span>
